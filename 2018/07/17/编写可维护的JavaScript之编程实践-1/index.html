@@ -5,18 +5,19 @@
   
 
   
-  <title>baishiwen&#39;s blog</title>
+  <title>编写可维护的JavaScript之编程实践---UI层的松耦合 | baishiwen&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="baishiwen&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="一. UI层的松耦合1. 将JavaScript从CSS中抽离在IE8和早版本的浏览器有一个特性，CSS表达式：123#box&amp;#123;	width: expression(document.body.offsetWidth + &amp;quot;px&amp;quot;);&amp;#125; 浏览器会以高频率重复计算CSS表达式，严重影响性能，且很难维护，所以要避免使用CSS表达式；值得庆幸的是IE9不再支持CS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编写可维护的JavaScript之编程实践---UI层的松耦合">
+<meta property="og:url" content="http://yoursite.com/2018/07/17/编写可维护的JavaScript之编程实践-1/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="学习笔记">
+<meta property="og:description" content="一. UI层的松耦合1. 将JavaScript从CSS中抽离在IE8和早版本的浏览器有一个特性，CSS表达式：123#box&amp;#123;	width: expression(document.body.offsetWidth + &amp;quot;px&amp;quot;);&amp;#125; 浏览器会以高频率重复计算CSS表达式，严重影响性能，且很难维护，所以要避免使用CSS表达式；值得庆幸的是IE9不再支持CS">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-17T07:56:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="baishiwen&#39;s blog">
-<meta name="twitter:description" content="学习笔记">
+<meta name="twitter:title" content="编写可维护的JavaScript之编程实践---UI层的松耦合">
+<meta name="twitter:description" content="一. UI层的松耦合1. 将JavaScript从CSS中抽离在IE8和早版本的浏览器有一个特性，CSS表达式：123#box&amp;#123;	width: expression(document.body.offsetWidth + &amp;quot;px&amp;quot;);&amp;#125; 浏览器会以高频率重复计算CSS表达式，严重影响性能，且很难维护，所以要避免使用CSS表达式；值得庆幸的是IE9不再支持CS">
   
     <link rel="alternate" href="/atom.xml" title="baishiwen&#39;s blog" type="application/atom+xml">
   
@@ -63,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-编写可维护的JavaScript之编程实践-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-编写可维护的JavaScript之编程实践-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/" class="article-date">
   <time datetime="2018-07-17T05:26:40.000Z" itemprop="datePublished">2018-07-17</time>
@@ -78,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/编写可维护的JavaScript之编程实践-1/">编写可维护的JavaScript之编程实践---UI层的松耦合</a>
+    <h1 class="article-title" itemprop="name">
+      编写可维护的JavaScript之编程实践---UI层的松耦合
     </h1>
   
 
@@ -116,64 +115,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="[layout]-编写可维护的JavaScript之编程风格" class="article article-type-[layout]" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/编写可维护的JavaScript之编程风格/" class="article-date">
-  <time datetime="2018-07-16T09:54:06.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/编写可维护的JavaScript之编程风格/">编写可维护的JavaScript之编程风格</a>
-    </h1>
+    <a href="/2018/07/16/编写可维护的JavaScript之编程风格/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">编写可维护的JavaScript之编程风格</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。</p>
-<h3 id="1-层级缩进"><a href="#1-层级缩进" class="headerlink" title="1. 层级缩进"></a>1. 层级缩进</h3><p>对于层级缩进目前有两种主张：<br>1）使用制表符<br>    这种方法有两种好处，第一，制表符和缩进层级之间是一一对应关系，符合逻辑；第二是文本编辑器可以配置制表符的展现长度。<br>    缺点是系统对制表符的解释不一致。<br>2）使用空格符<br>    目前主要有三种具体的做法：2个空格表示一个缩进，4个空格表示一个缩进，8个空格表示一个缩进<br>    优点：在所有的系统和编辑器中，文件的展现格式不会有任何差异；<br>    缺点：对于单个开发者来说，使用一个没有配置好的文本编辑器创建格式化的代码的方式非常原始。</p>
-<h3 id="2-语句结尾"><a href="#2-语句结尾" class="headerlink" title="2. 语句结尾"></a>2. 语句结尾</h3><p>JavaScript的语句要么独占一行， 要么以分号结尾。但是有赖于分析器的自动分号插入机制（Automatic Semicolon Insertion，ASI）会在应该有分号而实际没有的地方自动插入分号。<br>大多数场景不会出错，但是有写场景有可能会出现问题,导致出错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//原始代码</span><br><span class="line">function data()&#123;</span><br><span class="line">	return </span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//分析器会理解成：</span><br><span class="line">function data()&#123;</span><br><span class="line">	return;</span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以推荐在每一句代码的结束都加上分号，减少出现问题的几率。</p>
-<h3 id="3-行的长度"><a href="#3-行的长度" class="headerlink" title="3. 行的长度"></a>3. 行的长度</h3><p>建议将每行长度限定在80个字符</p>
-<h3 id="4-换行"><a href="#4-换行" class="headerlink" title="4. 换行"></a>4. 换行</h3><p>当单行字符达到最大值（例如80个字符）的时候要手动拆成两行。<br>一般规则是 ： 在运算符后换行，第二行追加两个缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">doSomething ( value1, value2, document, window, </span><br><span class="line">		element );</span><br></pre></td></tr></table></figure></p>
-<p><strong>特例：</strong>  </p>
-<p>特例1 :  在if语句中换行可以保持一个缩进，这样更容易阅读：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if ( isLong &amp;&amp; isShow &amp;&amp; number == 1 &amp;&amp; </span><br><span class="line">		children.length &gt; 0 ) &#123;</span><br><span class="line">	//do something...		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>特例2 ：当给变量赋值时，第二行的位置应该和赋值运算符的位置保持对齐：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var result = something + anotherThing + yetAnothering + someThingElse + </span><br><span class="line">	     anotherSomethingElse;</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-空行"><a href="#5-空行" class="headerlink" title="5. 空行"></a>5. 空行</h3><p>有时一段代码的语义和另外一段代码不相关，这时就应该使用空行分割，确保有关联的代码展现在一起。<br><strong>一般规则 ：</strong><br>在每个控制流语句（if，for语句等）之前添加空行;<br>在方法之前；<br>在方法中的局部变量和第一条语句之间；<br>在多行或但行注释之前；<br>在方法内的逻辑片段之间插入空行，提高可读性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//不实用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//使用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">  </span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">		</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-命名"><a href="#6-命名" class="headerlink" title="6. 命名"></a>6. 命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“计算机只存在两个难题：缓存失效和命名。”   --- Phil Karlton</span><br></pre></td></tr></table></figure>
-<p>JavaScript语言的核心ECMAScript是遵守驼峰式大小写命名法。</p>
-<p> <strong>一般命名规则：</strong><br> 命名长度尽可能短，并要抓住重点；<br> 避免没有任何意义的命名；<br> 变量名遵守驼峰大小写命名法，前缀应当是名词；<br> 函数名遵守驼峰大小写命名法，前缀应当是动词；<br> 常量使用大写字母和下划线命名，下划线用以分割单词；<br> 构造函数的命名遵守大驼峰（以大写字母开始）命名法，通常是名词（因为是用来创建某个类型的实例）；<br> 字符串可以用双引号也可以使用单引号括起来（上下文要保持同一种风格）；</p>
-<h3 id="7-null"><a href="#7-null" class="headerlink" title="7. null"></a>7. null</h3><p> null的使用场景 ：<br> 用来初始化一个变量，这个变量可能赋值为一个对象；<br> 用来和一个已经初始化的变量比较，这个变量可以是也可以不是一个对象；<br> 当函数的参数期望是对象时，用作参数传入；<br> 当函数的返回值期望是对象时，用作返回值传出；</p>
-<p> <strong> 理解null最好的方式是将它当作对象的占位符</strong></p>
-<p> [参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/" data-id="cjjpeo1pc0001wicsqcwo1014" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
