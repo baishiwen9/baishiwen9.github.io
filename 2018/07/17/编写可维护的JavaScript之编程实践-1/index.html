@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="baishiwen&#39;s blog">
 <meta property="og:description" content="一. UI层的松耦合1. 将JavaScript从CSS中抽离在IE8和早版本的浏览器有一个特性，CSS表达式：123#box&amp;#123;	width: expression(document.body.offsetWidth + &amp;quot;px&amp;quot;);&amp;#125; 浏览器会以高频率重复计算CSS表达式，严重影响性能，且很难维护，所以要避免使用CSS表达式；值得庆幸的是IE9不再支持CS">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-17T07:56:42.000Z">
+<meta property="og:updated_time" content="2018-07-17T09:33:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编写可维护的JavaScript之编程实践---UI层的松耦合">
 <meta name="twitter:description" content="一. UI层的松耦合1. 将JavaScript从CSS中抽离在IE8和早版本的浏览器有一个特性，CSS表达式：123#box&amp;#123;	width: expression(document.body.offsetWidth + &amp;quot;px&amp;quot;);&amp;#125; 浏览器会以高频率重复计算CSS表达式，严重影响性能，且很难维护，所以要避免使用CSS表达式；值得庆幸的是IE9不再支持CS">
@@ -86,7 +86,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一-UI层的松耦合"><a href="#一-UI层的松耦合" class="headerlink" title="一. UI层的松耦合"></a>一. UI层的松耦合</h3><h4 id="1-将JavaScript从CSS中抽离"><a href="#1-将JavaScript从CSS中抽离" class="headerlink" title="1. 将JavaScript从CSS中抽离"></a>1. 将JavaScript从CSS中抽离</h4><p>在IE8和早版本的浏览器有一个特性，CSS表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">	width: expression(document.body.offsetWidth + &quot;px&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="一-UI层的松耦合"><a href="#一-UI层的松耦合" class="headerlink" title="一. UI层的松耦合"></a>一. UI层的松耦合</h1><h4 id="1-将JavaScript从CSS中抽离"><a href="#1-将JavaScript从CSS中抽离" class="headerlink" title="1. 将JavaScript从CSS中抽离"></a>1. 将JavaScript从CSS中抽离</h4><p>在IE8和早版本的浏览器有一个特性，CSS表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">	width: expression(document.body.offsetWidth + &quot;px&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>浏览器会以高频率重复计算CSS表达式，严重影响性能，且很难维护，<strong>所以要避免使用CSS表达式</strong>；<br>值得庆幸的是IE9不再支持CSS表达式了。</p>
 <h4 id="2-将CSS从JavaScript中抽离"><a href="#2-将CSS从JavaScript中抽离" class="headerlink" title="2. 将CSS从JavaScript中抽离"></a>2. 将CSS从JavaScript中抽离</h4><p>可以同过脚本修改样式，最常见的是在js中修改DOM元素的style属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.style.color = &quot;red&quot;;</span><br><span class="line">element.style.left = &quot;10px&quot;;</span><br><span class="line">element.style.top = &quot;20px&quot;;</span><br></pre></td></tr></table></figure></p>
 <p>这样的方法带来的最大的问题就是可维护性问题，所以<strong>最佳的方法是操作CSS的className</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//css:</span><br><span class="line">.default&#123;</span><br><span class="line">	color:red;</span><br><span class="line">	left:10px;</span><br><span class="line">	top:10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//js:</span><br><span class="line">//原生方法：</span><br><span class="line">element.className += &quot; default&quot;;</span><br><span class="line">//jQuery:</span><br><span class="line">$(element).addClass(&quot;default&quot;);</span><br></pre></td></tr></table></figure></p>
@@ -109,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/17/编写可维护的JavaScript之编程实践-1/" data-id="cjjpeo1p70000wics9zet13iq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/17/编写可维护的JavaScript之编程实践-1/" data-id="cjjplnn67000184csz7b314hv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -117,6 +117,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          编写可维护的JavaScript之编程实践---全局变量
+        
+      </div>
+    </a>
   
   
     <a href="/2018/07/16/编写可维护的JavaScript之编程风格/" id="article-nav-older" class="article-nav-link-wrap">
@@ -156,6 +165,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/">编写可维护的JavaScript之编程实践---全局变量</a>
+          </li>
         
           <li>
             <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/">编写可维护的JavaScript之编程实践---UI层的松耦合</a>
