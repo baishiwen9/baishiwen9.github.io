@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>编写可维护的JavaScript---避免空比较 | baishiwen&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 检测原始值在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符： 对于字符串： typeof返回 “string”；对于数字：   typeof返回 “number”；对于布尔值： typeof返回 “boolean”；对于undefined： typ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编写可维护的JavaScript---避免空比较">
+<meta property="og:url" content="http://yoursite.com/2018/07/18/编写可维护的JavaScript-避免空比较/index.html">
+<meta property="og:site_name" content="baishiwen&#39;s blog">
+<meta property="og:description" content="1. 检测原始值在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符： 对于字符串： typeof返回 “string”；对于数字：   typeof返回 “number”；对于布尔值： typeof返回 “boolean”；对于undefined： typ">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-18T09:08:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编写可维护的JavaScript---避免空比较">
+<meta name="twitter:description" content="1. 检测原始值在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符： 对于字符串： typeof返回 “string”；对于数字：   typeof返回 “number”；对于布尔值： typeof返回 “boolean”；对于undefined： typ">
+  
+    <link rel="alternate" href="/atom.xml" title="baishiwen&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">baishiwen&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="[layout]-编写可维护的JavaScript-避免空比较" class="article article-type-[layout]" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/" class="article-date">
+  <time datetime="2018-07-18T08:01:35.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      编写可维护的JavaScript---避免空比较
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-检测原始值"><a href="#1-检测原始值" class="headerlink" title="1. 检测原始值"></a>1. 检测原始值</h2><p>在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。<br>如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：</p>
+<p>对于字符串： typeof返回 “string”；<br>对于数字：   typeof返回 “number”；<br>对于布尔值： typeof返回 “boolean”；<br>对于undefined： typeof返回 “undefined”；  </p>
+<p>用typeof检测这四种原始值是非常安全的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 检测字符串</span><br><span class="line">if ( typeof name === &quot;string&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测数字</span><br><span class="line">if ( typeof count === &quot;number&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测布尔值</span><br><span class="line">if ( typeof found === &quot;boolean&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测undefinded</span><br><span class="line">if ( typeof myApp === &quot;undefined&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>typeof运算符的独特在于，将其用于一个未声明的变量也不会报错。未定义的变量和值为undefined的变量通过typeof都返回undefined。</p>
+<p>对于null，一般不用于检测语句，简单的和null比较通常不会包含足够的信息以判断值的类型是否合法。</p>
+<h2 id="2-检测引用值"><a href="#2-检测引用值" class="headerlink" title="2. 检测引用值"></a>2. 检测引用值</h2><p>引用类型有：Object、Array、Date和Error<br>用typeof检测引用类型都返回“object”，所以检测引用值的类型的最好方法是使用instanceof运算符。<br>基本语法： value instanceof constructor<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 检测日期</span><br><span class="line">if ( value instanceof Date ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测正则</span><br><span class="line">if ( value instanceof RegExp ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测Error</span><br><span class="line">if ( value instanceof Error ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>instanceof 的一个特性是它不仅检测构造这个对象的构造器，还检测原型链。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var now = new Date();</span><br><span class="line">console.log( now instanceof Object );   // true, 每个对象都继承自Object</span><br><span class="line">console.log( now instanceof Date );     // true</span><br></pre></td></tr></table></figure></p>
+<p>因为上面这个原因，使用value instanceof Object 来判断对象是否属于某个特定类型的做法并非最佳。<br>instanceof 运算法也可以检测出自定义的类型，这也是检测自定义类型的唯一方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Person( name )&#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">var me = new Person( &quot;xiaoming&quot; );</span><br><span class="line">console.log( me instanceof Object );   // true</span><br><span class="line">console.log( me instanceof Person );   // true</span><br></pre></td></tr></table></figure></p>
+<p>  1） 检测函数<br>  检测函数最好的方法是typeof。<br>  2） 检测数组<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function isArray(value)&#123;</span><br><span class="line">	if ( typeof Array.isArray === &quot;function&quot; )&#123;</span><br><span class="line">		return Array.isArray(value);</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		return Object.prototype.toString.call(value) === &quot;[object Array]&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-检测属性"><a href="#3-检测属性" class="headerlink" title="3. 检测属性"></a>3. 检测属性</h2><p>  判断属性是否存在的最好的方法是使用in运算符。in运算法仅仅会简单的判断属性是否存在，而不会去读属性的值。如果实例对象的属性存在、或继承自对象的原型，in运算符都会返回true：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var object = &#123;</span><br><span class="line">	count:0,</span><br><span class="line">	related:null</span><br><span class="line">&#125;;</span><br><span class="line">if ( &quot;count&quot; in object )&#123;</span><br><span class="line">	// do something...</span><br><span class="line">&#125;</span><br><span class="line">if ( &quot;related&quot; in object )&#123;</span><br><span class="line">	// do something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  如果只想检测实例对象的某个属性是否存在，使用hasOwnProperty()方法，所有继承自Object的js对象都有这个方法，如果实例中存在这个属性则返回true（如果这个属性只存在原型里，则返回false）。</p>
+<p>[参考资料]:<br>编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/18/编写可维护的JavaScript-避免空比较/" data-id="cjjqwp7a40000dycs70eheq8x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/18/编写可维护的JavaScript-事件处理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">编写可维护的JavaScript---事件处理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/">编写可维护的JavaScript---避免空比较</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/18/编写可维护的JavaScript-事件处理/">编写可维护的JavaScript---事件处理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/">编写可维护的JavaScript之编程实践---全局变量</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/">编写可维护的JavaScript之编程实践---UI层的松耦合</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/编写可维护的JavaScript之编程风格/">编写可维护的JavaScript之编程风格</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 baishiwen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
