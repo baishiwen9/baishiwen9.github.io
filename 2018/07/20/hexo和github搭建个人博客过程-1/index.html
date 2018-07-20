@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>hexo和github搭建个人博客过程 | baishiwen&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo和github搭建个人博客过程">
+<meta property="og:url" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/index.html">
+<meta property="og:site_name" content="baishiwen&#39;s blog">
+<meta property="og:description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/项目目录.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/创建仓库.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/setting.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/new_ssh_key.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/add.png">
+<meta property="og:updated_time" content="2018-07-20T06:17:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo和github搭建个人博客过程">
+<meta name="twitter:description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/项目目录.png">
+  
+    <link rel="alternate" href="/atom.xml" title="baishiwen&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap"> 
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">baishiwen&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo和github搭建个人博客过程-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/20/hexo和github搭建个人博客过程-1/" class="article-date">
+  <time datetime="2018-07-20T05:45:04.000Z" itemprop="datePublished">2018-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo和github搭建个人博客过程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。</p>
+<h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h2><p>在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；<br>安装hexo，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo;</span><br></pre></td></tr></table></figure></p>
+<p>查看hexo版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v;</span><br></pre></td></tr></table></figure></p>
+<p>如果显示版本号则说明已经安装成功；<br>初始化hexo命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init；</span><br></pre></td></tr></table></figure></p>
+<p>此时打开myBlog文件夹可以看到有很多文件，大概是：</p>
+<p><img src="/2018/07/20/hexo和github搭建个人博客过程-1/项目目录.png" alt="项目目录结构"></p>
+<p>node_modules : 依赖包<br>public： 存放生成的静态页面<br>scaffolds：命令生成文章等的模板<br>source：命令创建的各种文章<br>themes：主题<br>_config.yml : 整个博客的配置文件<br>db.json : source解析得到的文件<br>package.json: 项目所需模块项目的各种配置信息</p>
+<h2 id="3-注册github"><a href="#3-注册github" class="headerlink" title="3. 注册github"></a>3. 注册github</h2><p>注册github，过程说明；<br>创建完之后新建仓库；</p>
+<p><img src="/2018/07/20/hexo和github搭建个人博客过程-1/创建仓库.png" alt="创建仓库"></p>
+<p>回到gitbash中，配置github账户信息（YourName和YourEail都替换成你自己的）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourName&quot;</span><br><span class="line">git config --global user.email &quot;yourEmail&quot;</span><br></pre></td></tr></table></figure></p>
+<p>创建SSH：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;yourEmail&quot;</span><br></pre></td></tr></table></figure>
+<p>生成SSH。然后找到id_rsa.pub文件的内容复制；<br>将复制的SSH放到github中：点击自己头像 =&gt; setting =&gt; ssh and GPG keys =&gt; New SSH key =&gt; 粘贴，title随便取<br><img src="/2018/07/20/hexo和github搭建个人博客过程-1/setting.png" alt=""><br><img src="/2018/07/20/hexo和github搭建个人博客过程-1/new_ssh_key.png" alt=""><br><img src="/2018/07/20/hexo和github搭建个人博客过程-1/add.png" alt=""></p>
+<h2 id="4-配置博客"><a href="#4-配置博客" class="headerlink" title="4. 配置博客"></a>4. 配置博客</h2><p>用编辑器打开myBlog项目，修改_config.yml文件的一些配置(冒号之后都是有一个半角空格的)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure></p>
+<p>回到gitbash中，进入你的blog目录，分别执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<p>打开浏览器输入：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<p>此时项目已经启动。</p>
+<h2 id="5-新建博客"><a href="#5-新建博客" class="headerlink" title="5. 新建博客"></a>5. 新建博客</h2><p>在gitbash中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;我的第一篇博客&quot;</span><br></pre></td></tr></table></figure></p>
+<p>此时你可以看到在myBlog/source/_posts/ 下面出现一个 “我的第一篇博客.md” 文件，你可以在里面写自己的东西了。<br>由于生成的是md格式的文件，应当遵循markdown的语法（很简单看一眼就会写）。</p>
+<h2 id="6-上传github"><a href="#6-上传github" class="headerlink" title="6. 上传github"></a>6. 上传github</h2><p>将刚才写好的博客保存后可以上传：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>一次执行完这些命令，就已经上传完成</p>
+<h2 id="7-打开页面"><a href="#7-打开页面" class="headerlink" title="7. 打开页面"></a>7. 打开页面</h2><p>在浏览器中输入http://“yourgithubname”.github.io就可以看到自己写的博客了。</p>
+<h2 id="8-博客中添加图片"><a href="#8-博客中添加图片" class="headerlink" title="8. 博客中添加图片"></a>8. 博客中添加图片</h2><p>1）把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true；<br>2）在Git Bash中cd到myBlog中执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
+<p>3) 执行第5步新建博客的时候就可以看到在/source/_posts文件夹中多出了一个和刚才新建的md文件名一样的文件夹，然后把本地的图片放到该文件夹中；<br>4）将图片引入到博客中：使用markdown的语法引入图片：![我是一张图片](logo.png);中括号是图片的替代文字，小括号是图片的路径，直接写图片名就行。</p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+    		<span id="busuanzi_container_page_pv">
+		 	 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	 	</span>
+      <a data-url="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/" data-id="cjjtt4sch00049acsi4da2mb2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">编写可维护的JavaScript---避免空比较</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/20/hexo和github搭建个人博客过程-1/">hexo和github搭建个人博客过程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/">编写可维护的JavaScript---避免空比较</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/18/编写可维护的JavaScript-事件处理/">编写可维护的JavaScript---事件处理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/">编写可维护的JavaScript---全局变量</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/">编写可维护的JavaScript---UI层的松耦合</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 baishiwen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+    <span id="busuanzi_container_site_uv">本站总访问量
+    			<span id="busuanzi_value_site_uv"></span>次
+    </span>
+</footer>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
