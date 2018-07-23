@@ -1,93 +1,329 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>baishiwen&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习笔记">
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="技术分享，学习笔记">
 <meta property="og:type" content="website">
 <meta property="og:title" content="baishiwen&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="学习笔记">
+<meta property="og:description" content="技术分享，学习笔记">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="baishiwen&#39;s blog">
-<meta name="twitter:description" content="学习笔记">
+<meta name="twitter:description" content="技术分享，学习笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>baishiwen's blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="baishiwen&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap"> 
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">baishiwen&#39;s blog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
   
-    <article id="post-hexo和github搭建个人博客过程-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/20/hexo和github搭建个人博客过程-1/" class="article-date">
-  <time datetime="2018-07-20T05:45:04.000Z" itemprop="datePublished">2018-07-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/20/hexo和github搭建个人博客过程-1/">hexo和github搭建个人博客过程</a>
-    </h1>
+    
   
 
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">baishiwen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/20/hexo和github搭建个人博客过程-1/" itemprop="url">hexo和github搭建个人博客过程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-20T13:45:04+08:00">
+                2018-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。</p>
+      
+
+      
+        
+          
+            <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。</p>
 <h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h2><p>在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；<br>安装hexo，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo;</span><br></pre></td></tr></table></figure></p>
 <p>查看hexo版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v;</span><br></pre></td></tr></table></figure></p>
 <p>如果显示版本号则说明已经安装成功；<br>初始化hexo命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init；</span><br></pre></td></tr></table></figure></p>
@@ -111,47 +347,135 @@
 <h2 id="7-打开页面"><a href="#7-打开页面" class="headerlink" title="7. 打开页面"></a>7. 打开页面</h2><p>在浏览器中输入http://“yourgithubname”.github.io就可以看到自己写的博客了。</p>
 <h2 id="8-博客中添加图片"><a href="#8-博客中添加图片" class="headerlink" title="8. 博客中添加图片"></a>8. 博客中添加图片</h2><p>1）把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true；<br>2）在Git Bash中cd到myBlog中执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
 <p>3) 执行第5步新建博客的时候就可以看到在/source/_posts文件夹中多出了一个和刚才新建的md文件名一样的文件夹，然后把本地的图片放到该文件夹中；<br>4）将图片引入到博客中：使用markdown的语法引入图片：![我是一张图片](logo.png);中括号是图片的替代文字，小括号是图片的路径，直接写图片名就行。</p>
+<h2 id="9-切换主题"><a href="#9-切换主题" class="headerlink" title="9. 切换主题"></a>9. 切换主题</h2><p>1）打开git shell，在当前博客项目的根目录下下载博客主题（以next主题为例）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
+<p>下载完成后在项目的themes中会多出一个next文件夹，这就是刚才下载的新的主题。<br>2）配置主题<br>在项目目录下找到_config.yml文件进行配置，找到theme字段，将其值改为next（默认是landscape）；<br>本地启动服务（hexo server），打开<a href="http://localhost:4000/。就会看到next主题已经切换成功。" target="_blank" rel="noopener">http://localhost:4000/。就会看到next主题已经切换成功。</a><br>3）主题样式选择<br>next的样式其实有三种：Muse、Mist和Pisces，next默认的模式Muse；<br>三种样式说明：</p>
+<pre><code>Muse： 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白
+Mist： Muse 的紧凑版本，整洁有序的单栏外观
+Pisces： 双栏 Scheme，小家碧玉似的清新
+</code></pre><p>选择样式的步骤：<br>    打开项目下next文件夹 =&gt; 代开_config.yml文件 =&gt; 找到scheme字段，<br>给scheme字段的值设置为Muse，Mist或者Pisces，保存，启动服务，打开<a href="http://localhost:4000/查看。" target="_blank" rel="noopener">http://localhost:4000/查看。</a></p>
+<h2 id="10-增加菜单栏"><a href="#10-增加菜单栏" class="headerlink" title="10. 增加菜单栏"></a>10. 增加菜单栏</h2><p>要在菜单栏显示about，tags等菜单时我们只需要进行一些简单的操作：<br>1）配置菜单<br>    进入到next主题文件夹里打开_config.yml文件进行配置，在_config.yml文件进行配置的menu字段里面已经有好几个菜单，不过是在注释状态，根据需求去掉注释:<br>    <img src="/2018/07/20/hexo和github搭建个人博客过程-1/menu.png" alt="配置菜单"></p>
+<p>2) 新建对应的页面<br>    比如第一步我们新建了about菜单，那我们要给about菜单对应的页面，创建页面过程如下：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure></p>
+<p>此时在项目下source下会出现一个about文件夹，里面有index文件夹和index.md（可以在里面写对应的内容）；</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
 
       
       
-    </div>
-    <footer class="article-footer">
-    		<span id="busuanzi_container_page_pv">
-		 	 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	 	</span>
-      <a data-url="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/" data-id="cjjtt4sch00049acsi4da2mb2" class="article-share-link">Share</a>
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="[layout]-编写可维护的JavaScript-避免空比较" class="article article-type-[layout]" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/" class="article-date">
-  <time datetime="2018-07-18T08:01:35.000Z" itemprop="datePublished">2018-07-18</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/编写可维护的JavaScript-避免空比较/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/编写可维护的JavaScript-避免空比较/">编写可维护的JavaScript---避免空比较</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/编写可维护的JavaScript-避免空比较/" itemprop="url">编写可维护的JavaScript---避免空比较</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T16:01:35+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h2 id="1-检测原始值"><a href="#1-检测原始值" class="headerlink" title="1. 检测原始值"></a>1. 检测原始值</h2><p>在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。<br>如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：</p>
+      
+
+      
+        
+          
+            <h2 id="1-检测原始值"><a href="#1-检测原始值" class="headerlink" title="1. 检测原始值"></a>1. 检测原始值</h2><p>在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。<br>如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：</p>
 <p>对于字符串： typeof返回 “string”；<br>对于数字：   typeof返回 “number”；<br>对于布尔值： typeof返回 “boolean”；<br>对于undefined： typeof返回 “undefined”；  </p>
 <p>用typeof检测这四种原始值是非常安全的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 检测字符串</span><br><span class="line">if ( typeof name === &quot;string&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测数字</span><br><span class="line">if ( typeof count === &quot;number&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测布尔值</span><br><span class="line">if ( typeof found === &quot;boolean&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测undefinded</span><br><span class="line">if ( typeof myApp === &quot;undefined&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>typeof运算符的独特在于，将其用于一个未声明的变量也不会报错。未定义的变量和值为undefined的变量通过typeof都返回undefined。</p>
@@ -164,91 +488,249 @@
 <p>  如果只想检测实例对象的某个属性是否存在，使用hasOwnProperty()方法，所有继承自Object的js对象都有这个方法，如果实例中存在这个属性则返回true（如果这个属性只存在原型里，则返回false）。</p>
 <p>[参考资料]:<br>编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
 
-      
+          
+        
       
     </div>
-    <footer class="article-footer">
-    		<span id="busuanzi_container_page_pv">
-		 	 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	 	</span>
-      <a data-url="http://yoursite.com/2018/07/18/编写可维护的JavaScript-避免空比较/" data-id="cjjtt4sc700009acs6wqv0qyq" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="[layout]-编写可维护的JavaScript-事件处理" class="article article-type-[layout]" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/编写可维护的JavaScript-事件处理/" class="article-date">
-  <time datetime="2018-07-18T05:47:11.000Z" itemprop="datePublished">2018-07-18</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/编写可维护的JavaScript-事件处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/编写可维护的JavaScript-事件处理/">编写可维护的JavaScript---事件处理</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/编写可维护的JavaScript-事件处理/" itemprop="url">编写可维护的JavaScript---事件处理</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T13:47:11+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>在JavaScript应用中事件处理是非常重要的，所有的JavaScript都是通过事件绑定到UI上的。</p>
+      
+
+      
+        
+          
+            <p>在JavaScript应用中事件处理是非常重要的，所有的JavaScript都是通过事件绑定到UI上的。</p>
 <h2 id="1-典型用法"><a href="#1-典型用法" class="headerlink" title="1. 典型用法"></a>1. 典型用法</h2><p>当事件触发的时候，事件对象event会最为回调参数传入到事件处理程序中。event对象包含所有和事件相关的信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 不好的写法</span><br><span class="line">function handleClick( event )&#123;</span><br><span class="line">	var popup = document.getElementById(&quot;popup&quot;);</span><br><span class="line">	popup.style.left = event.clientX + &quot;px&quot;;</span><br><span class="line">	popup.style.top = event.clientY + &quot;px&quot;;</span><br><span class="line">	popup.className = &quot;reveal&quot;;</span><br><span class="line">	// 事件处理中包含了应用逻辑</span><br><span class="line">&#125;</span><br><span class="line">addListener( element,&quot;click&quot;, handleClick );</span><br></pre></td></tr></table></figure></p>
 <h2 id="2-事件处理规则一：隔离应用逻辑"><a href="#2-事件处理规则一：隔离应用逻辑" class="headerlink" title="2. 事件处理规则一：隔离应用逻辑"></a>2. 事件处理规则一：隔离应用逻辑</h2><p>将应用逻辑从所有的事件处理程序中抽离出来的做法是一种最佳实践；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法，拆分应用逻辑</span><br><span class="line">var MyApplication = &#123;</span><br><span class="line">	handleClick : function( event )&#123;   // 事件处理</span><br><span class="line">		this.showPopup( event );     </span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	showPopup : function( event )&#123;     // 应用逻辑</span><br><span class="line">		var popup = document.getElementById(&quot;popup&quot;);</span><br><span class="line">		popup.style.left = event.clientX + &quot;px&quot;;</span><br><span class="line">		popup.style.top = event.clientY + &quot;px&quot;;</span><br><span class="line">		popup.className = &quot;reveal&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="3-事件处理规则二：不要分发事件对象"><a href="#3-事件处理规则二：不要分发事件对象" class="headerlink" title="3. 事件处理规则二：不要分发事件对象"></a>3. 事件处理规则二：不要分发事件对象</h2><p>上面代码存在一个问题：event对象被无节制的分发。<br>从匿名的事件处理函数传到 MyApplication.handleClick(),然后又传到MyApplication.showPopup()。<br>最佳的处理方法是让事件处理程序使用event对象来处理事件，然后拿到所有需要的数据传给应用逻辑。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var MyApplication = &#123;</span><br><span class="line">	handleClick : function( event )&#123;   // 事件处理</span><br><span class="line">		event.preventDefault();</span><br><span class="line">		event.stopPropagation();</span><br><span class="line">		this.showPopup( event.clientX, event.clientY );     </span><br><span class="line">		// 让事件处理程序成为接触到event对象的唯一函数。</span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	showPopup : function( x, y )&#123;     // 应用逻辑</span><br><span class="line">		var popup = document.getElementById(&quot;popup&quot;);</span><br><span class="line">		popup.style.left = x + &quot;px&quot;;</span><br><span class="line">		popup.style.top = y + &quot;px&quot;;</span><br><span class="line">		popup.className = &quot;reveal&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>[参考资料]:<br>编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
 
-      
+          
+        
       
     </div>
-    <footer class="article-footer">
-    		<span id="busuanzi_container_page_pv">
-		 	 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	 	</span>
-      <a data-url="http://yoursite.com/2018/07/18/编写可维护的JavaScript-事件处理/" data-id="cjjtt4sci00059acso1kgng06" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-编写可维护的JavaScript之编程实践-全局变量" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/" class="article-date">
-  <time datetime="2018-07-17T09:31:38.000Z" itemprop="datePublished">2018-07-17</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/">编写可维护的JavaScript---全局变量</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/" itemprop="url">编写可维护的JavaScript---全局变量</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-17T17:31:38+08:00">
+                2018-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h1 id="一-全局变量"><a href="#一-全局变量" class="headerlink" title="一.  全局变量"></a>一.  全局变量</h1><h3 id="1-由全局变量带来的一些问题："><a href="#1-由全局变量带来的一些问题：" class="headerlink" title="1. 由全局变量带来的一些问题："></a>1. 由全局变量带来的一些问题：</h3><p><strong>1) 命名冲突</strong><br>当脚本中的全局变量和全局函数越来越多的时候，发生命名冲突的概率随之增大；如果所有的变量都定义为局部变量，这样的代码最容易维护。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var color = &quot;red&quot;;   // 对color来说绝对不是一个安全的全局变量</span><br><span class="line"></span><br><span class="line">function sayName()&#123;</span><br><span class="line">	alert( color );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+      
+
+      
+        
+          
+            <h1 id="一-全局变量"><a href="#一-全局变量" class="headerlink" title="一.  全局变量"></a>一.  全局变量</h1><h3 id="1-由全局变量带来的一些问题："><a href="#1-由全局变量带来的一些问题：" class="headerlink" title="1. 由全局变量带来的一些问题："></a>1. 由全局变量带来的一些问题：</h3><p><strong>1) 命名冲突</strong><br>当脚本中的全局变量和全局函数越来越多的时候，发生命名冲突的概率随之增大；如果所有的变量都定义为局部变量，这样的代码最容易维护。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var color = &quot;red&quot;;   // 对color来说绝对不是一个安全的全局变量</span><br><span class="line"></span><br><span class="line">function sayName()&#123;</span><br><span class="line">	alert( color );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>2) 代码的脆弱性</strong><br>一个依赖于全局变量的函数即是深耦合于上下文环境中，如果环境发生改变，函数有可能会失效。<br>例如上面的代码中color不存在，那么sayName函数就会报错。</p>
 <p>所以在定义函数的时候，最好尽可能的将数据置于局部作用域内。任何来自函数外部的数据应当以参数形式传递进来。这样可以将函数和外部环境隔离开。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function sayName( color )&#123;</span><br><span class="line">	alert( color );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>3) 难以测试</strong><br>如果项目中有很多的全局变量存在，框架要依赖一些全局变量流程才能跑通，那么要进行一些单元测试是很困难的。</p>
@@ -267,46 +749,125 @@
 <h3 id="4-零全局变量："><a href="#4-零全局变量：" class="headerlink" title="4. 零全局变量："></a>4. 零全局变量：</h3><p>使用前提是内部代码与外部代码无联系。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function(win) &#123;</span><br><span class="line">	var doc = win.document;</span><br><span class="line">&#125;)(window)</span><br></pre></td></tr></table></figure></p>
 <p>[参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
 
-      
+          
+        
       
     </div>
-    <footer class="article-footer">
-    		<span id="busuanzi_container_page_pv">
-		 	 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	 	</span>
-      <a data-url="http://yoursite.com/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/" data-id="cjjtt4scb00019acs6i26ze6p" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-编写可维护的JavaScript之编程实践-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/" class="article-date">
-  <time datetime="2018-07-17T05:26:40.000Z" itemprop="datePublished">2018-07-17</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/编写可维护的JavaScript之编程实践-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/编写可维护的JavaScript之编程实践-1/">编写可维护的JavaScript---UI层的松耦合</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/17/编写可维护的JavaScript之编程实践-1/" itemprop="url">编写可维护的JavaScript---UI层的松耦合</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-17T13:26:40+08:00">
+                2018-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h1 id="一-UI层的松耦合"><a href="#一-UI层的松耦合" class="headerlink" title="一. UI层的松耦合"></a>一. UI层的松耦合</h1><h4 id="1-将JavaScript从CSS中抽离"><a href="#1-将JavaScript从CSS中抽离" class="headerlink" title="1. 将JavaScript从CSS中抽离"></a>1. 将JavaScript从CSS中抽离</h4><p>在IE8和早版本的浏览器有一个特性，CSS表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">	width: expression(document.body.offsetWidth + &quot;px&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+      
+
+      
+        
+          
+            <h1 id="一-UI层的松耦合"><a href="#一-UI层的松耦合" class="headerlink" title="一. UI层的松耦合"></a>一. UI层的松耦合</h1><h4 id="1-将JavaScript从CSS中抽离"><a href="#1-将JavaScript从CSS中抽离" class="headerlink" title="1. 将JavaScript从CSS中抽离"></a>1. 将JavaScript从CSS中抽离</h4><p>在IE8和早版本的浏览器有一个特性，CSS表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">	width: expression(document.body.offsetWidth + &quot;px&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>浏览器会以高频率重复计算CSS表达式，严重影响性能，且很难维护，<strong>所以要避免使用CSS表达式</strong>；<br>值得庆幸的是IE9不再支持CSS表达式了。</p>
 <h4 id="2-将CSS从JavaScript中抽离"><a href="#2-将CSS从JavaScript中抽离" class="headerlink" title="2. 将CSS从JavaScript中抽离"></a>2. 将CSS从JavaScript中抽离</h4><p>可以同过脚本修改样式，最常见的是在js中修改DOM元素的style属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.style.color = &quot;red&quot;;</span><br><span class="line">element.style.left = &quot;10px&quot;;</span><br><span class="line">element.style.top = &quot;20px&quot;;</span><br></pre></td></tr></table></figure></p>
 <p>这样的方法带来的最大的问题就是可维护性问题，所以<strong>最佳的方法是操作CSS的className</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//css:</span><br><span class="line">.default&#123;</span><br><span class="line">	color:red;</span><br><span class="line">	left:10px;</span><br><span class="line">	top:10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//js:</span><br><span class="line">//原生方法：</span><br><span class="line">element.className += &quot; default&quot;;</span><br><span class="line">//jQuery:</span><br><span class="line">$(element).addClass(&quot;default&quot;);</span><br></pre></td></tr></table></figure></p>
@@ -326,46 +887,125 @@
 <p>Handlebars 模板还支持一些简单的逻辑和循环。</p>
 <p>[参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
 
-      
+          
+        
       
     </div>
-    <footer class="article-footer">
-    		<span id="busuanzi_container_page_pv">
-		 	 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	 	</span>
-      <a data-url="http://yoursite.com/2018/07/17/编写可维护的JavaScript之编程实践-1/" data-id="cjjtt4sce00029acsjz533z3q" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="[layout]-编写可维护的JavaScript之编程风格" class="article article-type-[layout]" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/编写可维护的JavaScript之编程风格/" class="article-date">
-  <time datetime="2018-07-16T09:54:06.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/编写可维护的JavaScript之编程风格/">编写可维护的JavaScript---编程风格</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/16/编写可维护的JavaScript之编程风格/" itemprop="url">编写可维护的JavaScript---编程风格</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-16T17:54:06+08:00">
+                2018-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。</p>
+      
+
+      
+        
+          
+            <p>在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。</p>
 <h3 id="1-层级缩进"><a href="#1-层级缩进" class="headerlink" title="1. 层级缩进"></a>1. 层级缩进</h3><p>对于层级缩进目前有两种主张：<br>1）使用制表符<br>    这种方法有两种好处，第一，制表符和缩进层级之间是一一对应关系，符合逻辑；第二是文本编辑器可以配置制表符的展现长度。<br>    缺点是系统对制表符的解释不一致。<br>2）使用空格符<br>    目前主要有三种具体的做法：2个空格表示一个缩进，4个空格表示一个缩进，8个空格表示一个缩进<br>    优点：在所有的系统和编辑器中，文件的展现格式不会有任何差异；<br>    缺点：对于单个开发者来说，使用一个没有配置好的文本编辑器创建格式化的代码的方式非常原始。</p>
 <h3 id="2-语句结尾"><a href="#2-语句结尾" class="headerlink" title="2. 语句结尾"></a>2. 语句结尾</h3><p>JavaScript的语句要么独占一行， 要么以分号结尾。但是有赖于分析器的自动分号插入机制（Automatic Semicolon Insertion，ASI）会在应该有分号而实际没有的地方自动插入分号。<br>大多数场景不会出错，但是有写场景有可能会出现问题,导致出错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//原始代码</span><br><span class="line">function data()&#123;</span><br><span class="line">	return </span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//分析器会理解成：</span><br><span class="line">function data()&#123;</span><br><span class="line">	return;</span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>所以推荐在每一句代码的结束都加上分号，减少出现问题的几率。</p>
@@ -383,116 +1023,314 @@
 <p> <strong> 理解null最好的方式是将它当作对象的占位符</strong></p>
 <p> [参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
 
-      
+          
+        
       
     </div>
-    <footer class="article-footer">
-    		<span id="busuanzi_container_page_pv">
-		 	 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	 	</span>
-      <a data-url="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/" data-id="cjjtt4scg00039acs6bbebq1y" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+  </section>
 
   
 
 
-</section>
+          </div>
+          
+
+
+          
+
+        </div>
         
-          <aside id="sidebar">
+          
   
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-
-  
+  <aside id="sidebar" class="sidebar">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/07/20/hexo和github搭建个人博客过程-1/">hexo和github搭建个人博客过程</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/">编写可维护的JavaScript---避免空比较</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/编写可维护的JavaScript-事件处理/">编写可维护的JavaScript---事件处理</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/">编写可维护的JavaScript---全局变量</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/">编写可维护的JavaScript---UI层的松耦合</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+    <div class="sidebar-inner">
 
-  
-</aside>
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">baishiwen</p>
+              <p class="site-description motion-element" itemprop="description">技术分享，学习笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 baishiwen<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-    <span id="busuanzi_container_site_uv">本站总访问量
-    			<span id="busuanzi_value_site_uv"></span>次
-    </span>
-</footer>
+    </main>
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    </div>
-    <nav id="mobile-nav">
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">baishiwen</span>
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>

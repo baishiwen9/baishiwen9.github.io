@@ -1,13 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>hexo和github搭建个人博客过程 | baishiwen&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo和github搭建个人博客过程">
 <meta property="og:url" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/index.html">
@@ -19,78 +91,240 @@
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/setting.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/new_ssh_key.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/add.png">
-<meta property="og:updated_time" content="2018-07-20T06:17:54.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/menu.png">
+<meta property="og:updated_time" content="2018-07-23T07:06:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo和github搭建个人博客过程">
 <meta name="twitter:description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
 <meta name="twitter:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/项目目录.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/"/>
+
+
+
+
+
+  <title>hexo和github搭建个人博客过程 | baishiwen's blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="baishiwen&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap"> 
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">baishiwen&#39;s blog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-hexo和github搭建个人博客过程-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/20/hexo和github搭建个人博客过程-1/" class="article-date">
-  <time datetime="2018-07-20T05:45:04.000Z" itemprop="datePublished">2018-07-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
   
-    <h1 class="article-title" itemprop="name">
-      hexo和github搭建个人博客过程
-    </h1>
+  
+    
   
 
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">baishiwen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hexo和github搭建个人博客过程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-20T13:45:04+08:00">
+                2018-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。</p>
 <h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h2><p>在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；<br>安装hexo，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo;</span><br></pre></td></tr></table></figure></p>
@@ -116,125 +350,372 @@
 <h2 id="7-打开页面"><a href="#7-打开页面" class="headerlink" title="7. 打开页面"></a>7. 打开页面</h2><p>在浏览器中输入http://“yourgithubname”.github.io就可以看到自己写的博客了。</p>
 <h2 id="8-博客中添加图片"><a href="#8-博客中添加图片" class="headerlink" title="8. 博客中添加图片"></a>8. 博客中添加图片</h2><p>1）把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true；<br>2）在Git Bash中cd到myBlog中执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
 <p>3) 执行第5步新建博客的时候就可以看到在/source/_posts文件夹中多出了一个和刚才新建的md文件名一样的文件夹，然后把本地的图片放到该文件夹中；<br>4）将图片引入到博客中：使用markdown的语法引入图片：![我是一张图片](logo.png);中括号是图片的替代文字，小括号是图片的路径，直接写图片名就行。</p>
+<h2 id="9-切换主题"><a href="#9-切换主题" class="headerlink" title="9. 切换主题"></a>9. 切换主题</h2><p>1）打开git shell，在当前博客项目的根目录下下载博客主题（以next主题为例）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
+<p>下载完成后在项目的themes中会多出一个next文件夹，这就是刚才下载的新的主题。<br>2）配置主题<br>在项目目录下找到_config.yml文件进行配置，找到theme字段，将其值改为next（默认是landscape）；<br>本地启动服务（hexo server），打开<a href="http://localhost:4000/。就会看到next主题已经切换成功。" target="_blank" rel="noopener">http://localhost:4000/。就会看到next主题已经切换成功。</a><br>3）主题样式选择<br>next的样式其实有三种：Muse、Mist和Pisces，next默认的模式Muse；<br>三种样式说明：</p>
+<pre><code>Muse： 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白
+Mist： Muse 的紧凑版本，整洁有序的单栏外观
+Pisces： 双栏 Scheme，小家碧玉似的清新
+</code></pre><p>选择样式的步骤：<br>    打开项目下next文件夹 =&gt; 代开_config.yml文件 =&gt; 找到scheme字段，<br>给scheme字段的值设置为Muse，Mist或者Pisces，保存，启动服务，打开<a href="http://localhost:4000/查看。" target="_blank" rel="noopener">http://localhost:4000/查看。</a></p>
+<h2 id="10-增加菜单栏"><a href="#10-增加菜单栏" class="headerlink" title="10. 增加菜单栏"></a>10. 增加菜单栏</h2><p>要在菜单栏显示about，tags等菜单时我们只需要进行一些简单的操作：<br>1）配置菜单<br>    进入到next主题文件夹里打开_config.yml文件进行配置，在_config.yml文件进行配置的menu字段里面已经有好几个菜单，不过是在注释状态，根据需求去掉注释:<br>    <img src="/2018/07/20/hexo和github搭建个人博客过程-1/menu.png" alt="配置菜单"></p>
+<p>2) 新建对应的页面<br>    比如第一步我们新建了about菜单，那我们要给about菜单对应的页面，创建页面过程如下：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure></p>
+<p>此时在项目下source下会出现一个about文件夹，里面有index文件夹和index.md（可以在里面写对应的内容）；</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
 
       
       
-    </div>
-    <footer class="article-footer">
-    		<span id="busuanzi_container_page_pv">
-		 	 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	 	</span>
-      <a data-url="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/" data-id="cjjtt4sch00049acsi4da2mb2" class="article-share-link">Share</a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/" rel="next" title="编写可维护的JavaScript---避免空比较">
+                <i class="fa fa-chevron-left"></i> 编写可维护的JavaScript---避免空比较
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
       
       
     </footer>
   </div>
   
-    
-<nav id="article-nav">
   
   
-    <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">编写可维护的JavaScript---避免空比较</div>
-    </a>
-  
-</nav>
+  </article>
 
-  
-</article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    <div class="post-spread">
+      
     </div>
   </div>
 
 
+          </div>
+          
+
+
+          
+
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+
+
+
+        </div>
         
-          <li>
-            <a href="/2018/07/20/hexo和github搭建个人博客过程-1/">hexo和github搭建个人博客过程</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/">编写可维护的JavaScript---避免空比较</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/编写可维护的JavaScript-事件处理/">编写可维护的JavaScript---事件处理</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/">编写可维护的JavaScript---全局变量</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/">编写可维护的JavaScript---UI层的松耦合</a>
-          </li>
-        
-      </ul>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-  
-</aside>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">baishiwen</p>
+              <p class="site-description motion-element" itemprop="description">技术分享，学习笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备工作"><span class="nav-number">1.</span> <span class="nav-text">1. 准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装hexo"><span class="nav-number">2.</span> <span class="nav-text">2. 安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-注册github"><span class="nav-number">3.</span> <span class="nav-text">3. 注册github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置博客"><span class="nav-number">4.</span> <span class="nav-text">4. 配置博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-新建博客"><span class="nav-number">5.</span> <span class="nav-text">5. 新建博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-上传github"><span class="nav-number">6.</span> <span class="nav-text">6. 上传github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-打开页面"><span class="nav-number">7.</span> <span class="nav-text">7. 打开页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-博客中添加图片"><span class="nav-number">8.</span> <span class="nav-text">8. 博客中添加图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-切换主题"><span class="nav-number">9.</span> <span class="nav-text">9. 切换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-增加菜单栏"><span class="nav-number">10.</span> <span class="nav-text">10. 增加菜单栏</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 baishiwen<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-    <span id="busuanzi_container_site_uv">本站总访问量
-    			<span id="busuanzi_value_site_uv"></span>次
-    </span>
-</footer>
+    </main>
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    </div>
-    <nav id="mobile-nav">
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">baishiwen</span>
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
