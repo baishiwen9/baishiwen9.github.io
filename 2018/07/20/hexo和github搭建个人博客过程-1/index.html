@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,23 +79,23 @@
 
 
 
-<meta name="description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
+<meta name="description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo和github搭建个人博客过程">
 <meta property="og:url" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/项目目录.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/创建仓库.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/setting.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/new_ssh_key.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/add.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/menu.png">
-<meta property="og:updated_time" content="2018-07-23T07:06:35.000Z">
+<meta property="og:updated_time" content="2018-07-23T08:26:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo和github搭建个人博客过程">
-<meta name="twitter:description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。 2. 安装hexo在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；安装hexo，输入命令：1npm i -g hexo; 查看hexo版本：1hexo -v; 如果显示版本号则说明已经安装成功；">
+<meta name="twitter:description" content="1. 准备工作安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。">
 <meta name="twitter:image" content="http://yoursite.com/2018/07/20/hexo和github搭建个人博客过程-1/项目目录.png">
 
 
@@ -112,7 +112,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -144,7 +144,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -192,7 +192,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -202,7 +202,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            About
+            关于
           </a>
         </li>
       
@@ -212,7 +212,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -222,15 +222,49 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -286,9 +320,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-20T13:45:04+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T13:45:04+08:00">
                 2018-07-20
               </time>
             
@@ -326,7 +360,7 @@
       
 
       
-        <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。</p>
+        <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。<br><a id="more"></a></p>
 <h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h2><p>在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；<br>安装hexo，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo;</span><br></pre></td></tr></table></figure></p>
 <p>查看hexo版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v;</span><br></pre></td></tr></table></figure></p>
 <p>如果显示版本号则说明已经安装成功；<br>初始化hexo命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init；</span><br></pre></td></tr></table></figure></p>
@@ -359,6 +393,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 <h2 id="10-增加菜单栏"><a href="#10-增加菜单栏" class="headerlink" title="10. 增加菜单栏"></a>10. 增加菜单栏</h2><p>要在菜单栏显示about，tags等菜单时我们只需要进行一些简单的操作：<br>1）配置菜单<br>    进入到next主题文件夹里打开_config.yml文件进行配置，在_config.yml文件进行配置的menu字段里面已经有好几个菜单，不过是在注释状态，根据需求去掉注释:<br>    <img src="/2018/07/20/hexo和github搭建个人博客过程-1/menu.png" alt="配置菜单"></p>
 <p>2) 新建对应的页面<br>    比如第一步我们新建了about菜单，那我们要给about菜单对应的页面，创建页面过程如下：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure></p>
 <p>此时在项目下source下会出现一个about文件夹，里面有index文件夹和index.md（可以在里面写对应的内容）；</p>
+<h2 id="11-文章中显示“阅读全文”"><a href="#11-文章中显示“阅读全文”" class="headerlink" title="11. 文章中显示“阅读全文”"></a>11. 文章中显示“阅读全文”</h2><p>文章在首页展示的时候是以全文展示，文章太多的时候有点杂乱，这时候就可以设置“阅读全文”：<br>只需要在对应的md文件中找是适当的位置加入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -450,10 +485,10 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -474,7 +509,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
                 <a href="/archives/">
               
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -510,7 +545,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备工作"><span class="nav-number">1.</span> <span class="nav-text">1. 准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装hexo"><span class="nav-number">2.</span> <span class="nav-text">2. 安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-注册github"><span class="nav-number">3.</span> <span class="nav-text">3. 注册github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置博客"><span class="nav-number">4.</span> <span class="nav-text">4. 配置博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-新建博客"><span class="nav-number">5.</span> <span class="nav-text">5. 新建博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-上传github"><span class="nav-number">6.</span> <span class="nav-text">6. 上传github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-打开页面"><span class="nav-number">7.</span> <span class="nav-text">7. 打开页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-博客中添加图片"><span class="nav-number">8.</span> <span class="nav-text">8. 博客中添加图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-切换主题"><span class="nav-number">9.</span> <span class="nav-text">9. 切换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-增加菜单栏"><span class="nav-number">10.</span> <span class="nav-text">10. 增加菜单栏</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备工作"><span class="nav-number">1.</span> <span class="nav-text">1. 准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装hexo"><span class="nav-number">2.</span> <span class="nav-text">2. 安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-注册github"><span class="nav-number">3.</span> <span class="nav-text">3. 注册github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置博客"><span class="nav-number">4.</span> <span class="nav-text">4. 配置博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-新建博客"><span class="nav-number">5.</span> <span class="nav-text">5. 新建博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-上传github"><span class="nav-number">6.</span> <span class="nav-text">6. 上传github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-打开页面"><span class="nav-number">7.</span> <span class="nav-text">7. 打开页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-博客中添加图片"><span class="nav-number">8.</span> <span class="nav-text">8. 博客中添加图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-切换主题"><span class="nav-number">9.</span> <span class="nav-text">9. 切换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-增加菜单栏"><span class="nav-number">10.</span> <span class="nav-text">10. 增加菜单栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-文章中显示“阅读全文”"><span class="nav-number">11.</span> <span class="nav-text">11. 文章中显示“阅读全文”</span></a></li></ol></div>
             
 
           </div>
@@ -540,7 +575,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -548,7 +583,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -713,6 +748,323 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

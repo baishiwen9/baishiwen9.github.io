@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
 <meta property="og:description" content="技术分享，学习笔记">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="baishiwen&#39;s blog">
 <meta name="twitter:description" content="技术分享，学习笔记">
@@ -104,7 +104,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -136,7 +136,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            About
+            关于
           </a>
         </li>
       
@@ -205,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -215,15 +215,49 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -281,9 +315,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-20T13:45:04+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T13:45:04+08:00">
                 2018-07-20
               </time>
             
@@ -322,42 +356,14 @@
 
       
         
-          
-            <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。</p>
-<h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h2><p>在本地新建一个文件夹–myBlog（名字自己随便起），打开电脑的终端，cd到刚才新建的文件夹myBlog中；<br>安装hexo，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo;</span><br></pre></td></tr></table></figure></p>
-<p>查看hexo版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v;</span><br></pre></td></tr></table></figure></p>
-<p>如果显示版本号则说明已经安装成功；<br>初始化hexo命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init；</span><br></pre></td></tr></table></figure></p>
-<p>此时打开myBlog文件夹可以看到有很多文件，大概是：</p>
-<p><img src="/2018/07/20/hexo和github搭建个人博客过程-1/项目目录.png" alt="项目目录结构"></p>
-<p>node_modules : 依赖包<br>public： 存放生成的静态页面<br>scaffolds：命令生成文章等的模板<br>source：命令创建的各种文章<br>themes：主题<br>_config.yml : 整个博客的配置文件<br>db.json : source解析得到的文件<br>package.json: 项目所需模块项目的各种配置信息</p>
-<h2 id="3-注册github"><a href="#3-注册github" class="headerlink" title="3. 注册github"></a>3. 注册github</h2><p>注册github，过程说明；<br>创建完之后新建仓库；</p>
-<p><img src="/2018/07/20/hexo和github搭建个人博客过程-1/创建仓库.png" alt="创建仓库"></p>
-<p>回到gitbash中，配置github账户信息（YourName和YourEail都替换成你自己的）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourName&quot;</span><br><span class="line">git config --global user.email &quot;yourEmail&quot;</span><br></pre></td></tr></table></figure></p>
-<p>创建SSH：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;yourEmail&quot;</span><br></pre></td></tr></table></figure>
-<p>生成SSH。然后找到id_rsa.pub文件的内容复制；<br>将复制的SSH放到github中：点击自己头像 =&gt; setting =&gt; ssh and GPG keys =&gt; New SSH key =&gt; 粘贴，title随便取<br><img src="/2018/07/20/hexo和github搭建个人博客过程-1/setting.png" alt=""><br><img src="/2018/07/20/hexo和github搭建个人博客过程-1/new_ssh_key.png" alt=""><br><img src="/2018/07/20/hexo和github搭建个人博客过程-1/add.png" alt=""></p>
-<h2 id="4-配置博客"><a href="#4-配置博客" class="headerlink" title="4. 配置博客"></a>4. 配置博客</h2><p>用编辑器打开myBlog项目，修改_config.yml文件的一些配置(冒号之后都是有一个半角空格的)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure></p>
-<p>回到gitbash中，进入你的blog目录，分别执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>打开浏览器输入：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
-<p>此时项目已经启动。</p>
-<h2 id="5-新建博客"><a href="#5-新建博客" class="headerlink" title="5. 新建博客"></a>5. 新建博客</h2><p>在gitbash中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;我的第一篇博客&quot;</span><br></pre></td></tr></table></figure></p>
-<p>此时你可以看到在myBlog/source/_posts/ 下面出现一个 “我的第一篇博客.md” 文件，你可以在里面写自己的东西了。<br>由于生成的是md格式的文件，应当遵循markdown的语法（很简单看一眼就会写）。</p>
-<h2 id="6-上传github"><a href="#6-上传github" class="headerlink" title="6. 上传github"></a>6. 上传github</h2><p>将刚才写好的博客保存后可以上传：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p>一次执行完这些命令，就已经上传完成</p>
-<h2 id="7-打开页面"><a href="#7-打开页面" class="headerlink" title="7. 打开页面"></a>7. 打开页面</h2><p>在浏览器中输入http://“yourgithubname”.github.io就可以看到自己写的博客了。</p>
-<h2 id="8-博客中添加图片"><a href="#8-博客中添加图片" class="headerlink" title="8. 博客中添加图片"></a>8. 博客中添加图片</h2><p>1）把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true；<br>2）在Git Bash中cd到myBlog中执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
-<p>3) 执行第5步新建博客的时候就可以看到在/source/_posts文件夹中多出了一个和刚才新建的md文件名一样的文件夹，然后把本地的图片放到该文件夹中；<br>4）将图片引入到博客中：使用markdown的语法引入图片：![我是一张图片](logo.png);中括号是图片的替代文字，小括号是图片的路径，直接写图片名就行。</p>
-<h2 id="9-切换主题"><a href="#9-切换主题" class="headerlink" title="9. 切换主题"></a>9. 切换主题</h2><p>1）打开git shell，在当前博客项目的根目录下下载博客主题（以next主题为例）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<p>下载完成后在项目的themes中会多出一个next文件夹，这就是刚才下载的新的主题。<br>2）配置主题<br>在项目目录下找到_config.yml文件进行配置，找到theme字段，将其值改为next（默认是landscape）；<br>本地启动服务（hexo server），打开<a href="http://localhost:4000/。就会看到next主题已经切换成功。" target="_blank" rel="noopener">http://localhost:4000/。就会看到next主题已经切换成功。</a><br>3）主题样式选择<br>next的样式其实有三种：Muse、Mist和Pisces，next默认的模式Muse；<br>三种样式说明：</p>
-<pre><code>Muse： 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白
-Mist： Muse 的紧凑版本，整洁有序的单栏外观
-Pisces： 双栏 Scheme，小家碧玉似的清新
-</code></pre><p>选择样式的步骤：<br>    打开项目下next文件夹 =&gt; 代开_config.yml文件 =&gt; 找到scheme字段，<br>给scheme字段的值设置为Muse，Mist或者Pisces，保存，启动服务，打开<a href="http://localhost:4000/查看。" target="_blank" rel="noopener">http://localhost:4000/查看。</a></p>
-<h2 id="10-增加菜单栏"><a href="#10-增加菜单栏" class="headerlink" title="10. 增加菜单栏"></a>10. 增加菜单栏</h2><p>要在菜单栏显示about，tags等菜单时我们只需要进行一些简单的操作：<br>1）配置菜单<br>    进入到next主题文件夹里打开_config.yml文件进行配置，在_config.yml文件进行配置的menu字段里面已经有好几个菜单，不过是在注释状态，根据需求去掉注释:<br>    <img src="/2018/07/20/hexo和github搭建个人博客过程-1/menu.png" alt="配置菜单"></p>
-<p>2) 新建对应的页面<br>    比如第一步我们新建了about菜单，那我们要给about菜单对应的页面，创建页面过程如下：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure></p>
-<p>此时在项目下source下会出现一个about文件夹，里面有index文件夹和index.md（可以在里面写对应的内容）；</p>
-
-          
+          <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Git Bash，安装NodeJs，由于这两个经常使用，大家应该都会安装，此处就不再赘述。下面直接进入主题（以苹果电脑为例）。<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/20/hexo和github搭建个人博客过程-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -433,9 +439,9 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T16:01:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T16:01:35+08:00">
                 2018-07-18
               </time>
             
@@ -474,21 +480,14 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
       
         
-          
-            <h2 id="1-检测原始值"><a href="#1-检测原始值" class="headerlink" title="1. 检测原始值"></a>1. 检测原始值</h2><p>在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。<br>如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：</p>
-<p>对于字符串： typeof返回 “string”；<br>对于数字：   typeof返回 “number”；<br>对于布尔值： typeof返回 “boolean”；<br>对于undefined： typeof返回 “undefined”；  </p>
-<p>用typeof检测这四种原始值是非常安全的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 检测字符串</span><br><span class="line">if ( typeof name === &quot;string&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测数字</span><br><span class="line">if ( typeof count === &quot;number&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测布尔值</span><br><span class="line">if ( typeof found === &quot;boolean&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测undefinded</span><br><span class="line">if ( typeof myApp === &quot;undefined&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>typeof运算符的独特在于，将其用于一个未声明的变量也不会报错。未定义的变量和值为undefined的变量通过typeof都返回undefined。</p>
-<p>对于null，一般不用于检测语句，简单的和null比较通常不会包含足够的信息以判断值的类型是否合法。</p>
-<h2 id="2-检测引用值"><a href="#2-检测引用值" class="headerlink" title="2. 检测引用值"></a>2. 检测引用值</h2><p>引用类型有：Object、Array、Date和Error<br>用typeof检测引用类型都返回“object”，所以检测引用值的类型的最好方法是使用instanceof运算符。<br>基本语法： value instanceof constructor<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 检测日期</span><br><span class="line">if ( value instanceof Date ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测正则</span><br><span class="line">if ( value instanceof RegExp ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测Error</span><br><span class="line">if ( value instanceof Error ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>instanceof 的一个特性是它不仅检测构造这个对象的构造器，还检测原型链。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var now = new Date();</span><br><span class="line">console.log( now instanceof Object );   // true, 每个对象都继承自Object</span><br><span class="line">console.log( now instanceof Date );     // true</span><br></pre></td></tr></table></figure></p>
-<p>因为上面这个原因，使用value instanceof Object 来判断对象是否属于某个特定类型的做法并非最佳。<br>instanceof 运算法也可以检测出自定义的类型，这也是检测自定义类型的唯一方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Person( name )&#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">var me = new Person( &quot;xiaoming&quot; );</span><br><span class="line">console.log( me instanceof Object );   // true</span><br><span class="line">console.log( me instanceof Person );   // true</span><br></pre></td></tr></table></figure></p>
-<p>  1） 检测函数<br>  检测函数最好的方法是typeof。<br>  2） 检测数组<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function isArray(value)&#123;</span><br><span class="line">	if ( typeof Array.isArray === &quot;function&quot; )&#123;</span><br><span class="line">		return Array.isArray(value);</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		return Object.prototype.toString.call(value) === &quot;[object Array]&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-检测属性"><a href="#3-检测属性" class="headerlink" title="3. 检测属性"></a>3. 检测属性</h2><p>  判断属性是否存在的最好的方法是使用in运算符。in运算法仅仅会简单的判断属性是否存在，而不会去读属性的值。如果实例对象的属性存在、或继承自对象的原型，in运算符都会返回true：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var object = &#123;</span><br><span class="line">	count:0,</span><br><span class="line">	related:null</span><br><span class="line">&#125;;</span><br><span class="line">if ( &quot;count&quot; in object )&#123;</span><br><span class="line">	// do something...</span><br><span class="line">&#125;</span><br><span class="line">if ( &quot;related&quot; in object )&#123;</span><br><span class="line">	// do something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>  如果只想检测实例对象的某个属性是否存在，使用hasOwnProperty()方法，所有继承自Object的js对象都有这个方法，如果实例中存在这个属性则返回true（如果这个属性只存在原型里，则返回false）。</p>
-<p>[参考资料]:<br>编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
-
-          
+          <h2 id="1-检测原始值"><a href="#1-检测原始值" class="headerlink" title="1. 检测原始值"></a>1. 检测原始值</h2><p>在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。<br>如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/18/编写可维护的JavaScript-避免空比较/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -564,9 +563,9 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T13:47:11+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T13:47:11+08:00">
                 2018-07-18
               </time>
             
@@ -605,14 +604,15 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
       
         
-          
-            <p>在JavaScript应用中事件处理是非常重要的，所有的JavaScript都是通过事件绑定到UI上的。</p>
-<h2 id="1-典型用法"><a href="#1-典型用法" class="headerlink" title="1. 典型用法"></a>1. 典型用法</h2><p>当事件触发的时候，事件对象event会最为回调参数传入到事件处理程序中。event对象包含所有和事件相关的信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 不好的写法</span><br><span class="line">function handleClick( event )&#123;</span><br><span class="line">	var popup = document.getElementById(&quot;popup&quot;);</span><br><span class="line">	popup.style.left = event.clientX + &quot;px&quot;;</span><br><span class="line">	popup.style.top = event.clientY + &quot;px&quot;;</span><br><span class="line">	popup.className = &quot;reveal&quot;;</span><br><span class="line">	// 事件处理中包含了应用逻辑</span><br><span class="line">&#125;</span><br><span class="line">addListener( element,&quot;click&quot;, handleClick );</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-事件处理规则一：隔离应用逻辑"><a href="#2-事件处理规则一：隔离应用逻辑" class="headerlink" title="2. 事件处理规则一：隔离应用逻辑"></a>2. 事件处理规则一：隔离应用逻辑</h2><p>将应用逻辑从所有的事件处理程序中抽离出来的做法是一种最佳实践；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法，拆分应用逻辑</span><br><span class="line">var MyApplication = &#123;</span><br><span class="line">	handleClick : function( event )&#123;   // 事件处理</span><br><span class="line">		this.showPopup( event );     </span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	showPopup : function( event )&#123;     // 应用逻辑</span><br><span class="line">		var popup = document.getElementById(&quot;popup&quot;);</span><br><span class="line">		popup.style.left = event.clientX + &quot;px&quot;;</span><br><span class="line">		popup.style.top = event.clientY + &quot;px&quot;;</span><br><span class="line">		popup.className = &quot;reveal&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-事件处理规则二：不要分发事件对象"><a href="#3-事件处理规则二：不要分发事件对象" class="headerlink" title="3. 事件处理规则二：不要分发事件对象"></a>3. 事件处理规则二：不要分发事件对象</h2><p>上面代码存在一个问题：event对象被无节制的分发。<br>从匿名的事件处理函数传到 MyApplication.handleClick(),然后又传到MyApplication.showPopup()。<br>最佳的处理方法是让事件处理程序使用event对象来处理事件，然后拿到所有需要的数据传给应用逻辑。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var MyApplication = &#123;</span><br><span class="line">	handleClick : function( event )&#123;   // 事件处理</span><br><span class="line">		event.preventDefault();</span><br><span class="line">		event.stopPropagation();</span><br><span class="line">		this.showPopup( event.clientX, event.clientY );     </span><br><span class="line">		// 让事件处理程序成为接触到event对象的唯一函数。</span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	showPopup : function( x, y )&#123;     // 应用逻辑</span><br><span class="line">		var popup = document.getElementById(&quot;popup&quot;);</span><br><span class="line">		popup.style.left = x + &quot;px&quot;;</span><br><span class="line">		popup.style.top = y + &quot;px&quot;;</span><br><span class="line">		popup.className = &quot;reveal&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>[参考资料]:<br>编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
-
-          
+          <p>在JavaScript应用中事件处理是非常重要的，所有的JavaScript都是通过事件绑定到UI上的。</p>
+<h2 id="1-典型用法"><a href="#1-典型用法" class="headerlink" title="1. 典型用法"></a>1. 典型用法</h2><p>当事件触发的时候，事件对象event会最为回调参数传入到事件处理程序中。event对象包含所有和事件相关的信息。<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/18/编写可维护的JavaScript-事件处理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -688,9 +688,9 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-17T17:31:38+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-17T17:31:38+08:00">
                 2018-07-17
               </time>
             
@@ -729,27 +729,14 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
       
         
-          
-            <h1 id="一-全局变量"><a href="#一-全局变量" class="headerlink" title="一.  全局变量"></a>一.  全局变量</h1><h3 id="1-由全局变量带来的一些问题："><a href="#1-由全局变量带来的一些问题：" class="headerlink" title="1. 由全局变量带来的一些问题："></a>1. 由全局变量带来的一些问题：</h3><p><strong>1) 命名冲突</strong><br>当脚本中的全局变量和全局函数越来越多的时候，发生命名冲突的概率随之增大；如果所有的变量都定义为局部变量，这样的代码最容易维护。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var color = &quot;red&quot;;   // 对color来说绝对不是一个安全的全局变量</span><br><span class="line"></span><br><span class="line">function sayName()&#123;</span><br><span class="line">	alert( color );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>2) 代码的脆弱性</strong><br>一个依赖于全局变量的函数即是深耦合于上下文环境中，如果环境发生改变，函数有可能会失效。<br>例如上面的代码中color不存在，那么sayName函数就会报错。</p>
-<p>所以在定义函数的时候，最好尽可能的将数据置于局部作用域内。任何来自函数外部的数据应当以参数形式传递进来。这样可以将函数和外部环境隔离开。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function sayName( color )&#123;</span><br><span class="line">	alert( color );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>3) 难以测试</strong><br>如果项目中有很多的全局变量存在，框架要依赖一些全局变量流程才能跑通，那么要进行一些单元测试是很困难的。</p>
-<h3 id="2-意外的全局变量："><a href="#2-意外的全局变量：" class="headerlink" title="2. 意外的全局变量："></a>2. 意外的全局变量：</h3><p>当给一个未被var语句声明过的变量赋值时，JavaScript会自动创建一个全局变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function doSomething()&#123;</span><br><span class="line">	var count = 10;</span><br><span class="line">	    title = &quot;hello world&quot;;     // JavaScript会自动创建一个全局变量</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最好的规则就是总是用var来定义变量，哪怕是定义全局变量。<br>在严格模式下，未声明变量的赋值操作，JavaScript引擎会报错。</p>
-<h3 id="3-单全局变量方式："><a href="#3-单全局变量方式：" class="headerlink" title="3. 单全局变量方式："></a>3. 单全局变量方式：</h3><p>单全局变量：所创建的这个唯一全局对象名是独一无二的，并将所有的功能代码都挂在这个对象上。因此每个可能的全局变量都成了这个唯一全局对象的属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var MaintainableJs = &#123;&#125;;</span><br><span class="line">MaintainableJs.Book = function ( title )&#123;</span><br><span class="line">	this.title = title;</span><br><span class="line">	this.page = 1;</span><br><span class="line">&#125;</span><br><span class="line">MaintainableJs.Book.prototype.turnPage = function ( direction )&#123;</span><br><span class="line">	this.page += direction;</span><br><span class="line">&#125;</span><br><span class="line">MaintainableJs.Chapter1 = new MaintainableJs.Book( &quot;title&quot; );</span><br></pre></td></tr></table></figure></p>
-<p><strong>即使只有一个全局变量，也存在全局污染的可能性。</strong></p>
-<p>1) 命名空间</p>
-<p>命名空间是简单的通过全局对象的单一属性表示的功能性分组。<br>将功能按照命名空间进行分组，可以让你的单全局对象变得井然有序。</p>
-<p>创建自己的命名空间：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var MyBooks = &#123;&#125;;</span><br><span class="line">MyBooks.MaintainableJavaScript = &#123;&#125;;      // 表示这本书的命名空间</span><br><span class="line">MyBooks.HighPerformanceJavaScript = &#123;&#125;;   // 表示另外一本书的命名空间</span><br></pre></td></tr></table></figure></p>
-<p>有一种场景是每个文件都需要给一个命名空间挂载东西，可以这样处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var MyGlobal =&#123;</span><br><span class="line">	namespace : function (ns)&#123;</span><br><span class="line">		var parts = ns.split(&quot;.&quot;),</span><br><span class="line">		    object = this,</span><br><span class="line">		    i,</span><br><span class="line">		    len;</span><br><span class="line"></span><br><span class="line">		for ( i =0; i &lt; parts.length;i++ )&#123;</span><br><span class="line">		</span><br><span class="line">			if( !object[parts[i]] )&#123;</span><br><span class="line">				object[parts[i]] = &#123;&#125;;</span><br><span class="line">			&#125;</span><br><span class="line">			object = object[parts[i]];</span><br><span class="line">		&#125;</span><br><span class="line">		return object;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyGlobal.namespace( &quot;Books.MaintainableJavaScript&quot; );    // 创建一个命名空间</span><br><span class="line">MyGlobal.Books.MaintainableJavaScript.author = &quot;Nicholas C. Zakas&quot;;   // 使用命名空间</span><br></pre></td></tr></table></figure></p>
-<p>基于单全局对象使用namespace方法可以让开发者放心的认为命名空间总是存在的。这样每个文件都可以首先调用namespace方法来声明命名空间，这样做也不会对原来存在的命名空间造成任何破坏。</p>
-<p>2) 模块<br>模块是一种通用的功能片段，它并没有创建新的全局变量或命名空间。所有的这些代码都存放在一个表示执行一个任务或发布一个接口的单函数中。    </p>
-<p>现在最流行的模块： AMD模块 和 YUI 模块；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// AMD    </span><br><span class="line">define(&quot;my-books&quot;, [ &quot;dependency1&quot;, &quot;dependency2&quot; ],</span><br><span class="line">	function(dependency1, dependency2) &#123;</span><br><span class="line">		var Books = &#123;&#125;;</span><br><span class="line">		Books.MaintainableJavaScript = &#123;</span><br><span class="line">			author: &quot;Nicholas C. Zakas&quot;</span><br><span class="line">		&#125;;</span><br><span class="line">		return Books;</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"> // YUI   </span><br><span class="line"> YUI.add( &quot;my-books&quot;, function( Y )&#123;</span><br><span class="line"> 	Y.namespace(&quot;Books.MaintainableJavaScript&quot;);</span><br><span class="line"> 	Y.Books.MaintainableJavaScript.author = &quot;Nicholas C. Zakas&quot;;</span><br><span class="line"> &#125;, &quot;1.0.0&quot;, &#123;requires:[ &quot;dependency1&quot;,&quot;dependency2&quot; ]&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="4-零全局变量："><a href="#4-零全局变量：" class="headerlink" title="4. 零全局变量："></a>4. 零全局变量：</h3><p>使用前提是内部代码与外部代码无联系。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function(win) &#123;</span><br><span class="line">	var doc = win.document;</span><br><span class="line">&#125;)(window)</span><br></pre></td></tr></table></figure></p>
-<p>[参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
-
-          
+          <h1 id="一-全局变量"><a href="#一-全局变量" class="headerlink" title="一.  全局变量"></a>一.  全局变量</h1><h3 id="1-由全局变量带来的一些问题："><a href="#1-由全局变量带来的一些问题：" class="headerlink" title="1. 由全局变量带来的一些问题："></a>1. 由全局变量带来的一些问题：</h3><p><strong>1) 命名冲突</strong><br>当脚本中的全局变量和全局函数越来越多的时候，发生命名冲突的概率随之增大；如果所有的变量都定义为局部变量，这样的代码最容易维护。<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/17/编写可维护的JavaScript之编程实践-全局变量/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -825,9 +812,9 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-17T13:26:40+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-17T13:26:40+08:00">
                 2018-07-17
               </time>
             
@@ -866,28 +853,14 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
       
         
-          
-            <h1 id="一-UI层的松耦合"><a href="#一-UI层的松耦合" class="headerlink" title="一. UI层的松耦合"></a>一. UI层的松耦合</h1><h4 id="1-将JavaScript从CSS中抽离"><a href="#1-将JavaScript从CSS中抽离" class="headerlink" title="1. 将JavaScript从CSS中抽离"></a>1. 将JavaScript从CSS中抽离</h4><p>在IE8和早版本的浏览器有一个特性，CSS表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">	width: expression(document.body.offsetWidth + &quot;px&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>浏览器会以高频率重复计算CSS表达式，严重影响性能，且很难维护，<strong>所以要避免使用CSS表达式</strong>；<br>值得庆幸的是IE9不再支持CSS表达式了。</p>
-<h4 id="2-将CSS从JavaScript中抽离"><a href="#2-将CSS从JavaScript中抽离" class="headerlink" title="2. 将CSS从JavaScript中抽离"></a>2. 将CSS从JavaScript中抽离</h4><p>可以同过脚本修改样式，最常见的是在js中修改DOM元素的style属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.style.color = &quot;red&quot;;</span><br><span class="line">element.style.left = &quot;10px&quot;;</span><br><span class="line">element.style.top = &quot;20px&quot;;</span><br></pre></td></tr></table></figure></p>
-<p>这样的方法带来的最大的问题就是可维护性问题，所以<strong>最佳的方法是操作CSS的className</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//css:</span><br><span class="line">.default&#123;</span><br><span class="line">	color:red;</span><br><span class="line">	left:10px;</span><br><span class="line">	top:10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//js:</span><br><span class="line">//原生方法：</span><br><span class="line">element.className += &quot; default&quot;;</span><br><span class="line">//jQuery:</span><br><span class="line">$(element).addClass(&quot;default&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>由于CSS的className可以成为CSS和JavaScript之间的通信桥梁，在页面中JavaScript可以随意添加或者删除元素的className。而className所定义的样式在CSS中，CSS中的样式是可以随时修改的，但是不需要更新JavaScript代码，实现了CSS的松耦合。</p>
-<h4 id="3-将JavaScript从HTML中抽离"><a href="#3-将JavaScript从HTML中抽离" class="headerlink" title="3. 将JavaScript从HTML中抽离"></a>3. 将JavaScript从HTML中抽离</h4><p>将脚本嵌入到HTML中运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;doSomething()&quot;&gt;click me&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这种方法在之前是很流行的，但却是两个UI层（JavaScript和HTML）的深耦合；<br>缺点是：第一，在点击按钮的时候doSomething函数必须存在；第二，可维护性低。<br><strong>最佳的做法是JavaScript代码包含在外部文件中，在页面中通过&lt;script>标签来引用</strong>。</p>
-<h4 id="4-将HTML从JavaScript中抽离"><a href="#4-将HTML从JavaScript中抽离" class="headerlink" title="4. 将HTML从JavaScript中抽离"></a>4. 将HTML从JavaScript中抽离</h4><p>在JavaScript中可以通过HTML的innerHTML属性赋值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div = document.getElementById(&apos;test&apos;);</span><br><span class="line">div.innerHTML = &quot;&lt;h3&gt;Error&gt;&lt;/h3&gt;&lt;p&gt;Invalid email address.&lt;/p&gt;&quot;;</span><br></pre></td></tr></table></figure></p>
-<p>这样做的缺点是：第一，它增加了跟踪文本和结构性问题的复杂度；第二，可维护性低。</p>
-<p><strong>降低HTML和JavaScript之间的耦合的方法：</strong></p>
-<p>1）从服务器加载：<br>将模板放置于远程服务器，使用XMLHttpRequest对象来获取外部标签。这种方法会对单页面应用带来更多的便捷。<br>例如，点击一个按钮弹出一个对话框：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function loadDialog( name, oncomplete )&#123;</span><br><span class="line">	var xhr = new XMLHttpRequest();</span><br><span class="line">	xhr.open(&apos;get&apos;,&apos;js/dialog/&apos; + name, true);</span><br><span class="line">	</span><br><span class="line">	xhr.onreadystatechange = function()&#123;</span><br><span class="line">		</span><br><span class="line">		if( xhr.readystate == 4 &amp;&amp; xhr.status == 200 )&#123;</span><br><span class="line">		</span><br><span class="line">			var div = document.getElementById(&apos;dialog-holder&apos;);</span><br><span class="line">			div.innerHTML = xhr.responseText;</span><br><span class="line">			oncomplete();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			//处理错误</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>2）简单客户端模板：<br>客户端模板是一些带“插槽”的标签片段，这些“插槽”会被JavaScript程序替换为数据以保证模板的完整可用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;&lt;a href=&quot;%s&quot;&gt;%s&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">// %s为占位符，这个位置的文本会被程序替换；</span><br><span class="line"></span><br><span class="line">function sprintf( text )&#123;</span><br><span class="line">	var i =1, args = arguments;</span><br><span class="line">	return text.replace( /%s/g, function()&#123;</span><br><span class="line">		return ( i &lt; args.length ) ? args[i+1] : &quot;&quot;;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line">// 用法</span><br><span class="line">var result = sprintf( templateText, &quot;/item/4&quot;, &quot;Fourth item&quot; );</span><br></pre></td></tr></table></figure></p>
-<p>通常我们将模板定义在其他标签之间，直接存放在HTML中，这样就可以被JavaScript读取，用以下两种方法之一即可做到：<br><strong>方法一： 是在HTML注释中包含模板文本</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;mylist&quot;&gt;&lt;!--&lt;li id=&quot;item%s&quot;&gt;&lt;a href=&quot;%s&quot;&gt;%s&lt;/a&gt;&lt;/li&gt;--&gt;</span><br><span class="line">	&lt;li&gt;&lt;a href=&quot;/item/1&quot;&gt;first item &lt;/a&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;a href=&quot;/item/2&quot;&gt;second item &lt;/a&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;a href=&quot;/item/3&quot;&gt;third item &lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">function addItem( url, text )&#123;</span><br><span class="line">	var mylist = document.getElementById(&quot;mylist&quot;),</span><br><span class="line">	    templateText = mylist.firstChild.nodeValue,</span><br><span class="line">	    result = sprintf( template, url, text );</span><br><span class="line">	div.innerHTML = result;</span><br><span class="line">	mylist.insertAduacentHTML( &quot;beforeend&quot;, result );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 用法</span><br><span class="line">addItem( &quot;/item/4&quot;, &quot;fourth item&quot;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>方法二： 是使用一个带有自定义type属性的&lt;script>元素</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/x-my-template&quot; id=&quot;list-item&quot;&gt;</span><br><span class="line">	&lt;li&gt;&lt;a href=&quot;%s&quot;&gt;%s&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">function addItem( url, text )&#123;</span><br><span class="line">	var mylist = document.getElementById(&quot;mylist&quot;),</span><br><span class="line">	    script = document.getElementById(&apos;list-item&apos;),</span><br><span class="line">	    templateText = script.text,</span><br><span class="line">	    result = sprintf( template, url, text ),</span><br><span class="line">	    div = document.createElement(&quot;div&quot;);</span><br><span class="line">	</span><br><span class="line">	div.innerHTML = result.replace( /^\s*/, &quot;&quot;);</span><br><span class="line">	mylist.appendChild( div.firstChild );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 用法</span><br><span class="line">addItem( &quot;/item/4&quot;, &quot;fourth item&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>3）复杂客户端模板：</p>
-<p>例如handlebars提供的解决方案：<br>handlebars是专为浏览器JavaScript设计的完整的客户端模板系统；<br>首先必须将Handlebars类库引入到页面，这个类库会创建一个名为Handlebars的全局变量，用来将模板文本编译为一个函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/x-handlebars-template&quot; id=&quot;list-item&quot;&gt;</span><br><span class="line">	&lt;li&gt;&lt;a href=&quot;&#123;&#123;url&#125;&#125;&quot;&gt;&#123;&#123;text&#125;&#125;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">// 双花括号是占位符</span><br><span class="line"></span><br><span class="line">function addItem( url, text )&#123;</span><br><span class="line">	var mylist = document.getElementById(&quot;mylist&quot;),</span><br><span class="line">	    script = document.getElementById(&apos;list-item&apos;),</span><br><span class="line">	    templateText = script.text,</span><br><span class="line">	    template = Handlebars.compile( script.text ),</span><br><span class="line">	    div = document.createElement(&quot;div&quot;),</span><br><span class="line">	    result;</span><br><span class="line">	    </span><br><span class="line">	result = template(&#123;</span><br><span class="line">		text : text,</span><br><span class="line">		url : url</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	div.innerHTML = result;</span><br><span class="line">	mylist.appendChild( div.firstChild );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 用法</span><br><span class="line">addItem( &quot;/item/4&quot;, &quot;fourth item&quot;);</span><br></pre></td></tr></table></figure>
-<p>Handlebars 模板还支持一些简单的逻辑和循环。</p>
-<p>[参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
-
-          
+          <h1 id="一-UI层的松耦合"><a href="#一-UI层的松耦合" class="headerlink" title="一. UI层的松耦合"></a>一. UI层的松耦合</h1><h4 id="1-将JavaScript从CSS中抽离"><a href="#1-将JavaScript从CSS中抽离" class="headerlink" title="1. 将JavaScript从CSS中抽离"></a>1. 将JavaScript从CSS中抽离</h4><p>在IE8和早版本的浏览器有一个特性，CSS表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">	width: expression(document.body.offsetWidth + &quot;px&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/17/编写可维护的JavaScript之编程实践-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -963,9 +936,9 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-16T17:54:06+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-16T17:54:06+08:00">
                 2018-07-16
               </time>
             
@@ -1004,26 +977,15 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
       
         
-          
-            <p>在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。</p>
-<h3 id="1-层级缩进"><a href="#1-层级缩进" class="headerlink" title="1. 层级缩进"></a>1. 层级缩进</h3><p>对于层级缩进目前有两种主张：<br>1）使用制表符<br>    这种方法有两种好处，第一，制表符和缩进层级之间是一一对应关系，符合逻辑；第二是文本编辑器可以配置制表符的展现长度。<br>    缺点是系统对制表符的解释不一致。<br>2）使用空格符<br>    目前主要有三种具体的做法：2个空格表示一个缩进，4个空格表示一个缩进，8个空格表示一个缩进<br>    优点：在所有的系统和编辑器中，文件的展现格式不会有任何差异；<br>    缺点：对于单个开发者来说，使用一个没有配置好的文本编辑器创建格式化的代码的方式非常原始。</p>
-<h3 id="2-语句结尾"><a href="#2-语句结尾" class="headerlink" title="2. 语句结尾"></a>2. 语句结尾</h3><p>JavaScript的语句要么独占一行， 要么以分号结尾。但是有赖于分析器的自动分号插入机制（Automatic Semicolon Insertion，ASI）会在应该有分号而实际没有的地方自动插入分号。<br>大多数场景不会出错，但是有写场景有可能会出现问题,导致出错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//原始代码</span><br><span class="line">function data()&#123;</span><br><span class="line">	return </span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//分析器会理解成：</span><br><span class="line">function data()&#123;</span><br><span class="line">	return;</span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以推荐在每一句代码的结束都加上分号，减少出现问题的几率。</p>
-<h3 id="3-行的长度"><a href="#3-行的长度" class="headerlink" title="3. 行的长度"></a>3. 行的长度</h3><p>建议将每行长度限定在80个字符</p>
-<h3 id="4-换行"><a href="#4-换行" class="headerlink" title="4. 换行"></a>4. 换行</h3><p>当单行字符达到最大值（例如80个字符）的时候要手动拆成两行。<br>一般规则是 ： 在运算符后换行，第二行追加两个缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">doSomething ( value1, value2, document, window, </span><br><span class="line">		element );</span><br></pre></td></tr></table></figure></p>
-<p><strong>特例：</strong>  </p>
-<p>特例1 :  在if语句中换行可以保持一个缩进，这样更容易阅读：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if ( isLong &amp;&amp; isShow &amp;&amp; number == 1 &amp;&amp; </span><br><span class="line">		children.length &gt; 0 ) &#123;</span><br><span class="line">	//do something...		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>特例2 ：当给变量赋值时，第二行的位置应该和赋值运算符的位置保持对齐：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var result = something + anotherThing + yetAnothering + someThingElse + </span><br><span class="line">	     anotherSomethingElse;</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-空行"><a href="#5-空行" class="headerlink" title="5. 空行"></a>5. 空行</h3><p>有时一段代码的语义和另外一段代码不相关，这时就应该使用空行分割，确保有关联的代码展现在一起。<br><strong>一般规则 ：</strong><br>在每个控制流语句（if，for语句等）之前添加空行;<br>在方法之前；<br>在方法中的局部变量和第一条语句之间；<br>在多行或但行注释之前；<br>在方法内的逻辑片段之间插入空行，提高可读性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//不实用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//使用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">  </span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">		</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-命名"><a href="#6-命名" class="headerlink" title="6. 命名"></a>6. 命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“计算机只存在两个难题：缓存失效和命名。”   --- Phil Karlton</span><br></pre></td></tr></table></figure>
-<p>JavaScript语言的核心ECMAScript是遵守驼峰式大小写命名法。</p>
-<p> <strong>一般命名规则：</strong><br> 命名长度尽可能短，并要抓住重点；<br> 避免没有任何意义的命名；<br> 变量名遵守驼峰大小写命名法，前缀应当是名词；<br> 函数名遵守驼峰大小写命名法，前缀应当是动词；<br> 常量使用大写字母和下划线命名，下划线用以分割单词；<br> 构造函数的命名遵守大驼峰（以大写字母开始）命名法，通常是名词（因为是用来创建某个类型的实例）；<br> 字符串可以用双引号也可以使用单引号括起来（上下文要保持同一种风格）；</p>
-<h3 id="7-null"><a href="#7-null" class="headerlink" title="7. null"></a>7. null</h3><p> null的使用场景 ：<br> 用来初始化一个变量，这个变量可能赋值为一个对象；<br> 用来和一个已经初始化的变量比较，这个变量可以是也可以不是一个对象；<br> 当函数的参数期望是对象时，用作参数传入；<br> 当函数的返回值期望是对象时，用作返回值传出；</p>
-<p> <strong> 理解null最好的方式是将它当作对象的占位符</strong></p>
-<p> [参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
-
-          
+          <p>在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。</p>
+<h3 id="1-层级缩进"><a href="#1-层级缩进" class="headerlink" title="1. 层级缩进"></a>1. 层级缩进</h3><p>对于层级缩进目前有两种主张：<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/16/编写可维护的JavaScript之编程风格/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1104,7 +1066,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
                 <a href="/archives/">
               
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -1154,7 +1116,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -1162,7 +1124,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1312,6 +1274,323 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
