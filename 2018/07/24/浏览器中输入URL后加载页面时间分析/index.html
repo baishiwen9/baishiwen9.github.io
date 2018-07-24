@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="学习笔记," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="1. 检测原始值在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：">
+<meta name="description" content="在浏览器中输入页面url到页面加载完成，可将这个过程分为三个时间段，分别是： 数据在网络上传输的时间 站点服务器处理请求并生成回应数据的时间 浏览器本地计算和渲染的时间">
+<meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编写可维护的JavaScript---避免空比较">
-<meta property="og:url" content="http://yoursite.com/2018/07/18/编写可维护的JavaScript-避免空比较/index.html">
+<meta property="og:title" content="浏览器中输入URL后加载页面时间总结">
+<meta property="og:url" content="http://yoursite.com/2018/07/24/浏览器中输入URL后加载页面时间分析/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="1. 检测原始值在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：">
+<meta property="og:description" content="在浏览器中输入页面url到页面加载完成，可将这个过程分为三个时间段，分别是： 数据在网络上传输的时间 站点服务器处理请求并生成回应数据的时间 浏览器本地计算和渲染的时间">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-23T08:20:54.000Z">
+<meta property="og:updated_time" content="2018-07-24T07:36:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编写可维护的JavaScript---避免空比较">
-<meta name="twitter:description" content="1. 检测原始值在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：">
+<meta name="twitter:title" content="浏览器中输入URL后加载页面时间总结">
+<meta name="twitter:description" content="在浏览器中输入页面url到页面加载完成，可将这个过程分为三个时间段，分别是： 数据在网络上传输的时间 站点服务器处理请求并生成回应数据的时间 浏览器本地计算和渲染的时间">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/18/编写可维护的JavaScript-避免空比较/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/24/浏览器中输入URL后加载页面时间分析/"/>
 
 
 
 
 
-  <title>编写可维护的JavaScript---避免空比较 | baishiwen's blog</title>
+  <title>浏览器中输入URL后加载页面时间总结 | baishiwen's blog</title>
   
 
 
@@ -264,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/编写可维护的JavaScript-避免空比较/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/浏览器中输入URL后加载页面时间分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -281,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编写可维护的JavaScript---避免空比较</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器中输入URL后加载页面时间总结</h1>
         
 
         <div class="post-meta">
@@ -293,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T16:01:35+08:00">
-                2018-07-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T13:15:32+08:00">
+                2018-07-24
               </time>
             
 
@@ -312,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/18/编写可维护的JavaScript-避免空比较/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/07/18/编写可维护的JavaScript-避免空比较/" itemprop="commentCount">0</span> comments
+                <a href="/2018/07/24/浏览器中输入URL后加载页面时间分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/07/24/浏览器中输入URL后加载页面时间分析/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -340,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  758字
+                  756字
                 </span>
               
 
@@ -377,17 +378,28 @@
       
 
       
-        <h2 id="1-检测原始值"><a href="#1-检测原始值" class="headerlink" title="1. 检测原始值"></a>1. 检测原始值</h2><p>在JavaScript中有5种原始类型，字符串、数字、布尔值、null、undefined。<br>如果想检测一个值是字符串、数字、布尔值、undefined中的一个时，最佳选择是使用typeof运算符：<br><a id="more"></a><br>对于字符串： typeof返回 “string”；<br>对于数字：   typeof返回 “number”；<br>对于布尔值： typeof返回 “boolean”；<br>对于undefined： typeof返回 “undefined”；  </p>
-<p>用typeof检测这四种原始值是非常安全的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 检测字符串</span><br><span class="line">if ( typeof name === &quot;string&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测数字</span><br><span class="line">if ( typeof count === &quot;number&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测布尔值</span><br><span class="line">if ( typeof found === &quot;boolean&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测undefinded</span><br><span class="line">if ( typeof myApp === &quot;undefined&quot; )&#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>typeof运算符的独特在于，将其用于一个未声明的变量也不会报错。未定义的变量和值为undefined的变量通过typeof都返回undefined。</p>
-<p>对于null，一般不用于检测语句，简单的和null比较通常不会包含足够的信息以判断值的类型是否合法。</p>
-<h2 id="2-检测引用值"><a href="#2-检测引用值" class="headerlink" title="2. 检测引用值"></a>2. 检测引用值</h2><p>引用类型有：Object、Array、Date和Error<br>用typeof检测引用类型都返回“object”，所以检测引用值的类型的最好方法是使用instanceof运算符。<br>基本语法： value instanceof constructor<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 检测日期</span><br><span class="line">if ( value instanceof Date ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测正则</span><br><span class="line">if ( value instanceof RegExp ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br><span class="line">// 检测Error</span><br><span class="line">if ( value instanceof Error ) &#123;</span><br><span class="line">	// do something ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>instanceof 的一个特性是它不仅检测构造这个对象的构造器，还检测原型链。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var now = new Date();</span><br><span class="line">console.log( now instanceof Object );   // true, 每个对象都继承自Object</span><br><span class="line">console.log( now instanceof Date );     // true</span><br></pre></td></tr></table></figure></p>
-<p>因为上面这个原因，使用value instanceof Object 来判断对象是否属于某个特定类型的做法并非最佳。<br>instanceof 运算法也可以检测出自定义的类型，这也是检测自定义类型的唯一方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Person( name )&#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">var me = new Person( &quot;xiaoming&quot; );</span><br><span class="line">console.log( me instanceof Object );   // true</span><br><span class="line">console.log( me instanceof Person );   // true</span><br></pre></td></tr></table></figure></p>
-<p>  1） 检测函数<br>  检测函数最好的方法是typeof。<br>  2） 检测数组<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function isArray(value)&#123;</span><br><span class="line">	if ( typeof Array.isArray === &quot;function&quot; )&#123;</span><br><span class="line">		return Array.isArray(value);</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		return Object.prototype.toString.call(value) === &quot;[object Array]&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-检测属性"><a href="#3-检测属性" class="headerlink" title="3. 检测属性"></a>3. 检测属性</h2><p>  判断属性是否存在的最好的方法是使用in运算符。in运算法仅仅会简单的判断属性是否存在，而不会去读属性的值。如果实例对象的属性存在、或继承自对象的原型，in运算符都会返回true：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var object = &#123;</span><br><span class="line">	count:0,</span><br><span class="line">	related:null</span><br><span class="line">&#125;;</span><br><span class="line">if ( &quot;count&quot; in object )&#123;</span><br><span class="line">	// do something...</span><br><span class="line">&#125;</span><br><span class="line">if ( &quot;related&quot; in object )&#123;</span><br><span class="line">	// do something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>  如果只想检测实例对象的某个属性是否存在，使用hasOwnProperty()方法，所有继承自Object的js对象都有这个方法，如果实例中存在这个属性则返回true（如果这个属性只存在原型里，则返回false）。</p>
-<p>[参考资料]:<br>编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
+        <p>在浏览器中输入页面url到页面加载完成，可将这个过程分为三个时间段，分别是：</p>
+<pre><code>数据在网络上传输的时间
+站点服务器处理请求并生成回应数据的时间
+浏览器本地计算和渲染的时间
+</code></pre><a id="more"></a>
+<h2 id="1-数据在网络上传输的时间"><a href="#1-数据在网络上传输的时间" class="headerlink" title="1. 数据在网络上传输的时间"></a>1. 数据在网络上传输的时间</h2><p>这段时间主要包括两部分，第一是浏览器主机发出的请求数据经过网络到达服务器的时间，第二是服务器的回应数据经过网络回到浏览器端主机的时间。<br>这两部分时间都可以看作是某一大小的数据从某主机开始发送，直到另一端主机全部接受所消耗的总时间，称为响应时间。<br>1）决定因素<br>发送的数据量和网络宽带</p>
+<h2 id="2-站点服务器处理请求并生成回应数据的时间"><a href="#2-站点服务器处理请求并生成回应数据的时间" class="headerlink" title="2. 站点服务器处理请求并生成回应数据的时间"></a>2. 站点服务器处理请求并生成回应数据的时间</h2><p>站点服务器处理请求并生成回应数据的时间主要消耗在服务器端，包括很多的环节，我们使用每秒处理请求数（吞吐率）来衡量。<br>1）影响服务器吞吐率的因素<br>服务器的并发策略，I/O模型，I/O性能，CPU核数，应用本身的逻辑复杂度</p>
+<h2 id="3-浏览器本地计算和渲染的时间"><a href="#3-浏览器本地计算和渲染的时间" class="headerlink" title="3. 浏览器本地计算和渲染的时间"></a>3. 浏览器本地计算和渲染的时间</h2><p>这段时间是消耗在浏览器端<br>1）影响因素<br>主要有浏览器采用的并发策略，样式渲染方式，脚本解释器的性能，页面的大小，页面组件的数量，页面组件缓存状况，页面组件域名分布，域名DNS解析等。</p>
+<hr>
+<h2 id="4-可以减少这三个时间段时间的方法主要有"><a href="#4-可以减少这三个时间段时间的方法主要有" class="headerlink" title="4. 可以减少这三个时间段时间的方法主要有"></a>4. 可以减少这三个时间段时间的方法主要有</h2><p>1）增加带宽<br>    目标：以提供下载服务为主的站点</p>
+<p>2）减少网页中的HTTP请求<br>    设计简单的网页，使用较少的图片和脚本<br>    使用雪碧图<br>    合并JavaScript脚本和CSS样式表<br>    充分利用HTTP中的浏览器端Cache策略，减少重复下载</p>
+<p>3）加快服务器脚本计算速度<br>    比如解释器对某个脚本程序第一次解释的时候，将中间代码缓存起来，以供下次直接使用。</p>
+<p>4）使用动态内容缓存<br>    可以将动态内容的HTML输出结果缓存起来，在有用户访问的时候可以跳过重复的动态内容计算而直接输出。</p>
+<p>5）使用数据缓存</p>
+<p>6）将动态内容静态化</p>
+<p>7）更换web服务器软件</p>
+<p>8）页面组件分离<br>    根据采用不同组件的需求，有正对性的采用不同的并发策略，提供最佳的物理资源</p>
+<p>9）合理部署服务器</p>
+<p>10）使用负载均衡</p>
+<p>11）优化数据库<br>    解决不合理的应用程序数据访问组件设计，不合理的数据库表结构设计等</p>
+<p>12）考虑可扩展性</p>
+<p>13）减少视觉等待    </p>
 
       
     </div>
@@ -403,6 +415,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+        </div>
+      
 
       
       
@@ -412,8 +430,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/18/编写可维护的JavaScript-事件处理/" rel="next" title="编写可维护的JavaScript---事件处理">
-                <i class="fa fa-chevron-left"></i> 编写可维护的JavaScript---事件处理
+              <a href="/2018/07/20/hexo和github搭建个人博客过程-1/" rel="next" title="hexo和github搭建个人博客过程">
+                <i class="fa fa-chevron-left"></i> hexo和github搭建个人博客过程
               </a>
             
           </div>
@@ -421,10 +439,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/20/hexo和github搭建个人博客过程-1/" rel="prev" title="hexo和github搭建个人博客过程">
-                hexo和github搭建个人博客过程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -605,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-检测原始值"><span class="nav-text">1. 检测原始值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-检测引用值"><span class="nav-text">2. 检测引用值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-检测属性"><span class="nav-text">3. 检测属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据在网络上传输的时间"><span class="nav-text">1. 数据在网络上传输的时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-站点服务器处理请求并生成回应数据的时间"><span class="nav-text">2. 站点服务器处理请求并生成回应数据的时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-浏览器本地计算和渲染的时间"><span class="nav-text">3. 浏览器本地计算和渲染的时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-可以减少这三个时间段时间的方法主要有"><span class="nav-text">4. 可以减少这三个时间段时间的方法主要有</span></a></li></ol></div>
             
 
           </div>
