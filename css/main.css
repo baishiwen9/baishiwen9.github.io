@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a2e0cf;
+  background: #9fc72a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3158,7 +3158,7 @@ pre .javascript .function {
 }
 #todo1 div.item ul li span.context {
   display: inline-block;
-  width: 85%;
+  width: 70%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -3169,7 +3169,7 @@ pre .javascript .function {
 }
 #todo1 div.item ul li span.left {
   display: inline-block;
-  width: 20px;
+  width: 5%;
   height: 20px;
   float: left;
   margin-left: 10px;
@@ -3187,7 +3187,7 @@ pre .javascript .function {
 }
 #todo1 div.item ul li span.right {
   display: inline-block;
-  width: 20px;
+  width: 5%;
   height: 20px;
   float: right;
   background: url("/images/delete.jpg") no-repeat center center;
