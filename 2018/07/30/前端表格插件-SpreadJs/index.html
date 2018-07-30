@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. spreadJs简介1） 类 Excel 功能的纯前端表格控件，基于 HTML5 的 JavaScript 电子表格和网格功能控件； 2） 适用于 Java 、Web 应用程序、移动端等多种平台的表格数据处理； 3） 支持数据排序、过滤、增删改查、导出、导入、可视化； 4） 高度类似 Excel 功能和外观的在线表格编辑程序；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端表格插件-SpreadJs">
+<meta property="og:url" content="http://yoursite.com/2018/07/30/前端表格插件-SpreadJs/index.html">
+<meta property="og:site_name" content="baishiwen&#39;s blog">
+<meta property="og:description" content="1. spreadJs简介1） 类 Excel 功能的纯前端表格控件，基于 HTML5 的 JavaScript 电子表格和网格功能控件； 2） 适用于 Java 、Web 应用程序、移动端等多种平台的表格数据处理； 3） 支持数据排序、过滤、增删改查、导出、导入、可视化； 4） 高度类似 Excel 功能和外观的在线表格编辑程序；">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/07/30/前端表格插件-SpreadJs/sheet.png">
+<meta property="og:updated_time" content="2018-07-30T10:05:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端表格插件-SpreadJs">
+<meta name="twitter:description" content="1. spreadJs简介1） 类 Excel 功能的纯前端表格控件，基于 HTML5 的 JavaScript 电子表格和网格功能控件； 2） 适用于 Java 、Web 应用程序、移动端等多种平台的表格数据处理； 3） 支持数据排序、过滤、增删改查、导出、导入、可视化； 4） 高度类似 Excel 功能和外观的在线表格编辑程序；">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/30/前端表格插件-SpreadJs/sheet.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/30/前端表格插件-SpreadJs/"/>
+
+
+
+
+
+  <title>前端表格插件-SpreadJs | baishiwen's blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c9307d610a89b3a827920c759ffcb1c0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">baishiwen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/30/前端表格插件-SpreadJs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端表格插件-SpreadJs</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-30T17:20:17+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/30/前端表格插件-SpreadJs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/07/30/前端表格插件-SpreadJs/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,063字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-spreadJs简介"><a href="#1-spreadJs简介" class="headerlink" title="1. spreadJs简介"></a>1. spreadJs简介</h2><p>1） 类 Excel 功能的纯前端表格控件，基于 HTML5 的 JavaScript 电子表格和网格功能控件；</p>
+<p>2） 适用于 Java 、Web 应用程序、移动端等多种平台的表格数据处理；</p>
+<p>3） 支持数据排序、过滤、增删改查、导出、导入、可视化；</p>
+<p>4） 高度类似 Excel 功能和外观的在线表格编辑程序；</p>
+<a id="more"></a>
+<p><strong> 具体详细介绍可以去官网： <a href="https://www.grapecity.com.cn/developer/spreadjs" target="_blank" rel="noopener">https://www.grapecity.com.cn/developer/spreadjs</a>  </strong></p>
+<h2 id="2-表格组成"><a href="#2-表格组成" class="headerlink" title="2    . 表格组成"></a>2    . 表格组成</h2><p>一个表格是由spread（workbook）对象包含多个sheet，每个sheet有row（行）和 column（列）组成，每个行和列组成对应的cell（单元格）。</p>
+<h2 id="3-功能简介"><a href="#3-功能简介" class="headerlink" title="3. 功能简介"></a>3. 功能简介</h2><p>1） 图表：SpreadJS支持柱形图，折线图，饼形图，条形图，组合图等多种图标形式。<br>2）表格：有时候需要简单的管理或者一组数据，这时候就可以在sheet中插入一个表格。<br>3）条件格式 ：当有数千行数据时，仅仅通过从原始数据中检查模式是极其困难的。条件格式化提供了另外一种途径来可视化数据和使表单更加容易理解。<br>4）区域分组：如果有一个要进行组合和汇总的数据列表，则可以创建分级显示。可创建行的分级显示和列的分级显示。<br>5）右键：右键点击工作簿将会展示上下文菜单，菜单的内容取决于点击的内容。<br>还有很多的实用功能，这里就不一一列举。</p>
+<h2 id="4-初始化spread"><a href="#4-初始化spread" class="headerlink" title="4    . 初始化spread"></a>4    . 初始化spread</h2><p>SpreadJS不依赖任何第三方组件,只需要引用下列文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;styleSheet&quot; href=&quot;gc.spread.sheets.xx.x.x.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;gc.spread.sheets.all.xx.x.x.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>HTML：页面中添加一个DOM元素作为它的容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;ss&quot; style=&quot;width:100%; height:360px;border: 1px solid gray;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>JavaScript：用 new GC.Spread.Sheets.Workbook()来初始化Spread<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function () &#123;</span><br><span class="line">        var spread = new GC.Spread.Sheets.Workbook(document.getElementById(&apos;ss&apos;), &#123; sheetCount: 1 &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-sheet"><a href="#5-sheet" class="headerlink" title="5. sheet"></a>5. sheet</h2><p>每个sheet分为4部分组成，分别是：<br>角：<br>GC.Spread.Sheets.SheetArea. Corner ，简写：0；<br>行头：<br>GC.Spread.Sheets.SheetArea.RowHeader ，简写：1；<br>列头：<br>GC.Spread.Sheets.SheetArea.ColumnHeader ，简写：2；<br>表格区域：<br>GC.Spread.Sheets.SheetArea.viewport ，简写：3。<br>如图所示：<br><img src="/2018/07/30/前端表格插件-SpreadJs/sheet.png" alt="sheet组成"><br>1）获取当前活动的sheet：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var  activeSheet = spread.getActiveSheet();</span><br></pre></td></tr></table></figure></p>
+<p>2）根据sheet的name获取：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var  sheet = spread.getSheetFromName(“Sheet1”);</span><br></pre></td></tr></table></figure></p>
+<p>3）通过sheet的索引来获取：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var sheet = spread. getSheetIndex( index );</span><br></pre></td></tr></table></figure></p>
+<p>4）设置sheet的数量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spread.setSheetCount( number );</span><br></pre></td></tr></table></figure></p>
+<p>5）根据索引删除sheet：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spread.removeSheet( index );</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-cell"><a href="#6-cell" class="headerlink" title="6. cell"></a>6. cell</h2><p>1）获取活动单元格所在行和列的index：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var col = sheet. getActiveColumnIndex();</span><br><span class="line">var row = sheet.getActiveRowIndex();</span><br></pre></td></tr></table></figure></p>
+<p>2）获取单元格的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sheet.getValue( rowIndex, colIndex  )；</span><br><span class="line">sheet.getText( rowIndex, colIndex );</span><br></pre></td></tr></table></figure></p>
+<p>3）单元格设置样式（大多数样式和CSS的策略相同）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Spread.Sheets 提供一个样式的类, 其中包含很多属性, 例如前景色, 背景色：</span><br><span class="line"></span><br><span class="line">var style = GC.Spread.Sheets.Style(); </span><br><span class="line">style.backColor = &apos;red’; </span><br><span class="line">style.foreColor = &apos;green’;</span><br><span class="line"></span><br><span class="line">// 设置样式给（ row, col ）单元格</span><br><span class="line">sheet.setStyle(row, col, style, GC.Spread.Sheets.SheetArea.viewport); </span><br><span class="line">// row为-1表示整列设置该样式；col为-1时表示整行设置该样式</span><br></pre></td></tr></table></figure></p>
+<p>4）使用公式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sheet.getCell(1,1).value(3);</span><br><span class="line">sheet.getCell(2,1).value(1);</span><br><span class="line">spread.options.allowUserEditFormula = true;</span><br><span class="line">activeSheet.setArrayFormula( row, col, rowCount, colCount, &quot;B1:B5*C1:C5&quot;);</span><br><span class="line">// 单元格和sheet的索引是从0开始</span><br></pre></td></tr></table></figure></p>
+<p>5）单元格设置值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sheet.setValue( rowIndex, colIndex , 3 );      //  3代表表格区域, 第三个参数不写默认为表格区域</span><br><span class="line">sheet.getCell( row, col ).value( “hello world”);</span><br></pre></td></tr></table></figure></p>
+<p>6）合并单元格:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var sheet = spread.getActiveSheet();</span><br><span class="line"></span><br><span class="line">sheet.addSpan( row, col, rowCount, colCount );</span><br><span class="line">//从单元格( row, col )开始合并rowCount行， colCount列</span><br></pre></td></tr></table></figure></p>
+<p>6）单元格格式:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sheet.setValue( 1, 2, new Date(2018, 7, 28 ) );</span><br><span class="line">sheet.setFormatter( 1, 2, “d-mmm; @”);</span><br></pre></td></tr></table></figure></p>
+<h2 id="7-表单事件"><a href="#7-表单事件" class="headerlink" title="7. 表单事件"></a>7. 表单事件</h2><p>Spread.Sheets 在表单上提供了很多事件，可以通过调用 bind 和 unbind 方法来监听表单的某一个事件或取消监听表单的某一个事件，调用 unbindAll 方法来取消监听表单所有的事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var sheet = spread.getActiveSheet();</span><br><span class="line"></span><br><span class="line">//绑定单击事件</span><br><span class="line">sheet.bind( GC.Spread.Sheets.Events. CellClick, function ( e, args )&#123;</span><br><span class="line">	// do some thing …</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 解绑事件：</span><br><span class="line">sheet.unbind( GC.Spread.Sheets.Events. CellClick );</span><br></pre></td></tr></table></figure>
+<p>常用的事件有：<br>    CellClick, CellDoubleClick, ClipboardChanging, ClipboardChanged, ClipboardPasted, ClipboardPasting, CloumnWidthChanged, EditEnding, EditEnded, EditStarting ……</p>
+<p>参考：<br><a href="http://help.grapecity.com/spread/SpreadJSWeb/webframe.html#JavascriptLibrary~GcSpread.Sheets.Events.html" target="_blank" rel="noopener">http://help.grapecity.com/spread/SpreadJSWeb/webframe.html#JavascriptLibrary~GcSpread.Sheets.Events.html</a></p>
+<h2 id="8-数据绑定"><a href="#8-数据绑定" class="headerlink" title="8. 数据绑定"></a>8. 数据绑定</h2><p>数据绑定类型有表单级别绑定和单元格级别绑定</p>
+<p>可以使用 setDataSource 和 getDataSource 方法来设置获取数据源<br>1）表单级绑定数据<br>a. 自动生成绑定列方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var customers = [ </span><br><span class="line">	&#123; ID:0, Name:&apos;A&apos;, Info1:&apos;Info0&apos; &#125;, </span><br><span class="line">	&#123; ID:1, Name:&apos;B&apos;, Info1:&apos;Info1&apos; &#125;, </span><br><span class="line">	&#123; ID:2, Name:&apos;C&apos;, Info1:&apos;Info2&apos; &#125;,</span><br><span class="line">]; </span><br><span class="line"></span><br><span class="line">sheet.autoGenerateColumns = true;    //控制是否自动生成绑定列</span><br><span class="line">sheet.setDataSource(customers);</span><br></pre></td></tr></table></figure></p>
+<p>b.  使用bindColumns绑定所有自定义列方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 数据</span><br><span class="line">var datasource = [ </span><br><span class="line">	&#123; name: &apos;Alice&apos;, age: 27, birthday: &apos;1985/08/31&apos;, position: &apos;PM’ &#125;</span><br><span class="line"> ];</span><br><span class="line">//每列配置信息</span><br><span class="line">var colInfos = [ </span><br><span class="line">	&#123; name: ‘position‘,   displayName: ’Position‘, size: 50, visible: false &#125;, </span><br><span class="line">	&#123; name: ‘name‘,      displayName: &apos;Display Name‘,  size: 70 &#125;, </span><br><span class="line">	&#123; name: &apos;birthday‘,  displayName: &apos;Birthday&apos;, formatter: &apos;d/M/yy&apos;, size: 120 &#125;, </span><br><span class="line">	&#123; name: ‘age‘,         displayName: &apos;Age&apos;, size: 40, resizable: false &#125;, </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">sheet.autoGenerateColumns = false; </span><br><span class="line">sheet.setDataSource(datasource); </span><br><span class="line">sheet.bindColumns(colInfos);</span><br></pre></td></tr></table></figure></p>
+<p>2）单元格级别绑定数据</p>
+<p>使用 setBindingPath 方法来设置绑定路径到指定的单元格，并将数据源设置到表单上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123; </span><br><span class="line">	name: &apos;Wang feng&apos;, age: 25, sex: &apos;male&apos;, address: &#123; postcode: &apos;710075’ &#125; </span><br><span class="line">&#125;; </span><br><span class="line">var source = new GC.Spread.Sheets.Bindings.CellBindingSource(person);</span><br><span class="line"></span><br><span class="line">sheet.setBindingPath(2, 1, &apos;name’); </span><br><span class="line">sheet.setBindingPath(3, 1, &apos;age’); </span><br><span class="line">sheet.setBindingPath(4, 1, &apos;sex’); </span><br><span class="line">sheet.setBindingPath(5, 1, &apos;address.postcode’); </span><br><span class="line">sheet.setDataSource(source);</span><br></pre></td></tr></table></figure>
+<p>3）获取表单数据<br>a.  获取某一行的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sheet.getDataItem( row );</span><br></pre></td></tr></table></figure></p>
+<p>b.  获取表单所有数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sheet.getDataSource( ); // 数组对象格式</span><br></pre></td></tr></table></figure></p>
+<h2 id="9-单元格类型"><a href="#9-单元格类型" class="headerlink" title="9. 单元格类型"></a>9. 单元格类型</h2><p>1）按钮单元格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var button = new GC.Spread.Sheets.CellTypes.Button();</span><br><span class="line"></span><br><span class="line">button.marginLeft(15);  //设置按钮的margin-left</span><br><span class="line">button.text(button‘);    // 按钮文字</span><br><span class="line">button.buttonBackColor(‘red‘);   //设置背景颜色</span><br><span class="line">sheet.setCellType(3, 2, button, GC.Spread.Sheets.SheetArea.viewport);</span><br></pre></td></tr></table></figure></p>
+<p>2）复选框单元格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var checkbox = new GC.Spread.Sheets.CellTypes.CheckBox(); </span><br><span class="line">checkbox.textTrue(‘Check state’);       // 设置选中状态显示文本</span><br><span class="line">checkbox.textFalse(‘UnCheck state’);  // 设置未选中状态显示文本</span><br><span class="line"></span><br><span class="line">sheet.setCellType(3, 2, checkbox, GC.Spread.Sheets.SheetArea.viewport);</span><br></pre></td></tr></table></figure></p>
+<p>3）普通组合框单元格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var combo = new GC.Spread.Sheets.CellTypes.ComboBox();</span><br><span class="line">//使用 editorValueType 方法来设置或者获取被写入底层数据模型的值</span><br><span class="line">combo.editorValueType( GC.Spread.Sheets.CellTypes.EditorValueType.text );</span><br><span class="line"></span><br><span class="line">combo.items([ </span><br><span class="line">	&#123; text: &apos;Oranges&apos;, value: &apos;11k&apos; &#125;, </span><br><span class="line">	&#123; text: &apos;Apples&apos;, value: &apos;15k&apos; &#125;, </span><br><span class="line">	&#123; text: &apos;Grape&apos;, value: &apos;100k’ &#125;</span><br><span class="line">]);</span><br><span class="line">sheet.setCellType(3, 2, combo, GC.Spread.Sheets.SheetArea.viewport);</span><br></pre></td></tr></table></figure></p>
+<p>4）超链接单元格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var h = new GC.Spread.Sheets.CellTypes.HyperLink(); </span><br><span class="line"></span><br><span class="line">h.text(www.babytree.com’); //设置超链接的文本</span><br><span class="line">h.linkToolTip(宝宝树’);        //鼠标悬停在超链接上时显示的提示信息</span><br><span class="line">h.linkColor(‘red’);    //设置链接显示颜色</span><br><span class="line">h.visitedLinkColor(‘blue’);    //设置访问过的链接显示颜色</span><br><span class="line"></span><br><span class="line">sheet.setCellType(3, 2, h, GC.Spread.Sheets.SheetArea.viewport);</span><br></pre></td></tr></table></figure></p>
+<p>5）自定义单元格<br>前面这四种单元格在满足不了有些场景的时候，就可以使用自定义单元格。</p>
+<p>自定义单元格的实现：<br>通过继承 Base 类型来自定制单元格类型，并且实现一些必须的方法：<br>paint,  processMouseDown,  processMouseMove, processMouseUp, processMouseEnter,  processMouseLeave<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function MyCellType()&#123; &#125;</span><br><span class="line"></span><br><span class="line">MyCellType.prototype = new GC.Spread.Sheets.CellTypes.Base( );  // 继承自Base 类型</span><br><span class="line"></span><br><span class="line">MyCellType.prototype.paint = function (ctx, value, x, y, w, h, style, options) &#123; </span><br><span class="line">	//1. 拿到image对象</span><br><span class="line">	//2. 使用canvas 进行绘制</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyCellType.prototype.processMouseDown = function ( args ) &#123;</span><br><span class="line">	// 自定义单元格的mouseDown事件</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyCellType.prototype.processMouseEnter = function ( args )&#123;</span><br><span class="line">	//自定义单元格的mouseEnter事件</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 将自定义好的单元格设置到对应的单元格中</span><br><span class="line">sheet.getRange(1, 1, 1, 1).cellType( new MyCellType() );</span><br></pre></td></tr></table></figure></p>
+<h2 id="10-导入导出"><a href="#10-导入导出" class="headerlink" title="10. 导入导出"></a>10. 导入导出</h2><p>需要导入导出时需要引入相关的js文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&apos;.../spreadjs/plugins/gc.spread.excelio.x.xx.xxxxx.x.min.js&apos; type=&apos;text/javascript&apos;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>初始化Workbook实例和ExcelIO实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var spread = new GC.Spread.Sheets.Workbook(document.getElementById(&apos;ss&apos;)); </span><br><span class="line">var excelIo = new GC.Spread.Excel.IO();</span><br><span class="line">//可以使用open方法将excel文件导入为spread json，使用 save 方法将spread json导出为excel文件：</span><br><span class="line"></span><br><span class="line">//导入：</span><br><span class="line">excelIo.open(excelFile, function (json) &#123; </span><br><span class="line">	var workbookObj = json; </span><br><span class="line">	workbook.fromJSON(workbookObj); </span><br><span class="line">&#125;, function (e) &#123; </span><br><span class="line">	// console.log(e); </span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">//导出</span><br><span class="line">excelio.save(json, function (blob) &#123; </span><br><span class="line">	//do some thing …</span><br><span class="line">&#125;, function (e) &#123; </span><br><span class="line">	//console.log(e); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>其中导出的时候可能会用到FileSaver.js的saveAs()方法。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/30/fetch/" rel="next" title="fetch">
+                <i class="fa fa-chevron-left"></i> fetch
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread" style="display:block !important;">
+      
+        
+
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODI3OS8xNDgwNw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">baishiwen</p>
+              <p class="site-description motion-element" itemprop="description">技术分享，学习笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com/" title="baidu" target="_blank">baidu</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-spreadJs简介"><span class="nav-text">1. spreadJs简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-表格组成"><span class="nav-text">2    . 表格组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-功能简介"><span class="nav-text">3. 功能简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-初始化spread"><span class="nav-text">4    . 初始化spread</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-sheet"><span class="nav-text">5. sheet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-cell"><span class="nav-text">6. cell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-表单事件"><span class="nav-text">7. 表单事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-数据绑定"><span class="nav-text">8. 数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-单元格类型"><span class="nav-text">9. 单元格类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-导入导出"><span class="nav-text">10. 导入导出</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">baishiwen</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
