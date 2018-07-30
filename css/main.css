@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9fc72a;
+  background: #b416eb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3233,4 +3233,10 @@ pre .javascript .function {
 }
 #todo1 .handle .right span.show {
   border: 1px solid rgba(175,47,47,0.2);
+}
+#app {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  background: #f00;
 }
