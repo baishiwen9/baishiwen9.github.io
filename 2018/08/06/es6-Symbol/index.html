@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="学习笔记," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta name="description" content="1. Symbol的简介在es6之前，对象属性在命名时很容易造成命名冲突，为了保证每个属性的名字都是独一无二的，这就从根本上防止了属性名的冲突，这就是引入Symbol的原因。Symbol是一种新的原始数据类型，表示独一无二的值。至此，JavaScript语言总共有7中数据类型：undefined,null,Boolean,String,Number,Object,Symbol">
+<meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编写可维护的JavaScript---编程风格">
-<meta property="og:url" content="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/index.html">
+<meta property="og:title" content="es6--Symbol">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/es6-Symbol/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta property="og:description" content="1. Symbol的简介在es6之前，对象属性在命名时很容易造成命名冲突，为了保证每个属性的名字都是独一无二的，这就从根本上防止了属性名的冲突，这就是引入Symbol的原因。Symbol是一种新的原始数据类型，表示独一无二的值。至此，JavaScript语言总共有7中数据类型：undefined,null,Boolean,String,Number,Object,Symbol">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-23T08:21:15.000Z">
+<meta property="og:updated_time" content="2018-08-06T10:13:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编写可维护的JavaScript---编程风格">
-<meta name="twitter:description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta name="twitter:title" content="es6--Symbol">
+<meta name="twitter:description" content="1. Symbol的简介在es6之前，对象属性在命名时很容易造成命名冲突，为了保证每个属性的名字都是独一无二的，这就从根本上防止了属性名的冲突，这就是引入Symbol的原因。Symbol是一种新的原始数据类型，表示独一无二的值。至此，JavaScript语言总共有7中数据类型：undefined,null,Boolean,String,Number,Object,Symbol">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/06/es6-Symbol/"/>
 
 
 
 
 
-  <title>编写可维护的JavaScript---编程风格 | baishiwen's blog</title>
+  <title>es6--Symbol | baishiwen's blog</title>
   
 
 
@@ -264,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/es6-Symbol/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -281,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编写可维护的JavaScript---编程风格</h1>
+          <h1 class="post-title" itemprop="name headline">es6--Symbol</h1>
         
 
         <div class="post-meta">
@@ -293,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-16T17:54:06+08:00">
-                2018-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-06T17:06:33+08:00">
+                2018-08-06
               </time>
             
 
@@ -312,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/16/编写可维护的JavaScript之编程风格/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/" itemprop="commentCount">0</span> comments
+                <a href="/2018/08/06/es6-Symbol/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/08/06/es6-Symbol/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -340,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,135字
+                  1,013字
                 </span>
               
 
@@ -377,23 +378,23 @@
       
 
       
-        <p>在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。</p>
-<h3 id="1-层级缩进"><a href="#1-层级缩进" class="headerlink" title="1. 层级缩进"></a>1. 层级缩进</h3><p>对于层级缩进目前有两种主张：<br><a id="more"></a><br>1）使用制表符<br>    这种方法有两种好处，第一，制表符和缩进层级之间是一一对应关系，符合逻辑；第二是文本编辑器可以配置制表符的展现长度。<br>    缺点是系统对制表符的解释不一致。<br>2）使用空格符<br>    目前主要有三种具体的做法：2个空格表示一个缩进，4个空格表示一个缩进，8个空格表示一个缩进<br>    优点：在所有的系统和编辑器中，文件的展现格式不会有任何差异；<br>    缺点：对于单个开发者来说，使用一个没有配置好的文本编辑器创建格式化的代码的方式非常原始。</p>
-<h3 id="2-语句结尾"><a href="#2-语句结尾" class="headerlink" title="2. 语句结尾"></a>2. 语句结尾</h3><p>JavaScript的语句要么独占一行， 要么以分号结尾。但是有赖于分析器的自动分号插入机制（Automatic Semicolon Insertion，ASI）会在应该有分号而实际没有的地方自动插入分号。<br>大多数场景不会出错，但是有写场景有可能会出现问题,导致出错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//原始代码</span><br><span class="line">function data()&#123;</span><br><span class="line">	return </span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//分析器会理解成：</span><br><span class="line">function data()&#123;</span><br><span class="line">	return;</span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以推荐在每一句代码的结束都加上分号，减少出现问题的几率。</p>
-<h3 id="3-行的长度"><a href="#3-行的长度" class="headerlink" title="3. 行的长度"></a>3. 行的长度</h3><p>建议将每行长度限定在80个字符</p>
-<h3 id="4-换行"><a href="#4-换行" class="headerlink" title="4. 换行"></a>4. 换行</h3><p>当单行字符达到最大值（例如80个字符）的时候要手动拆成两行。<br>一般规则是 ： 在运算符后换行，第二行追加两个缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">doSomething ( value1, value2, document, window, </span><br><span class="line">		element );</span><br></pre></td></tr></table></figure></p>
-<p><strong>特例：</strong>  </p>
-<p>特例1 :  在if语句中换行可以保持一个缩进，这样更容易阅读：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if ( isLong &amp;&amp; isShow &amp;&amp; number == 1 &amp;&amp; </span><br><span class="line">		children.length &gt; 0 ) &#123;</span><br><span class="line">	//do something...		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>特例2 ：当给变量赋值时，第二行的位置应该和赋值运算符的位置保持对齐：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var result = something + anotherThing + yetAnothering + someThingElse + </span><br><span class="line">	     anotherSomethingElse;</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-空行"><a href="#5-空行" class="headerlink" title="5. 空行"></a>5. 空行</h3><p>有时一段代码的语义和另外一段代码不相关，这时就应该使用空行分割，确保有关联的代码展现在一起。<br><strong>一般规则 ：</strong><br>在每个控制流语句（if，for语句等）之前添加空行;<br>在方法之前；<br>在方法中的局部变量和第一条语句之间；<br>在多行或但行注释之前；<br>在方法内的逻辑片段之间插入空行，提高可读性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//不实用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//使用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">  </span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">		</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-命名"><a href="#6-命名" class="headerlink" title="6. 命名"></a>6. 命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“计算机只存在两个难题：缓存失效和命名。”   --- Phil Karlton</span><br></pre></td></tr></table></figure>
-<p>JavaScript语言的核心ECMAScript是遵守驼峰式大小写命名法。</p>
-<p> <strong>一般命名规则：</strong><br> 命名长度尽可能短，并要抓住重点；<br> 避免没有任何意义的命名；<br> 变量名遵守驼峰大小写命名法，前缀应当是名词；<br> 函数名遵守驼峰大小写命名法，前缀应当是动词；<br> 常量使用大写字母和下划线命名，下划线用以分割单词；<br> 构造函数的命名遵守大驼峰（以大写字母开始）命名法，通常是名词（因为是用来创建某个类型的实例）；<br> 字符串可以用双引号也可以使用单引号括起来（上下文要保持同一种风格）；</p>
-<h3 id="7-null"><a href="#7-null" class="headerlink" title="7. null"></a>7. null</h3><p> null的使用场景 ：<br> 用来初始化一个变量，这个变量可能赋值为一个对象；<br> 用来和一个已经初始化的变量比较，这个变量可以是也可以不是一个对象；<br> 当函数的参数期望是对象时，用作参数传入；<br> 当函数的返回值期望是对象时，用作返回值传出；</p>
-<p> <strong> 理解null最好的方式是将它当作对象的占位符</strong></p>
-<p> [参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
+        <h2 id="1-Symbol的简介"><a href="#1-Symbol的简介" class="headerlink" title="1. Symbol的简介"></a>1. Symbol的简介</h2><p>在es6之前，对象属性在命名时很容易造成命名冲突，为了保证每个属性的名字都是独一无二的，这就从根本上防止了属性名的冲突，这就是引入Symbol的原因。<br>Symbol是一种新的原始数据类型，表示独一无二的值。<br>至此，JavaScript语言总共有7中数据类型：undefined,null,Boolean,String,Number,Object,Symbol<br><a id="more"></a></p>
+<h2 id="2-Symbol的生成及使用规则"><a href="#2-Symbol的生成及使用规则" class="headerlink" title="2. Symbol的生成及使用规则"></a>2. Symbol的生成及使用规则</h2><p>Symbol值通过Symbol函数生成。现在对象的属性名可有两种类型，一种是原来的字符串，另一种就是新增的Symbol类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let symbol = Symbol();</span><br><span class="line">typeof symbol;   // &quot;symbol&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Symbol函数前面不能使用new命令，否则会报错，这是因为生成的Symbol是一种原始数据类型，不是对象。也就是说，由于Symbol的值不是对象，所以不能添加属性。<br>Symbol是一种类似于字符串的数据类型。</p>
+<p>Symbol函数可以接受一个字符串作为参数，表示对symbol实例的描述：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">let s2 = Symbol(&apos;bar&apos;);</span><br><span class="line"></span><br><span class="line">s1 // Symbol(&apos;foo&apos;)</span><br><span class="line">s1.toString();    // &apos;Symbol(foo)&apos;</span><br></pre></td></tr></table></figure></p>
+<p>如果Symbol的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，然后生成一个Symbol值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">	toString()&#123;</span><br><span class="line">		return &apos;abc&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">const sym = Symbol(obj);</span><br><span class="line">sym;  // Symbol(abc)</span><br></pre></td></tr></table></figure></p>
+<p>Symbol函数的参数只是对当前Symbol值的描述，因此相同参数的Symbol函数的返回值不相等：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//无参数</span><br><span class="line">let s1 = Symbol();</span><br><span class="line">let s2 = Symbol();</span><br><span class="line">s1 === s2 // false</span><br><span class="line">//有参数</span><br><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">let s2 = Symbol(&apos;foo&apos;);</span><br><span class="line">s1 === s2 // false</span><br></pre></td></tr></table></figure></p>
+<p>Symbol值不能与其他类型的值进行运算，否则报错；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">&quot;symbol is &quot;+ s1;    // TypeError: can&apos;t convert symbol to string</span><br></pre></td></tr></table></figure></p>
+<p>Symbol值可以显示转为字符串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">s1.toString();   // &quot;Symbol(foo)&quot;</span><br></pre></td></tr></table></figure>
+<p>Symbol 值可以转为布尔值，但是不能转为数值:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">Boolean(s1)  // true</span><br><span class="line">!s1   // false</span><br></pre></td></tr></table></figure>
+<h2 id="3-Symbol作为属性名"><a href="#3-Symbol作为属性名" class="headerlink" title="3. Symbol作为属性名"></a>3. Symbol作为属性名</h2><p>由于每一个 Symbol 值都是不相等的，这意味着 Symbol 值可以作为标识符，用于对象的属性名，就能保证不会出现同名的属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol();</span><br><span class="line">//first：</span><br><span class="line">let a = &#123;&#125;;</span><br><span class="line">a[s1] = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">//second:</span><br><span class="line">let a = &#123;</span><br><span class="line">	[s1]: &apos;hello&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//third:</span><br><span class="line">let a = &#123;&#125;;</span><br><span class="line">Object.defineProperty(a,s1,&#123;value:&apos;hello&apos;&#125;);</span><br><span class="line"></span><br><span class="line">a[s1];  // &quot;hello&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Symbol 值作为对象属性名时，不能用点运算符;<br>在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在方括号之中;<br>Symbol 类型还可以用于定义一组常量，保证这组常量的值都是不相等的;<br>Symbol 值作为属性名时，该属性还是公开属性，不是私有属性。</p>
+<h2 id="4-属性名的遍历"><a href="#4-属性名的遍历" class="headerlink" title="4. 属性名的遍历"></a>4. 属性名的遍历</h2><p>Symbol 作为属性名，该属性不会出现在for…in、for…of循环中，也不会被Object.keys()、Object.getOwnPropertyNames()、JSON.stringify()返回。<br>1）Object.getOwnPropertySymbols<br>Object.getOwnPropertySymbols方法返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;&#125;;</span><br><span class="line">let a = Symbol(&apos;a&apos;);</span><br><span class="line">let b = Symbol(&apos;b&apos;);</span><br><span class="line"></span><br><span class="line">obj[a] = &apos;Hello&apos;;</span><br><span class="line">obj[b] = &apos;World&apos;;</span><br><span class="line"></span><br><span class="line">const objectSymbols = Object.getOwnPropertySymbols(obj);</span><br><span class="line">objectSymbols</span><br><span class="line">// [Symbol(a), Symbol(b)]</span><br></pre></td></tr></table></figure></p>
+<p>2）Reflect.ownKeys<br>Reflect.ownKeys方法可以返回所有类型的键名，包括常规键名和 Symbol 键名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;</span><br><span class="line">  [Symbol(&apos;a&apos;)]: 1,</span><br><span class="line">  aaa: 2,</span><br><span class="line">  bbb: 3</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Reflect.ownKeys(obj)</span><br><span class="line">//  [&quot;aaa&quot;, &quot;bbb&quot;, Symbol(a)]</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-Symbol-for-和-Symbol-keyFor"><a href="#5-Symbol-for-和-Symbol-keyFor" class="headerlink" title="5. Symbol.for() 和 Symbol.keyFor()"></a>5. Symbol.for() 和 Symbol.keyFor()</h2><p>1）Symbol.for()<br>Symbol.for()接受一个字符串作为参数，然后搜索有没有以该参数作为名称的 Symbol 值。如果有，就返回这个 Symbol 值，否则就新建并返回一个以该字符串为名称的 Symbol 值。<br>Symbol.for()与Symbol()这两种写法，都会生成新的 Symbol。它们的区别是，前者会被登记在全局环境中供搜索，后者不会。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Symbol.for(&quot;bar&quot;) === Symbol.for(&quot;bar&quot;)</span><br><span class="line">// true</span><br><span class="line"></span><br><span class="line">Symbol(&quot;bar&quot;) === Symbol(&quot;bar&quot;)</span><br><span class="line">// false</span><br></pre></td></tr></table></figure></p>
+<p>2）Symbol.keyFor()<br>Symbol.keyFor方法返回一个已登记的 Symbol 类型值的key。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol.for(&quot;foo&quot;);</span><br><span class="line">Symbol.keyFor(s1) // &quot;foo&quot;</span><br><span class="line"></span><br><span class="line">let s2 = Symbol(&quot;foo&quot;);</span><br><span class="line">Symbol.keyFor(s2) // undefined</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -409,6 +410,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+        </div>
+      
 
       
       
@@ -418,15 +425,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/01/deepLink/" rel="next" title="deepLink">
+                <i class="fa fa-chevron-left"></i> deepLink
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/" rel="prev" title="编写可维护的JavaScript---UI层的松耦合">
-                编写可维护的JavaScript---UI层的松耦合 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -607,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-层级缩进"><span class="nav-text">1. 层级缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-语句结尾"><span class="nav-text">2. 语句结尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-行的长度"><span class="nav-text">3. 行的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-换行"><span class="nav-text">4. 换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-空行"><span class="nav-text">5. 空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-命名"><span class="nav-text">6. 命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-null"><span class="nav-text">7. null</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Symbol的简介"><span class="nav-text">1. Symbol的简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Symbol的生成及使用规则"><span class="nav-text">2. Symbol的生成及使用规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Symbol作为属性名"><span class="nav-text">3. Symbol作为属性名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-属性名的遍历"><span class="nav-text">4. 属性名的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Symbol-for-和-Symbol-keyFor"><span class="nav-text">5. Symbol.for() 和 Symbol.keyFor()</span></a></li></ol></div>
             
 
           </div>
