@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="组件之间传递信息方式，总体可分为以下5种： 父组件向子组件传递信息 父组件向更深层的子组件（孙子组件）进行传递信息 子组件向父组件传递信息">
+<meta name="description" content="react推崇的是单向数据流，自上而下进行数据的传递，但是由下而上或者不在一条数据流上的组件之间的通信就会变的复杂。组件之间传递信息方式，总体可分为以下5种： 父组件向子组件传递信息 父组件向更深层的子组件（孙子组件）进行传递信息 子组件向父组件传递信息">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React组件间传值方式">
 <meta property="og:url" content="http://yoursite.com/2018/07/31/React组件间传值方式/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="组件之间传递信息方式，总体可分为以下5种： 父组件向子组件传递信息 父组件向更深层的子组件（孙子组件）进行传递信息 子组件向父组件传递信息">
+<meta property="og:description" content="react推崇的是单向数据流，自上而下进行数据的传递，但是由下而上或者不在一条数据流上的组件之间的通信就会变的复杂。组件之间传递信息方式，总体可分为以下5种： 父组件向子组件传递信息 父组件向更深层的子组件（孙子组件）进行传递信息 子组件向父组件传递信息">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-01T06:51:09.000Z">
+<meta property="og:updated_time" content="2018-08-06T08:49:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React组件间传值方式">
-<meta name="twitter:description" content="组件之间传递信息方式，总体可分为以下5种： 父组件向子组件传递信息 父组件向更深层的子组件（孙子组件）进行传递信息 子组件向父组件传递信息">
+<meta name="twitter:description" content="react推崇的是单向数据流，自上而下进行数据的传递，但是由下而上或者不在一条数据流上的组件之间的通信就会变的复杂。组件之间传递信息方式，总体可分为以下5种： 父组件向子组件传递信息 父组件向更深层的子组件（孙子组件）进行传递信息 子组件向父组件传递信息">
 
 
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  279字
+                  760字
                 </span>
               
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  3分钟
                 </span>
               
             </div>
@@ -377,19 +377,19 @@
       
 
       
-        <p>组件之间传递信息方式，总体可分为以下5种：</p>
+        <p>react推崇的是单向数据流，自上而下进行数据的传递，但是由下而上或者不在一条数据流上的组件之间的通信就会变的复杂。<br>组件之间传递信息方式，总体可分为以下5种：</p>
 <p>父组件向子组件传递信息</p>
 <p>父组件向更深层的子组件（孙子组件）进行传递信息</p>
 <p>子组件向父组件传递信息</p>
 <a id="more"></a>
 <p>没有任何嵌套关系的组件之间传值（兄弟组件之间传值）</p>
 <p>利用react-redux进行组件之间的状态信息共享</p>
-<h2 id="1-父组件向子组件传递信息"><a href="#1-父组件向子组件传递信息" class="headerlink" title="1. 父组件向子组件传递信息"></a>1. 父组件向子组件传递信息</h2><p>主要是通过 prop进行传值：<br><a href="https://blog.csdn.net/guangyao88/article/details/71713806" target="_blank" rel="noopener">https://blog.csdn.net/guangyao88/article/details/71713806</a></p>
-<h2 id="2-父组件向更深层的子组件进行传递信息"><a href="#2-父组件向更深层的子组件进行传递信息" class="headerlink" title="2. 父组件向更深层的子组件进行传递信息"></a>2. 父组件向更深层的子组件进行传递信息</h2><p>主要是利用context：</p>
-<h2 id="3-子组件向父组件传递信息"><a href="#3-子组件向父组件传递信息" class="headerlink" title="3. 子组件向父组件传递信息"></a>3. 子组件向父组件传递信息</h2><p>主要是依赖 props 来传递事件的引用，并通过回调的方式来实现</p>
+<h2 id="1-父组件向子组件传递信息"><a href="#1-父组件向子组件传递信息" class="headerlink" title="1. 父组件向子组件传递信息"></a>1. 父组件向子组件传递信息</h2><p>主要是通过 prop进行传值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// 子组件</span><br><span class="line">class Button extends Component&#123;</span><br><span class="line">	constructor( props )&#123;</span><br><span class="line">		super( props );</span><br><span class="line">	&#125;;</span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;button style=&#123;&#123;background: this.props.color &#125;&#125;&gt;&#123;this.props.children&#125;&lt;/button&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 父组件</span><br><span class="line">class Message extends Component&#123;</span><br><span class="line">	constructor( props )&#123;</span><br><span class="line">		super( props );</span><br><span class="line">		this.state =&#123;</span><br><span class="line">			color : &quot;red&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;Button color=&#123;this.state.color&#125; /&gt;</span><br><span class="line">				//在父组件中将color属性通过prop传递给了子组件</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-父组件向更深层的子组件进行传递信息"><a href="#2-父组件向更深层的子组件进行传递信息" class="headerlink" title="2. 父组件向更深层的子组件进行传递信息"></a>2. 父组件向更深层的子组件进行传递信息</h2><p>主要是利用context：<br>组件层级嵌套到比较深，可以使用上下文getChildContext来传递信息，这样就不需要将数据一层层往下传，<br>任何一层的子级都可以通过this.context直接访问。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">// React 15.5版本以后, 使用PropTypes需要引入外部库</span><br><span class="line">import PropTypes from &apos;prop-types&apos;;</span><br><span class="line">// 子组件</span><br><span class="line">class Button extends Component&#123;</span><br><span class="line">	contextTypes = &#123;</span><br><span class="line">		color: React.PropTypes.string   // 必须指定context的数据类型</span><br><span class="line">	&#125;;</span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;button style=&#123;&#123;background: this.context.color &#125;&#125;&gt;&lt;/button&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 父组件</span><br><span class="line">class Message extends Component&#123;</span><br><span class="line">	constructor( props )&#123;</span><br><span class="line">		super( props );</span><br><span class="line">	&#125;;</span><br><span class="line">	// 父组件必须要定义 childContextTypes 和 getChildContext()</span><br><span class="line">	</span><br><span class="line">	childContextTypes = &#123;</span><br><span class="line">		color: React.PropTypes.string</span><br><span class="line">	&#125;;</span><br><span class="line">	getChildContext()&#123;</span><br><span class="line">		return &#123;color: &quot;red&quot;&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;Button /&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>父组件添加 childContextTypes 和 getChildContext()，React自动向下传递数据然后在组件中的任意组件都能通过定义 contextTypes（必须指定context的数据类型） 访问 context 中的数据。</p>
+<h2 id="3-子组件向父组件传递信息"><a href="#3-子组件向父组件传递信息" class="headerlink" title="3. 子组件向父组件传递信息"></a>3. 子组件向父组件传递信息</h2><p>主要是依赖 props 来传递事件的引用，并通过回调的方式来实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">// 子组件</span><br><span class="line">class Button extends Component&#123;</span><br><span class="line">	handleClickBtn()&#123;</span><br><span class="line">		var _num = this.props.number + 1;</span><br><span class="line">		this.props.callback( _num );</span><br><span class="line">		//子组件将改变后的数据传递给父组件的回调函数来实现传递信息</span><br><span class="line">	&#125;;</span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;button onClick=&#123;this.handleClickBtn.bind(this)&#125;&gt;&lt;/button&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 父组件</span><br><span class="line">class Message extends Component&#123;</span><br><span class="line">	constructor( props )&#123;</span><br><span class="line">		super( props );</span><br><span class="line">		this.state =&#123;</span><br><span class="line">			number : 0</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	handleChangeNumber( _number )&#123;</span><br><span class="line">		this.setState(&#123;</span><br><span class="line">			number: _number</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;span&gt;点击增加：&#123;this.state.number&#125; &lt;/span&gt;</span><br><span class="line">				&lt;Button number=&#123;this.state.number&#125; callback=&#123;this.handleChangeNumber&#125;/&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="4-没有任何嵌套关系的组件之间传值（兄弟组件之间传值）"><a href="#4-没有任何嵌套关系的组件之间传值（兄弟组件之间传值）" class="headerlink" title="4. 没有任何嵌套关系的组件之间传值（兄弟组件之间传值）"></a>4. 没有任何嵌套关系的组件之间传值（兄弟组件之间传值）</h2><p>主要是依赖 第三方组件来实现兄弟组件之间的传值</p>
-<h2 id="5-利用react-redux进行组件之间的状态信息共享"><a href="#5-利用react-redux进行组件之间的状态信息共享" class="headerlink" title="5. 利用react-redux进行组件之间的状态信息共享"></a>5. 利用react-redux进行组件之间的状态信息共享</h2><p>主要是依赖 第三方组件来实现兄弟组件之间的传值</p>
-
+<h2 id="5-利用react-redux进行组件之间的状态信息共享"><a href="#5-利用react-redux进行组件之间的状态信息共享" class="headerlink" title="5. 利用react-redux进行组件之间的状态信息共享"></a>5. 利用react-redux进行组件之间的状态信息共享</h2>
       
     </div>
     
