@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="学习笔记," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta name="description" content="1. 数组方法1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
+<meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编写可维护的JavaScript---编程风格">
-<meta property="og:url" content="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/index.html">
+<meta property="og:title" content="JavaScript方法总结">
+<meta property="og:url" content="http://yoursite.com/2018/08/07/JavaScript方法总结/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta property="og:description" content="1. 数组方法1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-23T08:21:15.000Z">
+<meta property="og:updated_time" content="2018-08-07T13:39:16.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编写可维护的JavaScript---编程风格">
-<meta name="twitter:description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta name="twitter:title" content="JavaScript方法总结">
+<meta name="twitter:description" content="1. 数组方法1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/07/JavaScript方法总结/"/>
 
 
 
 
 
-  <title>编写可维护的JavaScript---编程风格 | baishiwen's blog</title>
+  <title>JavaScript方法总结 | baishiwen's blog</title>
   
 
 
@@ -264,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/JavaScript方法总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -281,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编写可维护的JavaScript---编程风格</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript方法总结</h1>
         
 
         <div class="post-meta">
@@ -293,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-16T17:54:06+08:00">
-                2018-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-07T20:13:06+08:00">
+                2018-08-07
               </time>
             
 
@@ -312,8 +313,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/16/编写可维护的JavaScript之编程风格/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/" itemprop="commentCount">0</span> comments
+                <a href="/2018/08/07/JavaScript方法总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/08/07/JavaScript方法总结/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -340,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,135字
+                  877字
                 </span>
               
 
@@ -356,7 +357,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4分钟
+                  5分钟
                 </span>
               
             </div>
@@ -377,23 +378,20 @@
       
 
       
-        <p>在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。</p>
-<h3 id="1-层级缩进"><a href="#1-层级缩进" class="headerlink" title="1. 层级缩进"></a>1. 层级缩进</h3><p>对于层级缩进目前有两种主张：<br><a id="more"></a><br>1）使用制表符<br>    这种方法有两种好处，第一，制表符和缩进层级之间是一一对应关系，符合逻辑；第二是文本编辑器可以配置制表符的展现长度。<br>    缺点是系统对制表符的解释不一致。<br>2）使用空格符<br>    目前主要有三种具体的做法：2个空格表示一个缩进，4个空格表示一个缩进，8个空格表示一个缩进<br>    优点：在所有的系统和编辑器中，文件的展现格式不会有任何差异；<br>    缺点：对于单个开发者来说，使用一个没有配置好的文本编辑器创建格式化的代码的方式非常原始。</p>
-<h3 id="2-语句结尾"><a href="#2-语句结尾" class="headerlink" title="2. 语句结尾"></a>2. 语句结尾</h3><p>JavaScript的语句要么独占一行， 要么以分号结尾。但是有赖于分析器的自动分号插入机制（Automatic Semicolon Insertion，ASI）会在应该有分号而实际没有的地方自动插入分号。<br>大多数场景不会出错，但是有写场景有可能会出现问题,导致出错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//原始代码</span><br><span class="line">function data()&#123;</span><br><span class="line">	return </span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//分析器会理解成：</span><br><span class="line">function data()&#123;</span><br><span class="line">	return;</span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以推荐在每一句代码的结束都加上分号，减少出现问题的几率。</p>
-<h3 id="3-行的长度"><a href="#3-行的长度" class="headerlink" title="3. 行的长度"></a>3. 行的长度</h3><p>建议将每行长度限定在80个字符</p>
-<h3 id="4-换行"><a href="#4-换行" class="headerlink" title="4. 换行"></a>4. 换行</h3><p>当单行字符达到最大值（例如80个字符）的时候要手动拆成两行。<br>一般规则是 ： 在运算符后换行，第二行追加两个缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">doSomething ( value1, value2, document, window, </span><br><span class="line">		element );</span><br></pre></td></tr></table></figure></p>
-<p><strong>特例：</strong>  </p>
-<p>特例1 :  在if语句中换行可以保持一个缩进，这样更容易阅读：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if ( isLong &amp;&amp; isShow &amp;&amp; number == 1 &amp;&amp; </span><br><span class="line">		children.length &gt; 0 ) &#123;</span><br><span class="line">	//do something...		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>特例2 ：当给变量赋值时，第二行的位置应该和赋值运算符的位置保持对齐：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var result = something + anotherThing + yetAnothering + someThingElse + </span><br><span class="line">	     anotherSomethingElse;</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-空行"><a href="#5-空行" class="headerlink" title="5. 空行"></a>5. 空行</h3><p>有时一段代码的语义和另外一段代码不相关，这时就应该使用空行分割，确保有关联的代码展现在一起。<br><strong>一般规则 ：</strong><br>在每个控制流语句（if，for语句等）之前添加空行;<br>在方法之前；<br>在方法中的局部变量和第一条语句之间；<br>在多行或但行注释之前；<br>在方法内的逻辑片段之间插入空行，提高可读性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//不实用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//使用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">  </span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">		</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-命名"><a href="#6-命名" class="headerlink" title="6. 命名"></a>6. 命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“计算机只存在两个难题：缓存失效和命名。”   --- Phil Karlton</span><br></pre></td></tr></table></figure>
-<p>JavaScript语言的核心ECMAScript是遵守驼峰式大小写命名法。</p>
-<p> <strong>一般命名规则：</strong><br> 命名长度尽可能短，并要抓住重点；<br> 避免没有任何意义的命名；<br> 变量名遵守驼峰大小写命名法，前缀应当是名词；<br> 函数名遵守驼峰大小写命名法，前缀应当是动词；<br> 常量使用大写字母和下划线命名，下划线用以分割单词；<br> 构造函数的命名遵守大驼峰（以大写字母开始）命名法，通常是名词（因为是用来创建某个类型的实例）；<br> 字符串可以用双引号也可以使用单引号括起来（上下文要保持同一种风格）；</p>
-<h3 id="7-null"><a href="#7-null" class="headerlink" title="7. null"></a>7. null</h3><p> null的使用场景 ：<br> 用来初始化一个变量，这个变量可能赋值为一个对象；<br> 用来和一个已经初始化的变量比较，这个变量可以是也可以不是一个对象；<br> 当函数的参数期望是对象时，用作参数传入；<br> 当函数的返回值期望是对象时，用作返回值传出；</p>
-<p> <strong> 理解null最好的方式是将它当作对象的占位符</strong></p>
-<p> [参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
+        <h2 id="1-数组方法"><a href="#1-数组方法" class="headerlink" title="1. 数组方法"></a>1. 数组方法</h2><p>1）array.concat(item…)<br>该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">var b = [4,5,6];</span><br><span class="line">var c = a.concat(b,7);</span><br><span class="line">// c : [1,2,3,4,5,6,7]</span><br></pre></td></tr></table></figure></p>
+<p>2) array.join(separator)<br>该方法是把一个array构造成一个字符串。separator默认是逗号“,”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];</span><br><span class="line">var b = a.join(&quot;&quot;);</span><br><span class="line">//b : &quot;abc&quot;</span><br></pre></td></tr></table></figure></p>
+<p>3) array.pop()<br>pop和push方法使得数组array可以像堆栈一样工作。pop方法移除array中的最后一个元素并返回该元素，如果array是empty，则返回undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];</span><br><span class="line">var b = a.pop();</span><br><span class="line">//a: [&quot;a&quot;,&quot;b&quot;]</span><br><span class="line">//b : &quot;c&quot;</span><br></pre></td></tr></table></figure></p>
+<p>4) array.push(item…)<br>push方法把一个或者多个参数item加到array的尾部。会修改原数组array，返回新数组的长度：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];</span><br><span class="line">var b = [1,2,3];</span><br><span class="line">var c = a.push(b, true);</span><br><span class="line">// c : 5</span><br><span class="line">// a : [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,[1,2,3],true]</span><br></pre></td></tr></table></figure></p>
+<p>实现push：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype._push = function()&#123;</span><br><span class="line">	this.splice.apply(this, [this.length, 0].concat(Array.prototype.slice.apply(arguments) ));</span><br><span class="line">	return this.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>5) array.reverse()<br>该方法是反转array里的元素的顺序，并返回反转的array：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">var b = a.reverse();</span><br><span class="line">// a 和 b都是：[3,2,1]</span><br></pre></td></tr></table></figure></p>
+<p>6) array.shift()<br>该方法移除数组array中的第一个元素并返回该元素。如果这个数组是空的，返回undefined。shift比pop慢的多。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">var b = a.shift();</span><br><span class="line">//a: [2,3], b: 1</span><br></pre></td></tr></table></figure></p>
+<p>实现shift：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype._shift = function()&#123;</span><br><span class="line">	return this.splice(0,1)[0];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>7) array.slice(start, end)<br>该方法是对array中的一段做浅复制。从array[start]一直复制到array[end];<br>end是可选的，默认是该数组的长度；<br>其中有一个值为负数时，该值和array.length相加；<br>start大于array.length，返回一个空数组；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];</span><br><span class="line">var b = a.slice(0,1);   // b: [&quot;a&quot;]</span><br><span class="line">var c = a.slice(1);     // c: [&quot;b&quot;,&quot;c&quot;]</span><br><span class="line">var d = a.slice(1,2);   // d: [&quot;b&quot;]</span><br></pre></td></tr></table></figure></p>
+<p>8) array.sort(comparefn)<br>该方法对array中的内容进行排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a = [4,8,15,16,23,42];</span><br><span class="line">a.sort();</span><br><span class="line">//a: [15,16,23,4,42,8]</span><br><span class="line"></span><br><span class="line">a.sort(function(a,b)&#123;</span><br><span class="line">	return a-b;</span><br><span class="line">&#125;);</span><br><span class="line">//a: [4,8,15,16,23,42]</span><br></pre></td></tr></table></figure></p>
+<p>9) array.splice(start, deleteCount, item…)<br>该方法从array[start]开始删除deleteCount个，并用新的item替换它们。返回删除的元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">var b = a.splice(1,1,&quot;aa&quot;,&quot;bb&quot;);</span><br><span class="line">//a: [1,&quot;aa&quot;,&quot;bb&quot;,3]</span><br><span class="line">//b: [2]</span><br></pre></td></tr></table></figure></p>
+<p>实现splice：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype._splice = function()&#123;</span><br><span class="line">	var max = Math.max,</span><br><span class="line">		min = Math.min,</span><br><span class="line">		delta,</span><br><span class="line">		element,</span><br><span class="line">		insertCount = max(arguments.length - 2, 0),</span><br><span class="line">		k = 0,</span><br><span class="line">		len = this.length,</span><br><span class="line">		new_len,</span><br><span class="line">		result = [],</span><br><span class="line">		shift_count;</span><br><span class="line">		</span><br><span class="line">		start = start || 0;</span><br><span class="line">		if(start &lt; 0)&#123;</span><br><span class="line">			start += len;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		start = max(min(start,len),0);</span><br><span class="line">		deleteCount = max(min(typeof deleteCount === &apos;number&apos; ? deleteCount : len, len -start),0);</span><br><span class="line">		delta = insertCount - deleteCount;</span><br><span class="line">		new_len = len + delta;</span><br><span class="line">		while(k &lt; deleteCount)&#123;</span><br><span class="line">			element = this[start + k];</span><br><span class="line">			if(element !== undefined)&#123;</span><br><span class="line">				result[k] = element;</span><br><span class="line">			&#125;</span><br><span class="line">			k += 1;</span><br><span class="line">		&#125;</span><br><span class="line">		shift_count = len -start - deleteCount;</span><br><span class="line">		if(delta &lt; 0)&#123;</span><br><span class="line">			k = start + insertCount;</span><br><span class="line">			while(shift_count)&#123;</span><br><span class="line">				this[k] = this[k-delta];</span><br><span class="line">				k += 1;</span><br><span class="line">				shift_count -= 1;</span><br><span class="line">			&#125;</span><br><span class="line">			this.length = new_len;</span><br><span class="line">		&#125; else if (delta &gt; 0)&#123;</span><br><span class="line">			k = 1;</span><br><span class="line">			while(shift_count)&#123;</span><br><span class="line">				this[new_len - k] = this[len - k];</span><br><span class="line">				k += 1;</span><br><span class="line">				shift_count -= 1;</span><br><span class="line">			&#125;</span><br><span class="line">			this.length = new_len;</span><br><span class="line">		&#125;</span><br><span class="line">		for( k = 0; k &lt; insertCount; k += 1)&#123;</span><br><span class="line">			this[start + k] = arguments[k + 2];</span><br><span class="line">		&#125;</span><br><span class="line">		return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>10）array.unshift(item…)<br>该方法是把一个或者多个元素添加到数组的最前面。返回新数组的长度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">var b = a.unshift(&quot;a&quot;,&quot;b&quot;);</span><br><span class="line">//b: 5</span><br><span class="line">//a: [&quot;a&quot;,&quot;b&quot;,1,2,3]</span><br></pre></td></tr></table></figure></p>
+<p>实现unshift:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype._unshift = function()&#123;</span><br><span class="line">	this.splice.apply(this, [0,0].concat(Array.prototype.slice.apply(arguments) ));</span><br><span class="line">	return this.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -409,6 +407,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+        </div>
+      
 
       
       
@@ -418,15 +422,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/06/es6-Set和Map数据结构/" rel="next" title="es6--Set和Map数据结构">
+                <i class="fa fa-chevron-left"></i> es6--Set和Map数据结构
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/" rel="prev" title="编写可维护的JavaScript---UI层的松耦合">
-                编写可维护的JavaScript---UI层的松耦合 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -607,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-层级缩进"><span class="nav-text">1. 层级缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-语句结尾"><span class="nav-text">2. 语句结尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-行的长度"><span class="nav-text">3. 行的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-换行"><span class="nav-text">4. 换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-空行"><span class="nav-text">5. 空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-命名"><span class="nav-text">6. 命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-null"><span class="nav-text">7. null</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组方法"><span class="nav-text">1. 数组方法</span></a></li></ol></div>
             
 
           </div>
