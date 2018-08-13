@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. 数组方法1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
+<meta name="description" content="1. Array1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript方法总结">
+<meta property="og:title" content="JavaScript方法">
 <meta property="og:url" content="http://yoursite.com/2018/08/07/JavaScript方法总结/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="1. 数组方法1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
+<meta property="og:description" content="1. Array1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-07T13:39:16.297Z">
+<meta property="og:updated_time" content="2018-08-13T06:52:16.446Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript方法总结">
-<meta name="twitter:description" content="1. 数组方法1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
+<meta name="twitter:title" content="JavaScript方法">
+<meta name="twitter:description" content="1. Array1）array.concat(item…)该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title>JavaScript方法总结 | baishiwen's blog</title>
+  <title>JavaScript方法 | baishiwen's blog</title>
   
 
 
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript方法总结</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript方法</h1>
         
 
         <div class="post-meta">
@@ -341,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  877字
+                  2,003字
                 </span>
               
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5分钟
+                  10分钟
                 </span>
               
             </div>
@@ -378,7 +378,7 @@
       
 
       
-        <h2 id="1-数组方法"><a href="#1-数组方法" class="headerlink" title="1. 数组方法"></a>1. 数组方法</h2><p>1）array.concat(item…)<br>该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">var b = [4,5,6];</span><br><span class="line">var c = a.concat(b,7);</span><br><span class="line">// c : [1,2,3,4,5,6,7]</span><br></pre></td></tr></table></figure></p>
+        <h2 id="1-Array"><a href="#1-Array" class="headerlink" title="1. Array"></a>1. Array</h2><p>1）array.concat(item…)<br>该方法产生一个新数组，包含一份array的浅复制，并把一个或者多个参数item加在其后：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">var b = [4,5,6];</span><br><span class="line">var c = a.concat(b,7);</span><br><span class="line">// c : [1,2,3,4,5,6,7]</span><br></pre></td></tr></table></figure></p>
 <p>2) array.join(separator)<br>该方法是把一个array构造成一个字符串。separator默认是逗号“,”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];</span><br><span class="line">var b = a.join(&quot;&quot;);</span><br><span class="line">//b : &quot;abc&quot;</span><br></pre></td></tr></table></figure></p>
 <p>3) array.pop()<br>pop和push方法使得数组array可以像堆栈一样工作。pop方法移除array中的最后一个元素并返回该元素，如果array是empty，则返回undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];</span><br><span class="line">var b = a.pop();</span><br><span class="line">//a: [&quot;a&quot;,&quot;b&quot;]</span><br><span class="line">//b : &quot;c&quot;</span><br></pre></td></tr></table></figure></p>
 <p>4) array.push(item…)<br>push方法把一个或者多个参数item加到array的尾部。会修改原数组array，返回新数组的长度：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];</span><br><span class="line">var b = [1,2,3];</span><br><span class="line">var c = a.push(b, true);</span><br><span class="line">// c : 5</span><br><span class="line">// a : [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,[1,2,3],true]</span><br></pre></td></tr></table></figure></p>
@@ -392,6 +392,28 @@
 <p>实现splice：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype._splice = function()&#123;</span><br><span class="line">	var max = Math.max,</span><br><span class="line">		min = Math.min,</span><br><span class="line">		delta,</span><br><span class="line">		element,</span><br><span class="line">		insertCount = max(arguments.length - 2, 0),</span><br><span class="line">		k = 0,</span><br><span class="line">		len = this.length,</span><br><span class="line">		new_len,</span><br><span class="line">		result = [],</span><br><span class="line">		shift_count;</span><br><span class="line">		</span><br><span class="line">		start = start || 0;</span><br><span class="line">		if(start &lt; 0)&#123;</span><br><span class="line">			start += len;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		start = max(min(start,len),0);</span><br><span class="line">		deleteCount = max(min(typeof deleteCount === &apos;number&apos; ? deleteCount : len, len -start),0);</span><br><span class="line">		delta = insertCount - deleteCount;</span><br><span class="line">		new_len = len + delta;</span><br><span class="line">		while(k &lt; deleteCount)&#123;</span><br><span class="line">			element = this[start + k];</span><br><span class="line">			if(element !== undefined)&#123;</span><br><span class="line">				result[k] = element;</span><br><span class="line">			&#125;</span><br><span class="line">			k += 1;</span><br><span class="line">		&#125;</span><br><span class="line">		shift_count = len -start - deleteCount;</span><br><span class="line">		if(delta &lt; 0)&#123;</span><br><span class="line">			k = start + insertCount;</span><br><span class="line">			while(shift_count)&#123;</span><br><span class="line">				this[k] = this[k-delta];</span><br><span class="line">				k += 1;</span><br><span class="line">				shift_count -= 1;</span><br><span class="line">			&#125;</span><br><span class="line">			this.length = new_len;</span><br><span class="line">		&#125; else if (delta &gt; 0)&#123;</span><br><span class="line">			k = 1;</span><br><span class="line">			while(shift_count)&#123;</span><br><span class="line">				this[new_len - k] = this[len - k];</span><br><span class="line">				k += 1;</span><br><span class="line">				shift_count -= 1;</span><br><span class="line">			&#125;</span><br><span class="line">			this.length = new_len;</span><br><span class="line">		&#125;</span><br><span class="line">		for( k = 0; k &lt; insertCount; k += 1)&#123;</span><br><span class="line">			this[start + k] = arguments[k + 2];</span><br><span class="line">		&#125;</span><br><span class="line">		return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>10）array.unshift(item…)<br>该方法是把一个或者多个元素添加到数组的最前面。返回新数组的长度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">var b = a.unshift(&quot;a&quot;,&quot;b&quot;);</span><br><span class="line">//b: 5</span><br><span class="line">//a: [&quot;a&quot;,&quot;b&quot;,1,2,3]</span><br></pre></td></tr></table></figure></p>
 <p>实现unshift:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype._unshift = function()&#123;</span><br><span class="line">	this.splice.apply(this, [0,0].concat(Array.prototype.slice.apply(arguments) ));</span><br><span class="line">	return this.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-Function"><a href="#2-Function" class="headerlink" title="2. Function"></a>2. Function</h2><p>1）function.apply(this.arg, argArray)</p>
+<p>apply方法调用function，传递一个会被绑定到this上的对象和一个可选的数组作为参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.bind = function(that)&#123;</span><br><span class="line">	var method = this,</span><br><span class="line">		slice = Array.prototype.slice,</span><br><span class="line">		args = slice.apply(arguments, [1]);</span><br><span class="line">		return function()&#123;</span><br><span class="line">			return method.apply(that,args.concat(slice.apply(arguments,[0])))</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var x = function()&#123;</span><br><span class="line"></span><br><span class="line">	return this.value;</span><br><span class="line">&#125;.bind(&#123;value:123&#125;);</span><br><span class="line"></span><br><span class="line">x(); //666</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-Number"><a href="#3-Number" class="headerlink" title="3. Number"></a>3. Number</h2><p>1) number.toExponential(fractionDigits)<br>该方法把这个number转换成一个指数形式的字符串，可选参数fractionDigits表示小数点后的位数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(3).toExponential(2);   // &quot;3.00e+0&quot;</span><br><span class="line">Math.PI.toExponential(2);   // &quot;3.14e+0&quot;</span><br></pre></td></tr></table></figure></p>
+<p>2) number.toFixed(fractionDigits)<br>该方法是把这个number转为一个十进制形式的字符串，可选参数是控制小数点后数字位数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(3).toFixed(2);     //&quot;3.00&quot;</span><br><span class="line">Math.PI.toFixed(2);  // &quot;3.14&quot;</span><br></pre></td></tr></table></figure></p>
+<p>3) number.toPrecision( precision )<br>该方法是把这个number转换成为一个十进制数形式的字符串，可选参数控制数字的精度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.PI.toPrecision(2);  // &quot;3.1&quot;</span><br><span class="line">Math.PI.toPrecision(3);  // &quot;3.14&quot;</span><br></pre></td></tr></table></figure></p>
+<p>4) number.toString(radix)<br>该方法是把这个number转成为一个字符串，可选参数radix控制基数（值必须在2-36，默认值是10）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(3).toString(2);   //&quot;3.00&quot;</span><br><span class="line">(3).toString();    //&quot;3&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-Object"><a href="#4-Object" class="headerlink" title="4. Object"></a>4. Object</h2><p>1) object.hasOwnProperty(name)<br>如果object包含一个名为name的属性，hasOwnProperty则返回为true。原型链中的同名属性是不会被检查的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;number: true&#125;;</span><br><span class="line">var a = Object.create(obj);</span><br><span class="line"></span><br><span class="line">obj.hasOwnProperty(&quot;number&quot;);  // true</span><br><span class="line">a.hasOwnProperty(&quot;number&quot;);    // false</span><br><span class="line">a.number;     // true</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-String"><a href="#5-String" class="headerlink" title="5. String"></a>5. String</h2><p>1) string.charAt(pos)<br>该方法返回字符串pos位置处的字符，如果pos小于0或者大于等于字符串的长度则返回空字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;hello&quot;;</span><br><span class="line">var aa = str.charAt(0);</span><br><span class="line">aa    // &quot;h&quot;</span><br></pre></td></tr></table></figure></p>
+<p>charAt的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String.prototype._charAt = function()&#123;</span><br><span class="line">	return this.slice(pos, pos-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2) string.charCodeAt(pos)<br>该方法返回的是string中pos位置处的字符的字符码位。如果pos小于0或者大于字符串的长度则返回NaN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;hello&quot;;</span><br><span class="line">var a = str.charCodeAt(0);</span><br><span class="line">a;   // 104</span><br></pre></td></tr></table></figure></p>
+<p>3) string.concat(string…)<br>该方法是把其他的字符串连接在一起构造一个新的字符串。用+运算符更简单。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var s = &quot;a&quot;.concat(&quot;b&quot;,&quot;c&quot;);</span><br><span class="line">s;  // &quot;abc&quot;</span><br></pre></td></tr></table></figure></p>
+<p>4) string.indexOf(searchString, position)<br>该方法是在string中查找searchString字符串，能找到返回该字符串的第一个字符在string中的下标值，如果没有找到返回-1；可选参数position指定从某处开始查找。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;hello world&quot;;</span><br><span class="line"></span><br><span class="line">str.indexOf(&quot;o&quot;);   //4</span><br><span class="line">str.indexOf(&quot;a&quot;);   //-1</span><br><span class="line">str.indexOf(&quot;o&quot;,5); //7</span><br></pre></td></tr></table></figure></p>
+<p>5) string.lastIndexOf(searchString, position)<br>该方法和indexOf方法很相似，只不过该方法是从末尾开始查找。</p>
+<p>6）string.localeCompare(that)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.localeCompare(b);</span><br></pre></td></tr></table></figure></p>
+<p>该方法是比较两个字符串<br>如果a字符串在字母表的位置在b的后面，则返回一个正数（大多数情况是1）；<br>如果a字符串在字母表的位置在b的前面，则返回一个负数（大多数情况是-1）；<br>如果a字符串等于b字符串，则返回0；<br>7）string.match(regexp)<br>该方法让字符串和一个正则表达式进行匹配。</p>
+<p>8）string.replace(searchValue, replaceValue)<br>该方法对string进行查找和替换，返回一个新的字符串。searchValue可以是一个字符串也可以是一个正则表达式。<br>如果是字符串，它只会在第一次出现的地方被替换。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;h-e-l-l-o&quot;;</span><br><span class="line">str.replace9(“-”，“”)；   //&quot;he-l-l-o&quot;</span><br></pre></td></tr></table></figure></p>
+<p>如果是正则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;h-e-l-l-o&quot;;</span><br><span class="line">str.replace9(/-/g，“”)；   //&quot;hello&quot;</span><br></pre></td></tr></table></figure></p>
+<p>第二个参数replaceValue可以是一个函数。</p>
+<p>9）string.search(regexp)<br>该方法接受一个正则表达式对象作为参数，如果找到匹配返回匹配首字母的下标值，如果没有找到返回-1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var text = &quot;hello world!&quot;;</span><br><span class="line">var pos = text.search(/!/);   // 11</span><br></pre></td></tr></table></figure></p>
+<p>10) string.slice(start, end)<br>该方法是复制string的一部分字符串来构造一个新的字符串。<br>如果start小于零，则和string.length相加；<br>end可选，默认值为string.length;<br>end 小于零，则和string.length相加；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var text = &quot;hello world!&quot;;</span><br><span class="line">var str = text.slice(6);   //&quot;world!&quot;</span><br></pre></td></tr></table></figure></p>
+<p>11) string.split(separator, limit)<br>该方法是将string分割成片段来创建一个字符串数组。limit可以限制被分割的片段的数量。<br>12）string.substring(start,end)</p>
+<p>13) string.toLocaleLowerCase(),string.toLowerCase()<br>把string中所有的字符转为小写字母<br>14）string.toLocaleUpperCase(),string.toUpperCase()<br>把string中所有的字符转为大写字母<br>15) string.fromCharCode(char…)<br>该方法可以根据一串数字编码返回一个字符串。</p>
 
       
     </div>
@@ -611,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组方法"><span class="nav-text">1. 数组方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Array"><span class="nav-text">1. Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Function"><span class="nav-text">2. Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Number"><span class="nav-text">3. Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Object"><span class="nav-text">4. Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-String"><span class="nav-text">5. String</span></a></li></ol></div>
             
 
           </div>
