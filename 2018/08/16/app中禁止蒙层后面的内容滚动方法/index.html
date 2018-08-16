@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="baishiwen&#39;s blog">
 <meta property="og:description" content="在app的某一个页面要弹出一个蒙层这种情况是很常见的场景，但是我们经常会碰到这样的情况，当出现蒙层的时候，蒙层下面的内容还是可以上下滚动。以下是关于这种情况的解决方法，亲测ios和android都有效。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-16T03:33:04.654Z">
+<meta property="og:updated_time" content="2018-08-16T06:44:26.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="app中禁止蒙层后面的内容滚动方法">
 <meta name="twitter:description" content="在app的某一个页面要弹出一个蒙层这种情况是很常见的场景，但是我们经常会碰到这样的情况，当出现蒙层的时候，蒙层下面的内容还是可以上下滚动。以下是关于这种情况的解决方法，亲测ios和android都有效。">
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  338字
+                  409字
                 </span>
               
 
@@ -382,6 +382,7 @@
 <p>在出现蒙层的时候调用disableScroll方法即可解决，但是在部分android机中还是能出现上下滚动情况。这时候我们需要对蒙层这个dom对象进行处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dom.addEventListener(&quot;touchmove&quot;, function (e) &#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure></p>
 <p>完成这一步基本上所有的机型都会生效。</p>
 <p>如果想让蒙层后面的内容上下滚动，调用下面的方法即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function enableScroll() &#123;</span><br><span class="line">    if (window.removeEventListener) &#123;</span><br><span class="line">        window.removeEventListener(&apos;DOMMouseScroll&apos;, preventDefault, false);</span><br><span class="line">    &#125;</span><br><span class="line">    window.onmousewheel = document.onmousewheel = null;</span><br><span class="line">    window.onwheel = null;</span><br><span class="line">    window.ontouchmove = null;</span><br><span class="line">    document.onkeydown = null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>另外一种情况是连续点击蒙层的时候后面的内容区域也会上下滚动，我的一种解决方法是在蒙层的dom对象上禁止连续多次点击：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dom.addEventListener(&quot;click&quot;, function(e) &#123;</span><br><span class="line">    if (e.detail &gt; 1) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
