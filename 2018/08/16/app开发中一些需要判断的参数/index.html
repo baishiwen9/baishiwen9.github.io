@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="baishiwen&#39;s blog">
 <meta property="og:description" content="在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-16T04:04:39.084Z">
+<meta property="og:updated_time" content="2018-08-16T08:10:42.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="app开发中一些需要判断的参数">
 <meta name="twitter:description" content="在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。">
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  152字
+                  178字
                 </span>
               
 
@@ -380,7 +380,9 @@
         <p>在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。</p>
 <a id="more"></a>
 <h2 id="1-判断机型"><a href="#1-判断机型" class="headerlink" title="1. 判断机型"></a>1. 判断机型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var ua = navigator.userAgent.toLowerCase();</span><br><span class="line"></span><br><span class="line">if ( ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/i) ) &#123;</span><br><span class="line">    // ios</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    // android</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-判断页面是在微信、qq、微博内置浏览器中打开"><a href="#2-判断页面是在微信、qq、微博内置浏览器中打开" class="headerlink" title="2. 判断页面是在微信、qq、微博内置浏览器中打开"></a>2. 判断页面是在微信、qq、微博内置浏览器中打开</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var ua = navigator.userAgent.toLowerCase();</span><br><span class="line"></span><br><span class="line">if( ua.match(/MicroMessenger/i)==&quot;micromessenger&quot; ) &#123;</span><br><span class="line">	// 微信内置浏览器打开</span><br><span class="line">&#125; else if ( ua.match(/QQ/i) == &quot;qq&quot; ) &#123;</span><br><span class="line">	// QQ内置浏览器打开</span><br><span class="line">&#125; else if ( ua.match(/WeiBo/i) == &apos;weibo&apos; ) &#123;</span><br><span class="line">	// 微博内置浏览器打开</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-判断页面是在微信、qq、微博内置浏览器中打开"><a href="#2-判断页面是在微信、qq、微博内置浏览器中打开" class="headerlink" title="2. 判断页面是在微信、qq、微博内置浏览器中打开"></a>2. 判断页面是在微信、qq、微博内置浏览器中打开</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ua = navigator.userAgent.toLowerCase();</span><br><span class="line">var reg_qq = /QQ\/([\d]+)/i;</span><br><span class="line"></span><br><span class="line">if( ua.match(/MicroMessenger/i)==&quot;micromessenger&quot; ) &#123;</span><br><span class="line">	// 微信内置浏览器打开</span><br><span class="line">&#125; else if ( reg_qq.test(ua) ) &#123;</span><br><span class="line">	// QQ内置浏览器打开</span><br><span class="line">&#125; else if ( ua.match(/WeiBo/i) == &apos;weibo&apos; ) &#123;</span><br><span class="line">	// 微博内置浏览器打开</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：qq内置浏览器和qq浏览器的判断方法是不一样的。</p>
+
       
     </div>
     
