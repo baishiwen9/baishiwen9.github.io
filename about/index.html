@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="baishiwen&#39;s blog">
 <meta property="og:description" content="var setting = {         view: {             dblClickExpand: false,             showLine: true,             selectedMulti: false         },         data: {             simpleData: {">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-21T12:07:08.170Z">
+<meta property="og:updated_time" content="2018-08-21T12:39:17.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="书&#x2F;影&#x2F;音">
 <meta name="twitter:description" content="var setting = {         view: {             dblClickExpand: false,             showLine: true,             selectedMulti: false         },         data: {             simpleData: {">
@@ -269,8 +269,7 @@
       <div class="post-body">
         
         
-          <p><link type="text/css" rel="stylesheet" href="/css/_custom/custom.styl"></p>
-<p><link href="/lib/ztree/css/zTreeStyle/zTreeStyle.css"></p>
+          <p><link href="/lib/ztree/css/zTreeStyle/zTreeStyle.css"></p>
 <div id="book"><div id="leftDOM"><ul id="tree"></ul></div><div id="rightDOM"></div></div>
 
 <script type="text/javascript" src="/lib/ztree/js/jquery-1.4.4.min.js"></script>
@@ -295,6 +294,7 @@
         },
         callback: {
             beforeClick: function(treeId, treeNode) {
+
                 $("#tree li span.node_name").removeClass("curSelectedNodeColor");
                 var id = treeNode.tId;
                 if(treeNode && treeNode.children && treeNode.children.length>0){
@@ -302,6 +302,15 @@
                 }
 
                 $("#" + id + "_span").addClass("curSelectedNodeColor");
+            },
+            onClick: function(e,treeId, treeNode){
+                if(treeNode && treeNode.children && treeNode.children.length>0){
+                    if(treeNode.open){
+                        treeObj.expandNode(treeNode, false,true,true);
+                    } else {
+                        treeObj.expandNode(treeNode, true,true,true);
+                    }
+                }
             }
         }
     };
@@ -331,15 +340,8 @@
 
 
 
-
-
-    //$(document).ready(function(){
-
-        var t = $("#tree");
-        t = $.fn.zTree.init(t, setting, zNodes);
-
-
-    //});
+    $.fn.zTree.init($("#tree"), setting, zNodes);
+    var treeObj = $.fn.zTree.getZTreeObj("tree");
 
 
 </script>
