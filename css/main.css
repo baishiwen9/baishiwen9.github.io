@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0bff;
+  background: #144a2b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3121,122 +3121,64 @@ pre .javascript .function {
     margin: 8px 0 0;
   }
 }
-#todo1 .todo-list li {
-  list-style: none;
+#book {
+  display: flex;
 }
-#todo1 {
+#book #leftDOM {
+  flex-grow: 1;
+}
+#book #rightDOM {
+  flex-grow: 3;
+}
+#tree {
   width: 100%;
-  height: 100%;
-  margin: 0px auto;
-}
-#todo1 .todo-logo {
-  text-align: center;
-  color: #ebd7d8;
-  font-size: 64px;
-}
-#todo1 #todo {
-  width: 100%;
-  padding: 10px 40px 10px 20px;
-  box-sizing: border-box;
-  box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-  background: rgba(0,0,0,0.003);
-  outline: none;
-  -webkit-appearance: none;
-}
-#todo1 div.item {
-  padding: 0 80px;
-}
-#todo1 div.item ul {
-  border: 1px solid #f3eded;
-  box-shadow: inset 3px -3px 1px #edeff1;
+  height: auto;
+  border-left: 1px solid #808080;
   -webkit-padding-start: 0px;
+  font-size: 12px;
+  position: relative;
 }
-#todo1 div.item ul li {
-  height: 40px;
-  border-bottom: 1px solid #edeff1;
-  line-height: 40px;
+#tree a {
+  border-bottom: none;
+  margin-left: -22px;
 }
-#todo1 div.item ul li span.context {
+#tree a.level0 {
+  margin-left: 0px;
+}
+#tree li {
+  list-style: none;
+  outline: none;
+  cursor: pointer;
+}
+#tree li span.button {
   display: inline-block;
-  width: 70%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-#todo1 div.item ul li.middleLine {
-  text-decoration: line-through;
-  color: #e8e6e6;
-}
-#todo1 div.item ul li span.left {
-  display: inline-block;
-  width: 5%;
+  width: 20px;
   height: 20px;
-  float: left;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-right: 15px;
-  cursor: pointer;
+  background-position: center;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
 }
-#todo1 div.item ul li span.left.nochecked {
-  background: url("/images/nochecked.jpg") no-repeat center center;
-  background-size: 20px 20px;
+#tree li a span.button {
+  background-image: url("../../images/unchecked.png");
 }
-#todo1 div.item ul li span.left.checked {
-  background: url("/images/checked.jpg") no-repeat center center;
-  background-size: 20px 20px;
+#tree li a.curSelectedNode span.button {
+  background-image: url("../../images/checked.png");
 }
-#todo1 div.item ul li span.right {
+#tree li span.button.switch.level0.roots_open,
+#tree li span.button.switch.level0.center_open,
+#tree li span.button.switch.level0.bottom_open {
+  background-image: url("../../images/up.png");
+}
+#tree li span.button.switch.level0.roots_close,
+#tree li span.button.switch.level0.center_close,
+#tree li span.button.switch.level0.bottom_close {
+  background-image: url("../../images/down.png");
+}
+#tree span.curSelectedNodeColor {
+  background-color: #b8b8f1;
+}
+#tree li span.node_name {
   display: inline-block;
-  width: 5%;
-  height: 20px;
-  float: right;
-  background: url("/images/delete.jpg") no-repeat center center;
-  background-size: 20px 20px;
-  background-position: 0 0;
-  cursor: pointer;
-  margin-top: 10px;
-  margin-right: 8px;
-}
-#todo1 .handle {
-  width: 100%;
-  height: 40px;
-  display: none;
-}
-#todo1 .handle.show {
-  display: block;
-  margin-top: -60px;
-  padding-left: 20px;
-}
-#todo1 .handle .left {
-  display: inline-block;
-  float: left;
-  width: 30%;
-  height: 40px;
-  color: #c1c0c0;
-}
-#todo1 .handle .left span {
-  color: #c1c0c0;
-}
-#todo1 .handle .right {
-  display: inline-block;
-  float: right;
-  width: 70%;
-  height: 40px;
-}
-#todo1 .handle .right span {
-  display: inline-block;
-  padding: 0px 8px;
-  border-radius: 2px;
-  margin-left: 10px;
-  color: #c1c0c0;
-  cursor: pointer;
-}
-#todo1 .handle .right span.show {
-  border: 1px solid rgba(175,47,47,0.2);
-}
-#app {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #000;
-  background: #f00;
+  height: 100%;
+  vertical-align: top;
 }
