@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1bed7f;
+  background: #0fffde;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3182,6 +3182,6 @@ pre .javascript .function {
   height: 100%;
   vertical-align: top;
 }
-#tree_12_ul {
+#tree #tree_12_ul {
   -webkit-padding-start: 20px;
 }
