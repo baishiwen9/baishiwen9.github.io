@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。">
+<meta name="description" content="由于最近前端项目服务端是采用node开发，在开发的过程中涉及到数据交互，前端采用ajax，fetch等获取数据。服务端node的则采用mysql数据库。在这个过程中会涉及到很多有关数据库的操作，对于本人来说mysql基本上是初学者，本文是用来记录在项目开发过程中有关mysql的操作笔记。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="app开发中一些需要判断的参数">
-<meta property="og:url" content="http://yoursite.com/2018/08/16/app开发中一些需要判断的参数/index.html">
+<meta property="og:title" content="mySql学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/11/07/mySql学习笔记/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。">
+<meta property="og:description" content="由于最近前端项目服务端是采用node开发，在开发的过程中涉及到数据交互，前端采用ajax，fetch等获取数据。服务端node的则采用mysql数据库。在这个过程中会涉及到很多有关数据库的操作，对于本人来说mysql基本上是初学者，本文是用来记录在项目开发过程中有关mysql的操作笔记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-30T08:10:50.170Z">
+<meta property="og:updated_time" content="2018-11-08T04:54:10.592Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="app开发中一些需要判断的参数">
-<meta name="twitter:description" content="在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。">
+<meta name="twitter:title" content="mySql学习笔记">
+<meta name="twitter:description" content="由于最近前端项目服务端是采用node开发，在开发的过程中涉及到数据交互，前端采用ajax，fetch等获取数据。服务端node的则采用mysql数据库。在这个过程中会涉及到很多有关数据库的操作，对于本人来说mysql基本上是初学者，本文是用来记录在项目开发过程中有关mysql的操作笔记。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/16/app开发中一些需要判断的参数/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/07/mySql学习笔记/"/>
 
 
 
 
 
-  <title>app开发中一些需要判断的参数 | baishiwen's blog</title>
+  <title>mySql学习笔记 | baishiwen's blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/app开发中一些需要判断的参数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/mySql学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">app开发中一些需要判断的参数</h1>
+          <h1 class="post-title" itemprop="name headline">mySql学习笔记</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T11:46:32+08:00">
-                2018-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-07T17:02:06+08:00">
+                2018-11-07
               </time>
             
 
@@ -322,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/16/app开发中一些需要判断的参数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/08/16/app开发中一些需要判断的参数/" itemprop="commentCount">0</span> comments
+                <a href="/2018/11/07/mySql学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/11/07/mySql学习笔记/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  182字
+                  727字
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  3分钟
                 </span>
               
             </div>
@@ -387,215 +387,23 @@
       
 
       
-        <p>在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。</p>
-<a id="more"></a>
-<h2 id="1-判断机型"><a href="#1-判断机型" class="headerlink" title="1. 判断机型"></a>1. 判断机型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var ua = navigator.userAgent.toLowerCase();</span><br><span class="line">var reg = /\(i[^;]+;( U;)? CPU.+Mac OS X/i;</span><br><span class="line"></span><br><span class="line">if ( reg.test(ua) ) &#123;</span><br><span class="line">    // ios</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    // android</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-判断页面是在微信、qq、微博内置浏览器中打开"><a href="#2-判断页面是在微信、qq、微博内置浏览器中打开" class="headerlink" title="2. 判断页面是在微信、qq、微博内置浏览器中打开"></a>2. 判断页面是在微信、qq、微博内置浏览器中打开</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ua = navigator.userAgent.toLowerCase();</span><br><span class="line">var reg_qq = /QQ\/([\d]+)/i;</span><br><span class="line"></span><br><span class="line">if( ua.match(/MicroMessenger/i)==&quot;micromessenger&quot; ) &#123;</span><br><span class="line">	// 微信内置浏览器打开</span><br><span class="line">&#125; else if ( reg_qq.test(ua) ) &#123;</span><br><span class="line">	// QQ内置浏览器打开</span><br><span class="line">&#125; else if ( ua.match(/WeiBo/i) == &apos;weibo&apos; ) &#123;</span><br><span class="line">	// 微博内置浏览器打开</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：qq内置浏览器和qq浏览器的判断方法是不一样的。</p>
-<script type="text/javascript">
-    var client = function(){
-        //呈现引擎
-        var engine = {
-            ie: 0,
-            gecko: 0,
-            webkit: 0,
-            khtml: 0,
-            opera: 0,
-            ver: null   //版本号
-        };
-
-        //浏览器
-        var browser = {
-            ie: 0,
-            firefox: 0,
-            safari: 0,
-            konq: 0,
-            opera: 0,
-            chrome: 0,
-            ver: null   //版本号
-        };
-
-        //平台，设备和操作系统
-        var system = {
-            win: false,
-            mac: false,
-            xll: false,
-
-            //移动设备
-            iphone: false,
-            ipod: false,
-            ipad: false,
-            ios: false,
-            android: false,
-            nokiaN: false,
-            winMobile: false,
-
-            //游戏系统
-            wii: false,
-            ps: false
-        };
-
-        //检测呈现引擎和浏览器
-        var ua = navigator.userAgent;
-
-        if(window.opera){
-            engine.ver = browser.ver = window.opera.version();
-            engine.opera = browser.opera = parseFloat(engine.ver);
-        } else if(/AppleWebkit\/(\S+)/.test(ua)){
-            engine.ver = regExp["$1"];
-            engine.webkit = parseFloat(engine.ver);
-
-            if(/Chrome\/(S+)/.test(ua)){
-                browser.ver = RegExp["$1"];
-                browser.chrome = parseFloat(browser.ver);
-            } else if(/Version\/(\S+)/.test(ua)){
-                browser.ver = RegExp["$1"];
-                browser.safari = parseFloat(browser.ver);
-            } else{
-                var safariVersion = 1;
-
-                if(engine.webkit < 100){
-                    safariVersion = 1;
-                } else if(engine.webkit < 312){
-                    safariVersion = 1.2;
-                } else if(engine.webkit < 412){
-                    safariVersion = 1.3;
-                } else{
-                    safariVersion = 2;
-                }
-
-                browser.safari = browser.ver = safariVersion;
-            }
-        } else if (/KHTML\/(\S+)/.test(ua) || /Konqueror\/([^;]+)/.test(ua)){
-            engine.ver = browser.ver = RegExp["$1"];
-            engine.khtml = browser.konq = parseFloat(engine.ver);
-
-        } else if(/rv:([^\)]+)\) Gecko\/\d{8}/.test(ua)){
-            engine.ver = RegExp["$1"];
-            engine.gecko = parseFloat(engine.ver);
-
-            if(/Firefox\/(\S+)/.test(ua)){
-                browser.ver = RegExp["$1"];
-                browser.firefox = parseFloat(browser.ver);
-            }
-        } else if(/MISE ([^;]+)/.test(ua)){
-            engine.ver = browser.ver = RegExp["$1"];
-            engine.ie = browser.ie = parseFloat(engine.ver);
-        }
-
-        //检测浏览器
-        browser.ie = engine.ie;
-        browser.opera = engine.opera;
-
-        //检测平台
-        var p = navigator.platform;
-        system.win = p.indexOf("win") == 0;
-        system.mac = p.indexOf("Mac") == 0;
-        system.xll = (p == "X11") || (p.indexOf("Linux") == 0);
-
-        //检测windows操作系统
-        if(system.win){
-            if(/Win(?:dows )?([^do]{2})\s?(\d+\.\d+)?/.test(ua)){
-                if(RegExp["$1"] == "NT"){
-                    switch(RegExp["$2"]){
-                        case "5.0":
-                            system.win = "2000";
-                            break;
-                        case "5.1":
-                            system.win = "XP";
-                            break;
-                        case "6.0":
-                            system.win = "Vista";
-                            break;
-                        case "6.1":
-                            system.win = "7";
-                            break;
-                        default:
-                            system.win = "NT";
-                            break;
-                    }
-                } else if(RegExp["$1"] == "9x"){
-                    system.win = "ME";
-                } else{
-                    system.win = RegExp["$1"]; 
-                }
-            }
-        }
-
-        //移动设备
-        system.iphone = ua.indexOf("iPhone") > -1;
-        system.ipod = ua.indexOf("iPod") > -1;
-        system.ipad = ua.indexOf('iPad') > -1;
-        system.nokiaN = ua.indexOf("NokiaN") > -1;
-
-        // windows mobile
-        if(system.win == "CE"){
-            system.winMobile = system.win;
-        }else if(system.win == "Ph"){
-            if(/Windows Phone OS (\d+. \d+)/.test(ua)){
-                system.win = "Phone";
-                system.winMobile = parseFloat(RegExp["$1"]);
-            }
-        }
-
-        //ios version
-        if(system.mac && ua.indexOf("Mobile") > -1){
-            if(/CPU (?:iPhone )?OS (\d+_\d+)/.test(ua)){
-                system.ios = parseFloat(RegExp.$1.replace("_", "."));
-            } else {
-                system.ios = 2;
-            }
-        }
-
-        //android
-        if(/Android (\d+\.\d+)/.test(ua)){
-            system.android = parseFloat(RegExp.$1);
-        }
-
-        //游戏系统
-        system.wii = ua.indexOf("Wii") > -1;
-        system.ps = /playstation/i.test(ua);
-
-
-        return {
-            engine: engine,
-            browser: browser,
-            system: system
-        }
-    }();
-
-    debugger
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <p>由于最近前端项目服务端是采用node开发，在开发的过程中涉及到数据交互，前端采用ajax，fetch等获取数据。服务端node的则采用mysql数据库。<br>在这个过程中会涉及到很多有关数据库的操作，对于本人来说mysql基本上是初学者，本文是用来记录在项目开发过程中有关mysql的操作笔记。<br><a id="more"></a><br>本文是在Mac电脑开发，采用命令行</p>
+<h3 id="1-安装mysql"><a href="#1-安装mysql" class="headerlink" title="1. 安装mysql"></a>1. 安装mysql</h3><p>在mysql官网下载安装想要的版本，网址：<a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">https://www.mysql.com/downloads/</a><br>安装完成后依次点击电脑左上角苹果的logo，系统偏好设置，在最下面可以看到mysql的logo，点击进入，可以看到mysql的一些配置界面。</p>
+<h3 id="2-登录mysql"><a href="#2-登录mysql" class="headerlink" title="2. 登录mysql"></a>2. 登录mysql</h3><p>使用终端进入到mysql的安装路径下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/mysql</span><br></pre></td></tr></table></figure></p>
+<p>在进入到bin目录下，开始登录mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd bin</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></p>
+<p>这时需要输入用户密码，按照提示输入即可。<br>如果命令行中出现“mysql&gt;”则表示登录成功。</p>
+<h3 id="3-操作数据库"><a href="#3-操作数据库" class="headerlink" title="3. 操作数据库"></a>3. 操作数据库</h3><h4 id="a-创建数据库"><a href="#a-创建数据库" class="headerlink" title="a. 创建数据库"></a>a. 创建数据库</h4><p>创建一个名为test的数据库，在终端输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create databases test;</span><br></pre></td></tr></table></figure></p>
+<p>注意： 所有的mysql命令行都是要以英文分好结束，无分号会报错。</p>
+<p>删除数据库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database test;</span><br></pre></td></tr></table></figure></p>
+<h4 id="b-使用创建好的数据库test"><a href="#b-使用创建好的数据库test" class="headerlink" title="b. 使用创建好的数据库test"></a>b. 使用创建好的数据库test</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use test;</span><br></pre></td></tr></table></figure>
+<p>查看创建的数据库是否成功可以使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;(大小写都可以，规则是大写)</span><br></pre></td></tr></table></figure></p>
+<p>数据库的一些规则：<br> 关键字和函数名称全部大写；<br> 数据库名称，表名称，字段名称全部大写；<br> sql语句必须以分好结尾；</p>
+<h4 id="c-创建表"><a href="#c-创建表" class="headerlink" title="c. 创建表"></a>c. 创建表</h4><p>创建一个名为user的表:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS `test`.`user` (</span><br><span class="line">  `id` INT NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `username` VARCHAR(100) NULL COMMENT &apos;姓名&apos;,</span><br><span class="line">  `phonenumber` VARCHAR(100) NULL COMMENT &apos;电话&apos;,</span><br><span class="line">  `age` VARCHAR(100) NULL COMMENT &apos;年龄&apos;,</span><br><span class="line">  `department` VARCHAR(200) NULL COMMENT &apos;部门&apos;,</span><br><span class="line">  PRIMARY KEY (`id`))</span><br><span class="line">ENGINE = InnoDB;</span><br></pre></td></tr></table></figure></p>
+<p>其中：<br>IF NOT EXISTS从句表示：不需要知道表是否存在，只要每次都进行创建即可。因为里面有判断，如果表存在的时候，再执行这句不会发生重复创建表的情况；<br>INT NOT NULL AUTO_INCREMENT： 数据类型为int，并且数据是自动自增的，NOT NULL 约束强制列不接受 NULL 值；<br>VARCHAR(100) NULL COMMENT ‘姓名’： 允许最大存100个字节，注释为”姓名“， 可以为空；<br>PRIMARY KEY：约束唯一标识数据库表中的每条记录，主键必须包含唯一的值，主键列不能包含 NULL 值；</p>
+<p>显示所有表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure></p>
+<h4 id="d-查询某张表中的所有内容"><a href="#d-查询某张表中的所有内容" class="headerlink" title="d. 查询某张表中的所有内容"></a>d. 查询某张表中的所有内容</h4><p>查询user表中的内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user;</span><br></pre></td></tr></table></figure></p>
+<h4 id="e-在某张表中添加一列"><a href="#e-在某张表中添加一列" class="headerlink" title="e. 在某张表中添加一列"></a>e. 在某张表中添加一列</h4><p>在user表中添加一列address：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter table user add column address VARCHAR(100);</span><br><span class="line">``` </span><br><span class="line">在user表中删除address列：</span><br></pre></td></tr></table></figure></p>
+<p>alter table user drop cloumn address;<br><code>`</code></p>
 
       
     </div>
@@ -657,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/16/app中禁止蒙层后面的内容滚动方法/" rel="next" title="app中禁止蒙层后面的内容滚动方法">
-                <i class="fa fa-chevron-left"></i> app中禁止蒙层后面的内容滚动方法
+              <a href="/2018/11/06/webSocket通讯/" rel="next" title="webSocket通讯">
+                <i class="fa fa-chevron-left"></i> webSocket通讯
               </a>
             
           </div>
@@ -666,10 +474,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/20/webpack/" rel="prev" title="webpack">
-                webpack <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -836,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-判断机型"><span class="nav-text">1. 判断机型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-判断页面是在微信、qq、微博内置浏览器中打开"><span class="nav-text">2. 判断页面是在微信、qq、微博内置浏览器中打开</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装mysql"><span class="nav-text">1. 安装mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-登录mysql"><span class="nav-text">2. 登录mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作数据库"><span class="nav-text">3. 操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-创建数据库"><span class="nav-text">a. 创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-使用创建好的数据库test"><span class="nav-text">b. 使用创建好的数据库test</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-创建表"><span class="nav-text">c. 创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-查询某张表中的所有内容"><span class="nav-text">d. 查询某张表中的所有内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-在某张表中添加一列"><span class="nav-text">e. 在某张表中添加一列</span></a></li></ol></li></ol></div>
             
 
           </div>
