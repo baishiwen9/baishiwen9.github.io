@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="baishiwen&#39;s blog">
 <meta property="og:description" content="由于最近前端项目服务端是采用node开发，在开发的过程中涉及到数据交互，前端采用ajax，fetch等获取数据。服务端node的则采用mysql数据库。在这个过程中会涉及到很多有关数据库的操作，对于本人来说mysql基本上是初学者，本文是用来记录在项目开发过程中有关mysql的操作笔记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T04:54:10.592Z">
+<meta property="og:updated_time" content="2018-11-10T03:17:01.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mySql学习笔记">
 <meta name="twitter:description" content="由于最近前端项目服务端是采用node开发，在开发的过程中涉及到数据交互，前端采用ajax，fetch等获取数据。服务端node的则采用mysql数据库。在这个过程中会涉及到很多有关数据库的操作，对于本人来说mysql基本上是初学者，本文是用来记录在项目开发过程中有关mysql的操作笔记。">
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  727字
+                  783字
                 </span>
               
 
@@ -390,7 +390,7 @@
         <p>由于最近前端项目服务端是采用node开发，在开发的过程中涉及到数据交互，前端采用ajax，fetch等获取数据。服务端node的则采用mysql数据库。<br>在这个过程中会涉及到很多有关数据库的操作，对于本人来说mysql基本上是初学者，本文是用来记录在项目开发过程中有关mysql的操作笔记。<br><a id="more"></a><br>本文是在Mac电脑开发，采用命令行</p>
 <h3 id="1-安装mysql"><a href="#1-安装mysql" class="headerlink" title="1. 安装mysql"></a>1. 安装mysql</h3><p>在mysql官网下载安装想要的版本，网址：<a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">https://www.mysql.com/downloads/</a><br>安装完成后依次点击电脑左上角苹果的logo，系统偏好设置，在最下面可以看到mysql的logo，点击进入，可以看到mysql的一些配置界面。</p>
 <h3 id="2-登录mysql"><a href="#2-登录mysql" class="headerlink" title="2. 登录mysql"></a>2. 登录mysql</h3><p>使用终端进入到mysql的安装路径下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/mysql</span><br></pre></td></tr></table></figure></p>
-<p>在进入到bin目录下，开始登录mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd bin</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></p>
+<p>在进入到bin目录下，开始登录mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd bin</span><br><span class="line">./mysql -u root -p</span><br></pre></td></tr></table></figure></p>
 <p>这时需要输入用户密码，按照提示输入即可。<br>如果命令行中出现“mysql&gt;”则表示登录成功。</p>
 <h3 id="3-操作数据库"><a href="#3-操作数据库" class="headerlink" title="3. 操作数据库"></a>3. 操作数据库</h3><h4 id="a-创建数据库"><a href="#a-创建数据库" class="headerlink" title="a. 创建数据库"></a>a. 创建数据库</h4><p>创建一个名为test的数据库，在终端输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create databases test;</span><br></pre></td></tr></table></figure></p>
 <p>注意： 所有的mysql命令行都是要以英文分好结束，无分号会报错。</p>
@@ -402,8 +402,12 @@
 <p>其中：<br>IF NOT EXISTS从句表示：不需要知道表是否存在，只要每次都进行创建即可。因为里面有判断，如果表存在的时候，再执行这句不会发生重复创建表的情况；<br>INT NOT NULL AUTO_INCREMENT： 数据类型为int，并且数据是自动自增的，NOT NULL 约束强制列不接受 NULL 值；<br>VARCHAR(100) NULL COMMENT ‘姓名’： 允许最大存100个字节，注释为”姓名“， 可以为空；<br>PRIMARY KEY：约束唯一标识数据库表中的每条记录，主键必须包含唯一的值，主键列不能包含 NULL 值；</p>
 <p>显示所有表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure></p>
 <h4 id="d-查询某张表中的所有内容"><a href="#d-查询某张表中的所有内容" class="headerlink" title="d. 查询某张表中的所有内容"></a>d. 查询某张表中的所有内容</h4><p>查询user表中的内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user;</span><br></pre></td></tr></table></figure></p>
-<h4 id="e-在某张表中添加一列"><a href="#e-在某张表中添加一列" class="headerlink" title="e. 在某张表中添加一列"></a>e. 在某张表中添加一列</h4><p>在user表中添加一列address：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter table user add column address VARCHAR(100);</span><br><span class="line">``` </span><br><span class="line">在user表中删除address列：</span><br></pre></td></tr></table></figure></p>
-<p>alter table user drop cloumn address;<br><code>`</code></p>
+<h4 id="e-在某张表中添加一列"><a href="#e-在某张表中添加一列" class="headerlink" title="e. 在某张表中添加一列"></a>e. 在某张表中添加一列</h4><p>在user表中添加一列address：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table user add column address VARCHAR(100);</span><br></pre></td></tr></table></figure></p>
+<p>在user表中删除address列：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table user drop cloumn address;</span><br></pre></td></tr></table></figure>
+<h4 id="f-在某张表中删除一行"><a href="#f-在某张表中删除一行" class="headerlink" title="f. 在某张表中删除一行"></a>f. 在某张表中删除一行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from user(表名) where id=&apos;1&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="g-在某张表中更新一个字段的值"><a href="#g-在某张表中更新一个字段的值" class="headerlink" title="g. 在某张表中更新一个字段的值"></a>g. 在某张表中更新一个字段的值</h4><p>语法： update 表名称 set 列名称=新值 where 条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update user set userid=null where id=&apos;1&apos;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -474,6 +478,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/10/node学习笔记-1/" rel="prev" title="node学习笔记(1)">
+                node学习笔记(1) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -594,7 +602,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -640,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装mysql"><span class="nav-text">1. 安装mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-登录mysql"><span class="nav-text">2. 登录mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作数据库"><span class="nav-text">3. 操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-创建数据库"><span class="nav-text">a. 创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-使用创建好的数据库test"><span class="nav-text">b. 使用创建好的数据库test</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-创建表"><span class="nav-text">c. 创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-查询某张表中的所有内容"><span class="nav-text">d. 查询某张表中的所有内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-在某张表中添加一列"><span class="nav-text">e. 在某张表中添加一列</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装mysql"><span class="nav-text">1. 安装mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-登录mysql"><span class="nav-text">2. 登录mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作数据库"><span class="nav-text">3. 操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-创建数据库"><span class="nav-text">a. 创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-使用创建好的数据库test"><span class="nav-text">b. 使用创建好的数据库test</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-创建表"><span class="nav-text">c. 创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-查询某张表中的所有内容"><span class="nav-text">d. 查询某张表中的所有内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-在某张表中添加一列"><span class="nav-text">e. 在某张表中添加一列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-在某张表中删除一行"><span class="nav-text">f. 在某张表中删除一行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#g-在某张表中更新一个字段的值"><span class="nav-text">g. 在某张表中更新一个字段的值</span></a></li></ol></li></ol></div>
             
 
           </div>
