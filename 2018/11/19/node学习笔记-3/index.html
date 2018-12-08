@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta name="description" content="本节主要是学习npm的一些常用功能。CommonJS包规范是理论，npm是其中的一种实践。对node而言，npm帮助完成了第三方模块的发布，安装，依赖等。借助npm，node与第三方模块之间形成了一个很好的生态系统。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编写可维护的JavaScript---编程风格">
-<meta property="og:url" content="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/index.html">
+<meta property="og:title" content="node学习笔记-3">
+<meta property="og:url" content="http://yoursite.com/2018/11/19/node学习笔记-3/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta property="og:description" content="本节主要是学习npm的一些常用功能。CommonJS包规范是理论，npm是其中的一种实践。对node而言，npm帮助完成了第三方模块的发布，安装，依赖等。借助npm，node与第三方模块之间形成了一个很好的生态系统。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-23T08:21:15.000Z">
+<meta property="og:updated_time" content="2018-12-08T05:42:55.143Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编写可维护的JavaScript---编程风格">
-<meta name="twitter:description" content="在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。 1. 层级缩进对于层级缩进目前有两种主张：">
+<meta name="twitter:title" content="node学习笔记-3">
+<meta name="twitter:description" content="本节主要是学习npm的一些常用功能。CommonJS包规范是理论，npm是其中的一种实践。对node而言，npm帮助完成了第三方模块的发布，安装，依赖等。借助npm，node与第三方模块之间形成了一个很好的生态系统。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/19/node学习笔记-3/"/>
 
 
 
 
 
-  <title>编写可维护的JavaScript---编程风格 | baishiwen's blog</title>
+  <title>node学习笔记-3 | baishiwen's blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/19/node学习笔记-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编写可维护的JavaScript---编程风格</h1>
+          <h1 class="post-title" itemprop="name headline">node学习笔记-3</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-16T17:54:06+08:00">
-                2018-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T13:19:43+08:00">
+                2018-11-19
               </time>
             
 
@@ -322,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/16/编写可维护的JavaScript之编程风格/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/07/16/编写可维护的JavaScript之编程风格/" itemprop="commentCount">0</span> comments
+                <a href="/2018/11/19/node学习笔记-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/11/19/node学习笔记-3/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,135字
+                  844字
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4分钟
+                  3分钟
                 </span>
               
             </div>
@@ -387,23 +387,27 @@
       
 
       
-        <p>在团队中只有每个人的编程风格一致，大家才能方便的互相看懂和维护对方的代码。</p>
-<h3 id="1-层级缩进"><a href="#1-层级缩进" class="headerlink" title="1. 层级缩进"></a>1. 层级缩进</h3><p>对于层级缩进目前有两种主张：<br><a id="more"></a><br>1）使用制表符<br>    这种方法有两种好处，第一，制表符和缩进层级之间是一一对应关系，符合逻辑；第二是文本编辑器可以配置制表符的展现长度。<br>    缺点是系统对制表符的解释不一致。<br>2）使用空格符<br>    目前主要有三种具体的做法：2个空格表示一个缩进，4个空格表示一个缩进，8个空格表示一个缩进<br>    优点：在所有的系统和编辑器中，文件的展现格式不会有任何差异；<br>    缺点：对于单个开发者来说，使用一个没有配置好的文本编辑器创建格式化的代码的方式非常原始。</p>
-<h3 id="2-语句结尾"><a href="#2-语句结尾" class="headerlink" title="2. 语句结尾"></a>2. 语句结尾</h3><p>JavaScript的语句要么独占一行， 要么以分号结尾。但是有赖于分析器的自动分号插入机制（Automatic Semicolon Insertion，ASI）会在应该有分号而实际没有的地方自动插入分号。<br>大多数场景不会出错，但是有写场景有可能会出现问题,导致出错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//原始代码</span><br><span class="line">function data()&#123;</span><br><span class="line">	return </span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//分析器会理解成：</span><br><span class="line">function data()&#123;</span><br><span class="line">	return;</span><br><span class="line">	&#123;</span><br><span class="line">		name : &quot;xiaoming&quot;,</span><br><span class="line">		age : 18</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以推荐在每一句代码的结束都加上分号，减少出现问题的几率。</p>
-<h3 id="3-行的长度"><a href="#3-行的长度" class="headerlink" title="3. 行的长度"></a>3. 行的长度</h3><p>建议将每行长度限定在80个字符</p>
-<h3 id="4-换行"><a href="#4-换行" class="headerlink" title="4. 换行"></a>4. 换行</h3><p>当单行字符达到最大值（例如80个字符）的时候要手动拆成两行。<br>一般规则是 ： 在运算符后换行，第二行追加两个缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">doSomething ( value1, value2, document, window, </span><br><span class="line">		element );</span><br></pre></td></tr></table></figure></p>
-<p><strong>特例：</strong>  </p>
-<p>特例1 :  在if语句中换行可以保持一个缩进，这样更容易阅读：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if ( isLong &amp;&amp; isShow &amp;&amp; number == 1 &amp;&amp; </span><br><span class="line">		children.length &gt; 0 ) &#123;</span><br><span class="line">	//do something...		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>特例2 ：当给变量赋值时，第二行的位置应该和赋值运算符的位置保持对齐：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var result = something + anotherThing + yetAnothering + someThingElse + </span><br><span class="line">	     anotherSomethingElse;</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-空行"><a href="#5-空行" class="headerlink" title="5. 空行"></a>5. 空行</h3><p>有时一段代码的语义和另外一段代码不相关，这时就应该使用空行分割，确保有关联的代码展现在一起。<br><strong>一般规则 ：</strong><br>在每个控制流语句（if，for语句等）之前添加空行;<br>在方法之前；<br>在方法中的局部变量和第一条语句之间；<br>在多行或但行注释之前；<br>在方法内的逻辑片段之间插入空行，提高可读性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//不实用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//使用空行</span><br><span class="line">if ( wl &amp;&amp; wl.length ) &#123;</span><br><span class="line">  </span><br><span class="line">	for ( var i = 0;i &lt; wl.length; i++ ) &#123;</span><br><span class="line">		p = wl[i];</span><br><span class="line">		type = Y.Lang.type( r[p] );</span><br><span class="line">		</span><br><span class="line">		if ( s.hasOwnProperty(p) )&#123;</span><br><span class="line">		</span><br><span class="line">			if ( merge &amp;&amp; type == &apos;object&apos;)&#123;</span><br><span class="line">				//do something...</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-命名"><a href="#6-命名" class="headerlink" title="6. 命名"></a>6. 命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“计算机只存在两个难题：缓存失效和命名。”   --- Phil Karlton</span><br></pre></td></tr></table></figure>
-<p>JavaScript语言的核心ECMAScript是遵守驼峰式大小写命名法。</p>
-<p> <strong>一般命名规则：</strong><br> 命名长度尽可能短，并要抓住重点；<br> 避免没有任何意义的命名；<br> 变量名遵守驼峰大小写命名法，前缀应当是名词；<br> 函数名遵守驼峰大小写命名法，前缀应当是动词；<br> 常量使用大写字母和下划线命名，下划线用以分割单词；<br> 构造函数的命名遵守大驼峰（以大写字母开始）命名法，通常是名词（因为是用来创建某个类型的实例）；<br> 字符串可以用双引号也可以使用单引号括起来（上下文要保持同一种风格）；</p>
-<h3 id="7-null"><a href="#7-null" class="headerlink" title="7. null"></a>7. null</h3><p> null的使用场景 ：<br> 用来初始化一个变量，这个变量可能赋值为一个对象；<br> 用来和一个已经初始化的变量比较，这个变量可以是也可以不是一个对象；<br> 当函数的参数期望是对象时，用作参数传入；<br> 当函数的返回值期望是对象时，用作返回值传出；</p>
-<p> <strong> 理解null最好的方式是将它当作对象的占位符</strong></p>
-<p> [参考资料]:<br> 编写可维护的JavaScript，Nicholas C. Zakas 著，李晶 郭凯 张散集 译， Copyright 2012 Nicholas Zakas,978-7-115-31008-8</p>
+        <p>本节主要是学习npm的一些常用功能。CommonJS包规范是理论，npm是其中的一种实践。对node而言，npm帮助完成了第三方模块的发布，安装，依赖等。借助npm，node与第三方模块之间形成了一个很好的生态系统。<br><a id="more"></a><br>借助npm可以快速的安装和管理依赖包。</p>
+<h3 id="1-npm常用的一些命令"><a href="#1-npm常用的一些命令" class="headerlink" title="1. npm常用的一些命令"></a>1. npm常用的一些命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add-user, adduser, apihelp, author, bin, bugs, c, cache, completion, config, ddp, dedupe, deprecate, docs, </span><br><span class="line">edit, explore,faq, find, find-dupes, get, help, help-search, home, i, info, init, install, isntall, issues, la, </span><br><span class="line">link, list, ll, ln, login, ls, outdated, owner, pack, prefix, prune, publish, r, rb, rebuild, remove, restart, rm, root, run-script, s, se, search, set, show, shrinkwrap, star, stars, start, stop, submodule, tag, test, tst, un, uninstall, unlink, unpublish, unstar, up, update, version, view, whomi</span><br></pre></td></tr></table></figure>
+<p>每种命令是什么含义，可以通过npm help <command>来查看</p>
+<h3 id="2-安装依赖包"><a href="#2-安装依赖包" class="headerlink" title="2. 安装依赖包"></a>2. 安装依赖包</h3><p>npm最常用的方法就是安装依赖包，使用的命令是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install packageName</span><br></pre></td></tr></table></figure>
+<p>执行命令后npm会在当前的目录下创建node_modules目录，然后在node_module目录下创建packageName目录，接着会将包解压到这个目录下。</p>
+<p>安装完成后可以直接通过require(‘pakeageName’)，即可引入该包。</p>
+<h4 id="a-全局安装"><a href="#a-全局安装" class="headerlink" title="a. 全局安装"></a>a. 全局安装</h4><p>执行以下命令进行全局模式安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install packageName -g</span><br></pre></td></tr></table></figure>
+<h4 id="b-从本地安装"><a href="#b-从本地安装" class="headerlink" title="b. 从本地安装"></a>b. 从本地安装</h4><p>对于一些没有发布在npm上的包，或是因为网络原因导致无法直接安装的包，可以通过将包下载到本地，然后以本地安装。本地安装只需要为npm指明package.json文件所在的位置即可：它可以是一个包含package.json的存档文件，也可以是一个url地址，也可以是一个目录下有package.json文件的目录位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;tarball file&gt;</span><br><span class="line">npm install &lt;tarball url&gt;</span><br><span class="line">npm install &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="c-从非官方源安装"><a href="#c-从非官方源安装" class="headerlink" title="c. 从非官方源安装"></a>c. 从非官方源安装</h4><p>如果不能通过官方源安装，可以通过镜像源安装。在执行命令的时候，添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--registry=http://registry.url</span><br></pre></td></tr></table></figure>
+<h3 id="3-npm钩子命令"><a href="#3-npm钩子命令" class="headerlink" title="3. npm钩子命令"></a>3. npm钩子命令</h3><p>在package.json中scripts字段的提出就是让包在安装或者卸载的过程中提供钩子机制，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;preinstall&quot;: &quot;preinstall.js&quot;,</span><br><span class="line">&quot;install&quot;: &quot;install.js&quot;,</span><br><span class="line">&quot;uninstall&quot;: &quot;uninstall.js&quot;,</span><br><span class="line">&quot;test&quot;: &quot;test.js&quot;</span><br></pre></td></tr></table></figure></p>
+<p>在以上字段中执行npm install <package>时候，preinstall指向的脚本将会被加载执行， 然后install指向的脚本会被执行。</package></p>
+<h3 id="4-发布包"><a href="#4-发布包" class="headerlink" title="4. 发布包"></a>4. 发布包</h3><h4 id="a-编写模块"><a href="#a-编写模块" class="headerlink" title="a. 编写模块"></a>a. 编写模块</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">exports.demo = function ()&#123;</span><br><span class="line">	return &apos;my first demo.&apos;;</span><br><span class="line">&#125;</span><br><span class="line">//保存为demo.js</span><br></pre></td></tr></table></figure>
+<h4 id="b-初始化包描述文件"><a href="#b-初始化包描述文件" class="headerlink" title="b. 初始化包描述文件"></a>b. 初始化包描述文件</h4><p>使用npm init命令初始化，生成package.json文件，在npm init的时候npm回通过提问式的交互逐个填入选项，最后生成预览的包描述文件。</p>
+<h4 id="c-注册包仓库账号"><a href="#c-注册包仓库账号" class="headerlink" title="c. 注册包仓库账号"></a>c. 注册包仓库账号</h4><p>为了维护包，npm必须要使用仓库账号才允许将包发布到仓库中。注册账号的命令是npm adduser，这个命令也是一个提问式的交互过程，依次填入即可。</p>
+<h4 id="d-上传包"><a href="#d-上传包" class="headerlink" title="d. 上传包"></a>d. 上传包</h4><p>上传包的命令是npm publish <folder><br>在刚刚创建的package.json文件所在的目录下执行npm publish 开始上传包</folder></p>
+<h4 id="e-安装包"><a href="#e-安装包" class="headerlink" title="e. 安装包"></a>e. 安装包</h4><p>通过npm install &lt;刚才上传的包名&gt; 命令可以安装刚才上传的包</p>
+<h4 id="f-管理包权限"><a href="#f-管理包权限" class="headerlink" title="f. 管理包权限"></a>f. 管理包权限</h4><p>可以使用npm owner命令管理包的所有者，可使用的命令有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm owner ls &lt;package name&gt;</span><br><span class="line">npm owner add &lt;user&gt; &lt;package name&gt;</span><br><span class="line">npm owner rm &lt;user&gt; &lt;package nameb&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -465,15 +469,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/17/node学习笔记-2/" rel="next" title="node学习笔记(2)">
+                <i class="fa fa-chevron-left"></i> node学习笔记(2)
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/17/编写可维护的JavaScript之编程实践-1/" rel="prev" title="编写可维护的JavaScript---UI层的松耦合">
-                编写可维护的JavaScript---UI层的松耦合 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -640,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-层级缩进"><span class="nav-text">1. 层级缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-语句结尾"><span class="nav-text">2. 语句结尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-行的长度"><span class="nav-text">3. 行的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-换行"><span class="nav-text">4. 换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-空行"><span class="nav-text">5. 空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-命名"><span class="nav-text">6. 命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-null"><span class="nav-text">7. null</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-npm常用的一些命令"><span class="nav-text">1. npm常用的一些命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装依赖包"><span class="nav-text">2. 安装依赖包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-全局安装"><span class="nav-text">a. 全局安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-从本地安装"><span class="nav-text">b. 从本地安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-从非官方源安装"><span class="nav-text">c. 从非官方源安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-npm钩子命令"><span class="nav-text">3. npm钩子命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-发布包"><span class="nav-text">4. 发布包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-编写模块"><span class="nav-text">a. 编写模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-初始化包描述文件"><span class="nav-text">b. 初始化包描述文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-注册包仓库账号"><span class="nav-text">c. 注册包仓库账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-上传包"><span class="nav-text">d. 上传包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-安装包"><span class="nav-text">e. 安装包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-管理包权限"><span class="nav-text">f. 管理包权限</span></a></li></ol></li></ol></div>
             
 
           </div>
