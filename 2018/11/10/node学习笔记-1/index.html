@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="baishiwen&#39;s blog">
 <meta property="og:description" content="最近项目服务端是采用node来搭建，我在这之前是没有真正的接触node，在node方面也算是一个菜鸟，本文是将我在项目中碰到的一些知识点进行记录。在接触到一个新的东西的时候首先要去了解他诞生的历史背景和意义，这样会让我更深的对他进行了解。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-10T06:16:11.578Z">
+<meta property="og:updated_time" content="2018-12-13T06:02:04.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node学习笔记(1)">
 <meta name="twitter:description" content="最近项目服务端是采用node来搭建，我在这之前是没有真正的接触node，在node方面也算是一个菜鸟，本文是将我在项目中碰到的一些知识点进行记录。在接触到一个新的东西的时候首先要去了解他诞生的历史背景和意义，这样会让我更深的对他进行了解。">
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,310字
+                  1,594字
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5分钟
+                  6分钟
                 </span>
               
             </div>
@@ -429,6 +429,17 @@
 <p>在node中模块分为两类： 一类是node提供的模块，称为核心模块；另一类是用户编写的模块，称为文件模块。</p>
 <p>核心模块： 在node源代码的编译过程中，编译进了二进制执行文件中。在node进程启动的时候，部分核心模块就被直接加载进了内存中，所以这部分核心模块引入时。文件定位和编译执行这两个步骤可以省略掉，并且在路径分析中优先判断，所以他的加载速度是最快的。</p>
 <p>文件模块： 是在运行时动态加载的，需要完整的路径分析，文件定位，编译执行的过程，速度比核心模块慢。</p>
+<h4 id="c-npm的模块加载机制："><a href="#c-npm的模块加载机制：" class="headerlink" title="c. npm的模块加载机制："></a>c. npm的模块加载机制：</h4><p>如果require的是绝对路径文件，查找不会去遍历每个node_modules目录， 其速度最快。</p>
+<ol>
+<li>从module.paths数组中（由当前执行文件目录到磁盘根目录）取出第一个目录作为查找基准；</li>
+<li>直接从目录中查找该文件，如果存在则结束查找，如果不存在则进行下一条查找；</li>
+<li>尝试添加.js，.node, .json后缀之后查找，如果存在文件则结束查找，如果不存在则进行下一条查找；</li>
+<li>尝试将require的参数作为一个包来进行查找，读取目录下的package.json文件，取得Main参数指定的文件；</li>
+<li>尝试查找该文件，如果存在则结束查找，如果不存在则进行第三条查找；</li>
+<li>如果继续失败，则取出module.paths数组中的下一目录作为基准查找，循环1-5个步骤；</li>
+<li>如果继续失败，循环1-6个步骤，直到module.paths数组中的最后一个值；</li>
+<li>如果继续失败，则抛出异常。</li>
+</ol>
 
       
     </div>
@@ -623,7 +634,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -669,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-node的特点"><span class="nav-text">1. node的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-异步I-O"><span class="nav-text">a. 异步I/O</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-事件和回调函数"><span class="nav-text">b. 事件和回调函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-单线程"><span class="nav-text">c. 单线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-跨平台"><span class="nav-text">d. 跨平台</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-node的模块机制"><span class="nav-text">2. node的模块机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-commonJS的模块规范"><span class="nav-text">a. commonJS的模块规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-node的模块实现"><span class="nav-text">b. node的模块实现</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-node的特点"><span class="nav-text">1. node的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-异步I-O"><span class="nav-text">a. 异步I/O</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-事件和回调函数"><span class="nav-text">b. 事件和回调函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-单线程"><span class="nav-text">c. 单线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-跨平台"><span class="nav-text">d. 跨平台</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-node的模块机制"><span class="nav-text">2. node的模块机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-commonJS的模块规范"><span class="nav-text">a. commonJS的模块规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-node的模块实现"><span class="nav-text">b. node的模块实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-npm的模块加载机制："><span class="nav-text">c. npm的模块加载机制：</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。">
+<meta name="description" content="CommonJS的出发点是由于js没有模块系统，标准库少，缺乏包管理工具，为了能让js可以在任何地方运行，以达到想java等后台语言具备开发大型应用的能力。CommonJS规范主要分为三部分，模块引用，模块定义，模块标识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="app开发中一些需要判断的参数">
-<meta property="og:url" content="http://yoursite.com/2018/08/16/app开发中一些需要判断的参数/index.html">
+<meta property="og:title" content="CCommonJS规范">
+<meta property="og:url" content="http://yoursite.com/2018/12/12/commonJS规范/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。">
+<meta property="og:description" content="CommonJS的出发点是由于js没有模块系统，标准库少，缺乏包管理工具，为了能让js可以在任何地方运行，以达到想java等后台语言具备开发大型应用的能力。CommonJS规范主要分为三部分，模块引用，模块定义，模块标识。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-30T08:10:50.170Z">
+<meta property="og:updated_time" content="2018-12-13T06:16:58.214Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="app开发中一些需要判断的参数">
-<meta name="twitter:description" content="在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。">
+<meta name="twitter:title" content="CCommonJS规范">
+<meta name="twitter:description" content="CommonJS的出发点是由于js没有模块系统，标准库少，缺乏包管理工具，为了能让js可以在任何地方运行，以达到想java等后台语言具备开发大型应用的能力。CommonJS规范主要分为三部分，模块引用，模块定义，模块标识。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/16/app开发中一些需要判断的参数/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/12/commonJS规范/"/>
 
 
 
 
 
-  <title>app开发中一些需要判断的参数 | baishiwen's blog</title>
+  <title>CCommonJS规范 | baishiwen's blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/app开发中一些需要判断的参数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/commonJS规范/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">app开发中一些需要判断的参数</h1>
+          <h1 class="post-title" itemprop="name headline">CCommonJS规范</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T11:46:32+08:00">
-                2018-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-12T14:20:27+08:00">
+                2018-12-12
               </time>
             
 
@@ -322,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/16/app开发中一些需要判断的参数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/08/16/app开发中一些需要判断的参数/" itemprop="commentCount">0</span> comments
+                <a href="/2018/12/12/commonJS规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/12/12/commonJS规范/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  182字
+                  253字
                 </span>
               
 
@@ -387,215 +387,10 @@
       
 
       
-        <p>在app开发过程中经常需要判断是ios还是android等一些这样的问题，将自己在开发过程中遇到的问题进行总结。</p>
+        <p>CommonJS的出发点是由于js没有模块系统，标准库少，缺乏包管理工具，为了能让js可以在任何地方运行，以达到想java等后台语言具备开发大型应用的能力。CommonJS规范主要分为三部分，模块引用，模块定义，模块标识。</p>
 <a id="more"></a>
-<h2 id="1-判断机型"><a href="#1-判断机型" class="headerlink" title="1. 判断机型"></a>1. 判断机型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var ua = navigator.userAgent.toLowerCase();</span><br><span class="line">var reg = /\(i[^;]+;( U;)? CPU.+Mac OS X/i;</span><br><span class="line"></span><br><span class="line">if ( reg.test(ua) ) &#123;</span><br><span class="line">    // ios</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    // android</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-判断页面是在微信、qq、微博内置浏览器中打开"><a href="#2-判断页面是在微信、qq、微博内置浏览器中打开" class="headerlink" title="2. 判断页面是在微信、qq、微博内置浏览器中打开"></a>2. 判断页面是在微信、qq、微博内置浏览器中打开</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ua = navigator.userAgent.toLowerCase();</span><br><span class="line">var reg_qq = /QQ\/([\d]+)/i;</span><br><span class="line"></span><br><span class="line">if( ua.match(/MicroMessenger/i)==&quot;micromessenger&quot; ) &#123;</span><br><span class="line">	// 微信内置浏览器打开</span><br><span class="line">&#125; else if ( reg_qq.test(ua) ) &#123;</span><br><span class="line">	// QQ内置浏览器打开</span><br><span class="line">&#125; else if ( ua.match(/WeiBo/i) == &apos;weibo&apos; ) &#123;</span><br><span class="line">	// 微博内置浏览器打开</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：qq内置浏览器和qq浏览器的判断方法是不一样的。</p>
-<script type="text/javascript">
-    var client = function(){
-        //呈现引擎
-        var engine = {
-            ie: 0,
-            gecko: 0,
-            webkit: 0,
-            khtml: 0,
-            opera: 0,
-            ver: null   //版本号
-        };
-
-        //浏览器
-        var browser = {
-            ie: 0,
-            firefox: 0,
-            safari: 0,
-            konq: 0,
-            opera: 0,
-            chrome: 0,
-            ver: null   //版本号
-        };
-
-        //平台，设备和操作系统
-        var system = {
-            win: false,
-            mac: false,
-            xll: false,
-
-            //移动设备
-            iphone: false,
-            ipod: false,
-            ipad: false,
-            ios: false,
-            android: false,
-            nokiaN: false,
-            winMobile: false,
-
-            //游戏系统
-            wii: false,
-            ps: false
-        };
-
-        //检测呈现引擎和浏览器
-        var ua = navigator.userAgent;
-
-        if(window.opera){
-            engine.ver = browser.ver = window.opera.version();
-            engine.opera = browser.opera = parseFloat(engine.ver);
-        } else if(/AppleWebkit\/(\S+)/.test(ua)){
-            engine.ver = regExp["$1"];
-            engine.webkit = parseFloat(engine.ver);
-
-            if(/Chrome\/(S+)/.test(ua)){
-                browser.ver = RegExp["$1"];
-                browser.chrome = parseFloat(browser.ver);
-            } else if(/Version\/(\S+)/.test(ua)){
-                browser.ver = RegExp["$1"];
-                browser.safari = parseFloat(browser.ver);
-            } else{
-                var safariVersion = 1;
-
-                if(engine.webkit < 100){
-                    safariVersion = 1;
-                } else if(engine.webkit < 312){
-                    safariVersion = 1.2;
-                } else if(engine.webkit < 412){
-                    safariVersion = 1.3;
-                } else{
-                    safariVersion = 2;
-                }
-
-                browser.safari = browser.ver = safariVersion;
-            }
-        } else if (/KHTML\/(\S+)/.test(ua) || /Konqueror\/([^;]+)/.test(ua)){
-            engine.ver = browser.ver = RegExp["$1"];
-            engine.khtml = browser.konq = parseFloat(engine.ver);
-
-        } else if(/rv:([^\)]+)\) Gecko\/\d{8}/.test(ua)){
-            engine.ver = RegExp["$1"];
-            engine.gecko = parseFloat(engine.ver);
-
-            if(/Firefox\/(\S+)/.test(ua)){
-                browser.ver = RegExp["$1"];
-                browser.firefox = parseFloat(browser.ver);
-            }
-        } else if(/MISE ([^;]+)/.test(ua)){
-            engine.ver = browser.ver = RegExp["$1"];
-            engine.ie = browser.ie = parseFloat(engine.ver);
-        }
-
-        //检测浏览器
-        browser.ie = engine.ie;
-        browser.opera = engine.opera;
-
-        //检测平台
-        var p = navigator.platform;
-        system.win = p.indexOf("win") == 0;
-        system.mac = p.indexOf("Mac") == 0;
-        system.xll = (p == "X11") || (p.indexOf("Linux") == 0);
-
-        //检测windows操作系统
-        if(system.win){
-            if(/Win(?:dows )?([^do]{2})\s?(\d+\.\d+)?/.test(ua)){
-                if(RegExp["$1"] == "NT"){
-                    switch(RegExp["$2"]){
-                        case "5.0":
-                            system.win = "2000";
-                            break;
-                        case "5.1":
-                            system.win = "XP";
-                            break;
-                        case "6.0":
-                            system.win = "Vista";
-                            break;
-                        case "6.1":
-                            system.win = "7";
-                            break;
-                        default:
-                            system.win = "NT";
-                            break;
-                    }
-                } else if(RegExp["$1"] == "9x"){
-                    system.win = "ME";
-                } else{
-                    system.win = RegExp["$1"]; 
-                }
-            }
-        }
-
-        //移动设备
-        system.iphone = ua.indexOf("iPhone") > -1;
-        system.ipod = ua.indexOf("iPod") > -1;
-        system.ipad = ua.indexOf('iPad') > -1;
-        system.nokiaN = ua.indexOf("NokiaN") > -1;
-
-        // windows mobile
-        if(system.win == "CE"){
-            system.winMobile = system.win;
-        }else if(system.win == "Ph"){
-            if(/Windows Phone OS (\d+. \d+)/.test(ua)){
-                system.win = "Phone";
-                system.winMobile = parseFloat(RegExp["$1"]);
-            }
-        }
-
-        //ios version
-        if(system.mac && ua.indexOf("Mobile") > -1){
-            if(/CPU (?:iPhone )?OS (\d+_\d+)/.test(ua)){
-                system.ios = parseFloat(RegExp.$1.replace("_", "."));
-            } else {
-                system.ios = 2;
-            }
-        }
-
-        //android
-        if(/Android (\d+\.\d+)/.test(ua)){
-            system.android = parseFloat(RegExp.$1);
-        }
-
-        //游戏系统
-        system.wii = ua.indexOf("Wii") > -1;
-        system.ps = /playstation/i.test(ua);
-
-
-        return {
-            engine: engine,
-            browser: browser,
-            system: system
-        }
-    }();
-
-    debugger
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h3 id="1-CommonJS规范中："><a href="#1-CommonJS规范中：" class="headerlink" title="1. CommonJS规范中："></a>1. CommonJS规范中：</h3><p>一个文件就是一个模块，拥有单独的作用域；<br>普通方式定义的变量，函数，对象都属于该模块内；<br>通过require来加载模块；<br>通过exports和modul.exports来暴露模块中的内容；</p>
+<h3 id="2-CommonJS模块规范的好处"><a href="#2-CommonJS模块规范的好处" class="headerlink" title="2. CommonJS模块规范的好处"></a>2. CommonJS模块规范的好处</h3><p>CommonJS规范很好的解决了变量污染问题，每个模块具有独立的空间，互不干扰，命名空间等方案与之相比相形见绌；<br>CommonJS规范定义模块十分简单，接口十分简洁；<br>CommonJS规范支持引入和导出功能，这样可以顺畅的链接各个模块，实现彼此间的依赖关系。</p>
 
       
     </div>
@@ -657,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/16/app中禁止蒙层后面的内容滚动方法/" rel="next" title="app中禁止蒙层后面的内容滚动方法">
-                <i class="fa fa-chevron-left"></i> app中禁止蒙层后面的内容滚动方法
+              <a href="/2018/11/19/node学习笔记-3/" rel="next" title="node学习笔记-3">
+                <i class="fa fa-chevron-left"></i> node学习笔记-3
               </a>
             
           </div>
@@ -666,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/20/webpack/" rel="prev" title="webpack">
-                webpack <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -836,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-判断机型"><span class="nav-text">1. 判断机型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-判断页面是在微信、qq、微博内置浏览器中打开"><span class="nav-text">2. 判断页面是在微信、qq、微博内置浏览器中打开</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CommonJS规范中："><span class="nav-text">1. CommonJS规范中：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-CommonJS模块规范的好处"><span class="nav-text">2. CommonJS模块规范的好处</span></a></li></ol></div>
             
 
           </div>
