@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、二叉树相关简介树是一种非线性的数据结构，以分层的方式存储数据；树由一组以边连接的节点组成；树最上面的节点称为根节点；如果一个节点下面有子节点，则称为父节点；没有任何子节点的节点称为叶子节点；二叉树的子节点不超过两个；一个父节点的两个子节点分别称为左节点和右节点；二叉查找树：是一种特殊的二叉树，相对较小的值保存在左节点中，较大的值保存在右节点中；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法--二叉树">
+<meta property="og:url" content="http://yoursite.com/2019/05/13/数据结构与算法-二叉树/index.html">
+<meta property="og:site_name" content="baishiwen&#39;s blog">
+<meta property="og:description" content="一、二叉树相关简介树是一种非线性的数据结构，以分层的方式存储数据；树由一组以边连接的节点组成；树最上面的节点称为根节点；如果一个节点下面有子节点，则称为父节点；没有任何子节点的节点称为叶子节点；二叉树的子节点不超过两个；一个父节点的两个子节点分别称为左节点和右节点；二叉查找树：是一种特殊的二叉树，相对较小的值保存在左节点中，较大的值保存在右节点中；">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-13T06:30:10.548Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构与算法--二叉树">
+<meta name="twitter:description" content="一、二叉树相关简介树是一种非线性的数据结构，以分层的方式存储数据；树由一组以边连接的节点组成；树最上面的节点称为根节点；如果一个节点下面有子节点，则称为父节点；没有任何子节点的节点称为叶子节点；二叉树的子节点不超过两个；一个父节点的两个子节点分别称为左节点和右节点；二叉查找树：是一种特殊的二叉树，相对较小的值保存在左节点中，较大的值保存在右节点中；">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/13/数据结构与算法-二叉树/"/>
+
+
+
+
+
+  <title>数据结构与算法--二叉树 | baishiwen's blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c9307d610a89b3a827920c759ffcb1c0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">baishiwen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-前端">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            前端
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-书/影/音">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            书/影/音
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-照片墙">
+          <a href="/照片墙" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            照片墙
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/13/数据结构与算法-二叉树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="baishiwen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baishiwen's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构与算法--二叉树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-13T14:20:55+08:00">
+                2019-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/13/数据结构与算法-二叉树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2019/05/13/数据结构与算法-二叉树/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,389字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、二叉树相关简介"><a href="#一、二叉树相关简介" class="headerlink" title="一、二叉树相关简介"></a>一、二叉树相关简介</h2><p>树是一种非线性的数据结构，以分层的方式存储数据；<br>树由一组以边连接的节点组成；<br>树最上面的节点称为根节点；<br>如果一个节点下面有子节点，则称为父节点；<br>没有任何子节点的节点称为叶子节点；<br>二叉树的子节点不超过两个；<br>一个父节点的两个子节点分别称为左节点和右节点；<br>二叉查找树：是一种特殊的二叉树，相对较小的值保存在左节点中，较大的值保存在右节点中；<br><a id="more"></a></p>
+<h2 id="二、实现二叉查找树"><a href="#二、实现二叉查找树" class="headerlink" title="二、实现二叉查找树"></a>二、实现二叉查找树</h2><p>a. 实现算法</p>
+<pre><code>1. 设根节点为当前节点
+2. 如果待插入节点保存的数据小于当前节点，则设新的当前节点为原节点的左节点；反之执行第4步
+3. 如果当前节点的左节点为null，就将新的节点插入这个位置，退出循环；反之，继续执行下一次循环
+4. 设新的当前节点为原节点的右节点
+5. 如果当前节点的右节点为null，就将新的节点插入这个位置，退出循环；反之，继续执行下一次循环
+</code></pre><p>b. 遍历二叉查找树的几种方法<br>    先序：根节点 =&gt; 左子树 =&gt; 右子树<br>    中序：左子树 =&gt; 根节点 =&gt; 右子树<br>    后序：左子树 =&gt; 右子树 =&gt; 根节点<br>    分层遍历：根节点 =&gt; 子节点，左子树 =&gt; 右子树 </p>
+<p>c. 二叉树进行查找<br>    查找给定值（算法：需要比较该值和当前节点的值的大小，通过比较，就能确定如果给定值不在当前节点时，该向左遍历还是向右遍历）<br>    查找最大值（算法：因为较大的值在右边树上，只需要遍历右子树）<br>    查找最小值（算法：因为较小的值在左边树上，只需要遍历左子树）</p>
+<p>d. 二叉查找树删除节点<br>    1.要删除的节点没有子节点<br>    2.要删除的节点有子节点 =&gt; 递归操作<br>    删除算法： </p>
+<pre><code>1. 判断当前节点是否包含要删除的节点，如果包含，删除该节点，如果不包含，比较当前节点数据和要删除的节点数据的大小
+2. 如果待删除数据小于当前节点数据，则移至当前节点的左节点继续比较
+3. 如果待删除数据大于当前节点数据，则移至当前节点的右节点继续比较
+4. 如果待删除节点时叶子节点，只需要将从父节点指向它的链接指向null
+5. 如果待删除节点包含一个子节点，那么原本指向它的节点就得做些调整，使其指向它的子节点
+</code></pre><p>实现二叉查找树类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line">class Node &#123;</span><br><span class="line">    constructor(data, left, right)&#123;</span><br><span class="line">        this.data = data;</span><br><span class="line">        this.left = left;</span><br><span class="line">        this.right = right;</span><br><span class="line">    &#125;  </span><br><span class="line">    show () &#123;</span><br><span class="line">        return this.data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class BST &#123;</span><br><span class="line">    constructor () &#123;</span><br><span class="line">        this.root = null; //根节点</span><br><span class="line">        this.showData = &apos;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    //向树中加入新节点</span><br><span class="line">    insert (data) &#123;</span><br><span class="line">        let node = new Node(data, null, null);</span><br><span class="line">        if (this.root === null) &#123;</span><br><span class="line">            this.root = node;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            let current = this.root;</span><br><span class="line">            let parent = null;</span><br><span class="line">            while (true) &#123;</span><br><span class="line">                parent = current;</span><br><span class="line">                if (data &lt; current.data) &#123;</span><br><span class="line">                    current = current.left;</span><br><span class="line">                    if (current === null) &#123;</span><br><span class="line">                        parent.left = node;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    current = current.right;</span><br><span class="line">                    if (current === null) &#123;</span><br><span class="line">                        parent.right = node;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    //先序</span><br><span class="line">    preOrder (node) &#123;</span><br><span class="line">        if (!(node == null)) &#123;</span><br><span class="line">            this.showData += node.show() + &apos; &apos;;</span><br><span class="line">            this.preOrder(node.left);</span><br><span class="line">            this.preOrder(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //中序</span><br><span class="line">    inOrder (node) &#123;</span><br><span class="line">        if (!(node == null)) &#123;</span><br><span class="line">            this.inOrder(node.left);</span><br><span class="line">            this.showData += node.show() + &apos; &apos;;</span><br><span class="line">            this.inOrder(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    //后序</span><br><span class="line">    postOrder (node) &#123;</span><br><span class="line">        if (!(node == null)) &#123;</span><br><span class="line">            this.postOrder(node.left);</span><br><span class="line">            this.postOrder(node.right);</span><br><span class="line">            this.showData += node.show() + &apos; &apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //分层遍历</span><br><span class="line">    layerOrder (node) &#123;</span><br><span class="line">        let arr = [];</span><br><span class="line">        arr.push(node);</span><br><span class="line">        while (arr.length) &#123;</span><br><span class="line">            let parentNode = arr.pop;</span><br><span class="line">            this.showData += parentNode.show() + &apos; &apos;;</span><br><span class="line">            if (parentNode.right !== null) &#123;</span><br><span class="line">                arr.push(parentNode.right);</span><br><span class="line">            &#125;</span><br><span class="line">            if (parentNode.left !== null) &#123;</span><br><span class="line">                arr.push(parentNode.left);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //查找最小值</span><br><span class="line">    getMin () &#123;</span><br><span class="line">        let current = this.root;</span><br><span class="line">        while (current.left !== null) &#123;</span><br><span class="line">            current = current.left;</span><br><span class="line">        &#125;</span><br><span class="line">        return current.data;</span><br><span class="line">    &#125;</span><br><span class="line">    //查找最大值</span><br><span class="line">    getMax () &#123;</span><br><span class="line">        let current = this.root;</span><br><span class="line">        while (current.right !== null) &#123;</span><br><span class="line">            current = current.right;</span><br><span class="line">        &#125;</span><br><span class="line">        return current.data;</span><br><span class="line">    &#125;</span><br><span class="line">    //查找指定值</span><br><span class="line">    find (data) &#123;</span><br><span class="line">        let current = this.root;</span><br><span class="line">        while (current !== null) &#123;</span><br><span class="line">            if (current.data === data) &#123;</span><br><span class="line">                return current;</span><br><span class="line">            &#125; else if (data &lt; current.left) &#123;</span><br><span class="line">                current = current.left;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                current = current.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    remove (data) &#123;</span><br><span class="line">        return this.removeNode(this.root, data);</span><br><span class="line">    &#125;</span><br><span class="line">    //删除节点</span><br><span class="line">    removeNode (node, data) &#123;</span><br><span class="line">        if (node === null) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;   </span><br><span class="line">        if (data === node.data) &#123;</span><br><span class="line">            //删除的节点没有子节点</span><br><span class="line">            if (node.left === null &amp;&amp; node.right === null) &#123;</span><br><span class="line">                return null;</span><br><span class="line">            &#125;</span><br><span class="line">            //删除的节点没有左子节点</span><br><span class="line">            if (node.left === null) &#123;</span><br><span class="line">                return node.right;</span><br><span class="line">            &#125;</span><br><span class="line">            //删除的节点没有右子节点</span><br><span class="line">            if (node.right === null) &#123;</span><br><span class="line">                return node.left;</span><br><span class="line">            &#125;</span><br><span class="line">            //删除的节点有两个子节点</span><br><span class="line">            let tempNode = this.getSmallest(node.right);</span><br><span class="line">            node.data = tempNode.data;</span><br><span class="line">            node.right = removeNode(node.right, tempNode.data);</span><br><span class="line">            return node;</span><br><span class="line">        &#125; else if (data &lt; node.data) &#123;</span><br><span class="line">            node.left = removeNode(node.left, data);</span><br><span class="line">            return node;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            node.right = removeNode(node.right, data);</span><br><span class="line">            return node;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //查找左边最小节点</span><br><span class="line">    getSmallest (node) &#123;</span><br><span class="line">        let current = node;</span><br><span class="line">        while (current.left !== null) &#123;</span><br><span class="line">            current = current.left;</span><br><span class="line">        &#125;</span><br><span class="line">        return current;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var nums = new BST();</span><br><span class="line">nums.insert(23)</span><br><span class="line">nums.insert(45)</span><br><span class="line">nums.insert(16)</span><br><span class="line">nums.insert(37)</span><br><span class="line">nums.insert(3)</span><br><span class="line">nums.insert(99)</span><br><span class="line">nums.insert(22);</span><br><span class="line">// nums.inOrder(nums.root);    // 3 16 22 23 37 45 99</span><br><span class="line">// nums.preOrder(nums.root);   //23 16 3 22 45 37 99</span><br><span class="line">nums.postOrder(nums.root);     //3 22 16 37 99 45 23</span><br><span class="line">var min = nums.getMin();       //3</span><br><span class="line">var findValue = nums.find(99); //&#123;data: 99, left: null, right: null&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/erweima.jpg" alt="baishiwen wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="baishiwen 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="baishiwen 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/07/数据结构与算法-队列-栈-列表/" rel="next" title="数据结构与算法--队列/栈/列表">
+                <i class="fa fa-chevron-left"></i> 数据结构与算法--队列/栈/列表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread" style="display:block !important;">
+      
+        
+
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODI3OS8xNDgwNw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">baishiwen</p>
+              <p class="site-description motion-element" itemprop="description">技术分享，学习笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、二叉树相关简介"><span class="nav-text">一、二叉树相关简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、实现二叉查找树"><span class="nav-text">二、实现二叉查找树</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">baishiwen</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</html>
+
+
+
+
+
+
