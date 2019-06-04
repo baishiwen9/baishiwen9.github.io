@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="介绍：figerprintjs可以获取设备的所有物理信息。">
+<meta name="description" content="1. 搭建前端react项目使用create-react-app脚手架搭建项目，并且集成react组件库antd。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="figerprintjs">
-<meta property="og:url" content="http://yoursite.com/2018/08/20/figerprintjs/index.html">
+<meta property="og:title" content="使用react+antd+node+mysql搭建项目">
+<meta property="og:url" content="http://yoursite.com/2019/06/04/使用react-antd-node-mysql搭建项目/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="介绍：figerprintjs可以获取设备的所有物理信息。">
+<meta property="og:description" content="1. 搭建前端react项目使用create-react-app脚手架搭建项目，并且集成react组件库antd。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/08/20/figerprintjs/figerprint.png">
-<meta property="og:updated_time" content="2018-08-20T12:27:40.572Z">
+<meta property="og:updated_time" content="2019-06-04T06:13:45.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="figerprintjs">
-<meta name="twitter:description" content="介绍：figerprintjs可以获取设备的所有物理信息。">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/20/figerprintjs/figerprint.png">
+<meta name="twitter:title" content="使用react+antd+node+mysql搭建项目">
+<meta name="twitter:description" content="1. 搭建前端react项目使用create-react-app脚手架搭建项目，并且集成react组件库antd。">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/20/figerprintjs/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/04/使用react-antd-node-mysql搭建项目/"/>
 
 
 
 
 
-  <title>figerprintjs | baishiwen's blog</title>
+  <title>使用react+antd+node+mysql搭建项目 | baishiwen's blog</title>
   
 
 
@@ -276,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/figerprintjs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/使用react-antd-node-mysql搭建项目/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -293,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">figerprintjs</h1>
+          <h1 class="post-title" itemprop="name headline">使用react+antd+node+mysql搭建项目</h1>
         
 
         <div class="post-meta">
@@ -305,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T18:40:21+08:00">
-                2018-08-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T10:52:44+08:00">
+                2019-06-04
               </time>
             
 
@@ -324,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/20/figerprintjs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/08/20/figerprintjs/" itemprop="commentCount">0</span> comments
+                <a href="/2019/06/04/使用react-antd-node-mysql搭建项目/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2019/06/04/使用react-antd-node-mysql搭建项目/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -352,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  435字
+                  980字
                 </span>
               
 
@@ -368,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  4分钟
                 </span>
               
             </div>
@@ -389,15 +387,31 @@
       
 
       
-        <p>介绍：<br>figerprintjs可以获取设备的所有物理信息。<br><a id="more"></a></p>
-<p>安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fingerprintjs2</span><br></pre></td></tr></table></figure></p>
-<p>使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new Fingerprint2().get(function(result, components)&#123;</span><br><span class="line">  console.log(result); //a hash, representing your device fingerprint</span><br><span class="line">  console.log(components); // an array of FP components</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>获取到的信息列表：</p>
-<p>UserAgent ：<br>Language ：<br>Color Depth ：                     色彩深度<br>Screen Resolution ：               屏幕分辨率<br>Timezone            ：            时区<br>Has session storage or not ：       支持session storage ？<br>Has local storage or not ：       支持session storage ？<br>Has indexed DB             ：     支持indexed DB？<br>Has IE specific ‘AddBehavior’ ：  有IE特定’AddBehavior’？<br>Has open DB                     ： 有开放的DB？<br>CPU class                        ： CPU类型<br>Platform                       ： 平台<br>DoNotTrack or not               ： DoNotTrack与否？<br>Full list of installed fonts (maintaining their order, which increases the entropy), implemented with Flash.   使用Flash实现的已安装字体的完整列表（维护其顺序，增加了熵）</p>
-<p>A list of installed fonts, detected with JS/CSS (side-channel technique) - can detect up to 500 installed fonts without flash：<br>使用JS / CSS（侧通道技术）检测到的已安装字体列表，可以检测多达500个没有闪存的已安装字体</p>
-<p>Canvas fingerprinting   ： 画布识别<br>WebGL fingerprinting  ：WebGL识别<br>Plugins (IE included)：插件（包括IE）<br>Is AdBlock installed or not ： 是否安装了AdBlock<br>Has the user tampered with its languages 1   ： 用户是否篡改了其语言1<br>Has the user tampered with its screen resolution 1 ： 用户是否篡改了屏幕分辨率1<br>Has the user tampered with its OS 1 ： 用户是否篡改了其操作系统1<br>Has the user tampered with its browser 1 ： 用户是否篡改了其浏览器1<br>Touch screen detection and capabilities ：触摸屏检测和功能<br>Pixel Ratio : 像素比率<br>System’s total number of logical processors available to the user agent : 系统用户代理可用的逻辑处理器总数</p>
-<p><img src="/2018/08/20/figerprintjs/figerprint.png" alt="物理信息截图"></p>
-<p>两个名词解释：<br>PV：page view，页面浏览量，或点击量<br>UV：unique visitor，指访问某个站点或点击某条新闻的不同IP地址的人数</p>
+        <h2 id="1-搭建前端react项目"><a href="#1-搭建前端react项目" class="headerlink" title="1. 搭建前端react项目"></a>1. 搭建前端react项目</h2><p>使用create-react-app脚手架搭建项目，并且集成react组件库antd。<br><a id="more"></a><br>初始化项目流程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br><span class="line"></span><br><span class="line">create-react-app myapp</span><br><span class="line"></span><br><span class="line">cd myapp</span><br><span class="line"></span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<p>集成antd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install antd --save</span><br><span class="line"></span><br><span class="line">//使用组件</span><br><span class="line">import &#123; Button &#125; from &apos;antd&apos;;</span><br><span class="line"></span><br><span class="line">&lt;Button type=&quot;primary&quot;&gt;按钮&lt;/Button&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-搭建node服务"><a href="#2-搭建node服务" class="headerlink" title="2. 搭建node服务"></a>2. 搭建node服务</h2><p>在react统一项目目录下新建server文件夹，在server中初始化node服务。<br>node项目框架选用koa，数据库选用mysql，接下来是对项目的一些初始化操作。<br>我在本地已经下载安装了mysql（mac系统）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">npm i; //初始化项目</span><br><span class="line"></span><br><span class="line">npm install koa; //安装koa</span><br><span class="line"></span><br><span class="line">npm install mysql;  //安装mysql数据库</span><br><span class="line"></span><br><span class="line">npm install koa-router; //安装管理路由的中间件</span><br><span class="line"></span><br><span class="line">npm install koa-static; //安装管理静态资源的中间件</span><br><span class="line"></span><br><span class="line">npm install koa-body; //安装用来解析body的中间件</span><br><span class="line"></span><br><span class="line">//koa-views 是一个视图管理模块，它的灵活度很高，支持很多的模版引擎</span><br><span class="line">npm install koa-views;</span><br></pre></td></tr></table></figure>
+<p>安装完成后项目基本上是已经初始化完成。</p>
+<p>接下来就是让项目跑起来，首先在server目录下新建app.js作为node服务的入口文件。<br>在app.js中对项目做一些配置和初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//app.js</span><br><span class="line">//引入所需要的中间件和方法</span><br><span class="line">const Koa = require(&apos;koa&apos;);</span><br><span class="line">const koaBody = require(&apos;koa-body&apos;);</span><br><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">const static = require(&apos;koa-static&apos;);</span><br><span class="line">const views = require(&apos;koa-views&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const app = new Koa();</span><br><span class="line"></span><br><span class="line">app.use(koaBody());</span><br><span class="line"></span><br><span class="line">const main = static(__dirname + &apos;./../build&apos;);</span><br><span class="line">//使用react项目编译出来的模板</span><br><span class="line">app.use(views(__dirname + &apos;./../build&apos;));</span><br><span class="line"></span><br><span class="line">app.use(main);</span><br><span class="line"></span><br><span class="line">app.on(&apos;error&apos;, err =&gt; &#123;</span><br><span class="line">    log.error(&apos;error&apos;, err);</span><br><span class="line">&#125;);</span><br><span class="line">//打开view目录下的index.html页面</span><br><span class="line">app.use(async (ctx, next) =&gt; &#123;</span><br><span class="line">    if (ctx.request.path === &apos;/index&apos;) &#123;</span><br><span class="line">        ctx.type = &apos;text/html&apos;;</span><br><span class="line">        ctx.body = fs.createReadStream(&apos;./view/index.html&apos;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        await next();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(8001);</span><br></pre></td></tr></table></figure>
+<p>在server目录下新建route目录来管理路由，新建/route/index.js;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const router = require(&apos;koa-router&apos;)();</span><br><span class="line"></span><br><span class="line">//index页面路由</span><br><span class="line">router.get(&apos;/index&apos;, async (ctx, next) =&gt; &#123;</span><br><span class="line">    await ctx.render(&apos;index&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在server目录下新建service目录来管理和数据库的交互，新建/service/index.js;<br>在操作数据库之前要对mysql做一些基础的配置等等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//mysqlUtil.execQuery: 是封装的操作mysql的方法</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    getuser: async() =&gt; &#123;</span><br><span class="line">        const result = await mysqlUtil.execQuery(&#123;</span><br><span class="line">            sql: &apos;select * from `表名`&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">        return result;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-koa中最常用的几个中间件"><a href="#3-koa中最常用的几个中间件" class="headerlink" title="3. koa中最常用的几个中间件"></a>3. koa中最常用的几个中间件</h2><p>参考博客： <a href="https://www.jianshu.com/p/c1e0ca3f9764" target="_blank" rel="noopener">https://www.jianshu.com/p/c1e0ca3f9764</a></p>
+<ol>
+<li><p>koa-router<br>路由是Web框架必不可少的基础功能，koa.js为了保持自身的精简，并没有像Express.js自带了路由功能，因此koa-router做了很好的补充，koa-router提供了全面的路由功能，比如类似Express的app.get/post/put的写法，URL命名参数、路由命名、支持加载多个中间件、嵌套路由等。</p>
+</li>
+<li><p>koa-bodyparser<br>koa.js并没有内置Request Body的解析器，当我们需要解析请求体时需要加载额外的中间件，官方提供的koa-bodyparser是个很不错的选择，支持x-www-form-urlencoded, application/json等格式的请求体，但不支持form-data的请求体，可以选择使用 koa-body。</p>
+</li>
+<li><p>koa-views<br>koa-views对需要进行视图模板渲染的应用是个不可缺少的中间件，支持ejs, nunjucks等众多模板引擎。</p>
+</li>
+<li><p>koa-static<br>Node.js除了处理动态请求，也可以用作类似Nginx的静态文件服务，在本地开发时特别方便，可用于加载前端文件或后端Fake数据，可结合 koa-compress 和 koa-mount 使用。</p>
+</li>
+<li><p>koa-logger<br>koa-logger提供了输出请求日志的功能，包括请求的url、状态码、响应时间、响应体大小等信息，对于调试和跟踪应用程序特别有帮助，koa-bunyan-logger 提供了更丰富的功能。</p>
+</li>
+</ol>
 
       
     </div>
@@ -459,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/20/webpack/" rel="next" title="webpack">
-                <i class="fa fa-chevron-left"></i> webpack
+              <a href="/2019/05/13/数据结构与算法-二叉树/" rel="next" title="数据结构与算法--二叉树">
+                <i class="fa fa-chevron-left"></i> 数据结构与算法--二叉树
               </a>
             
           </div>
@@ -468,10 +482,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/21/Evercookie/" rel="prev" title="Evercookie">
-                Evercookie <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -567,8 +577,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -619,6 +638,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-搭建前端react项目"><span class="nav-text">1. 搭建前端react项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-搭建node服务"><span class="nav-text">2. 搭建node服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-koa中最常用的几个中间件"><span class="nav-text">3. koa中最常用的几个中间件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
