@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="最近项目服务端是采用node来搭建，我在这之前是没有真正的接触node，在node方面也算是一个菜鸟，本文是将我在项目中碰到的一些知识点进行记录。在接触到一个新的东西的时候首先要去了解他诞生的历史背景和意义，这样会让我更深的对他进行了解。">
+<meta name="description" content="在做微信小程序的时候想做一个ui自定义的音频播放组件，如果使用官方给的audio组件是无法实现的，这时候就可以自定义音频播放组件，做成自己想要的样子。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node学习笔记(1)">
-<meta property="og:url" content="http://yoursite.com/2018/11/10/node学习笔记-1/index.html">
+<meta property="og:title" content="微信小程序自定义音频组件">
+<meta property="og:url" content="http://yoursite.com/2019/06/22/微信小程序自定义音频组件/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="最近项目服务端是采用node来搭建，我在这之前是没有真正的接触node，在node方面也算是一个菜鸟，本文是将我在项目中碰到的一些知识点进行记录。在接触到一个新的东西的时候首先要去了解他诞生的历史背景和意义，这样会让我更深的对他进行了解。">
+<meta property="og:description" content="在做微信小程序的时候想做一个ui自定义的音频播放组件，如果使用官方给的audio组件是无法实现的，这时候就可以自定义音频播放组件，做成自己想要的样子。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-13T06:02:04.728Z">
+<meta property="og:updated_time" content="2019-06-22T05:55:42.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node学习笔记(1)">
-<meta name="twitter:description" content="最近项目服务端是采用node来搭建，我在这之前是没有真正的接触node，在node方面也算是一个菜鸟，本文是将我在项目中碰到的一些知识点进行记录。在接触到一个新的东西的时候首先要去了解他诞生的历史背景和意义，这样会让我更深的对他进行了解。">
+<meta name="twitter:title" content="微信小程序自定义音频组件">
+<meta name="twitter:description" content="在做微信小程序的时候想做一个ui自定义的音频播放组件，如果使用官方给的audio组件是无法实现的，这时候就可以自定义音频播放组件，做成自己想要的样子。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/10/node学习笔记-1/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/22/微信小程序自定义音频组件/"/>
 
 
 
 
 
-  <title>node学习笔记(1) | baishiwen's blog</title>
+  <title>微信小程序自定义音频组件 | baishiwen's blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/10/node学习笔记-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/微信小程序自定义音频组件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">node学习笔记(1)</h1>
+          <h1 class="post-title" itemprop="name headline">微信小程序自定义音频组件</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T11:03:06+08:00">
-                2018-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-22T13:32:38+08:00">
+                2019-06-22
               </time>
             
 
@@ -322,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/10/node学习笔记-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/11/10/node学习笔记-1/" itemprop="commentCount">0</span> comments
+                <a href="/2019/06/22/微信小程序自定义音频组件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2019/06/22/微信小程序自定义音频组件/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,594字
+                  641字
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6分钟
+                  3分钟
                 </span>
               
             </div>
@@ -387,59 +387,19 @@
       
 
       
-        <p>最近项目服务端是采用node来搭建，我在这之前是没有真正的接触node，在node方面也算是一个菜鸟，本文是将我在项目中碰到的一些知识点进行记录。<br>在接触到一个新的东西的时候首先要去了解他诞生的历史背景和意义，这样会让我更深的对他进行了解。<br><a id="more"></a></p>
-<h3 id="1-node的特点"><a href="#1-node的特点" class="headerlink" title="1. node的特点"></a>1. node的特点</h3><p>作为后端JavaScript的运行平台，node保留了前端浏览器JavaScript中那些熟悉的接口，没有改写语言本身的任何特性，依旧基于作用域和原型链。</p>
-<h4 id="a-异步I-O"><a href="#a-异步I-O" class="headerlink" title="a. 异步I/O"></a>a. 异步I/O</h4><p>在node中绝大多数的操作都是以异步的方法进行调用。作者在底层构建了很多异步的I/O的API，比如文件读取等操作。<br>这样的意义在于在node中，我们可以从语言层面上很自然的进行并行的I/O操作，每个调用之间无须等待之前的I/O调用结束，极大地提高了效率。</p>
-<h4 id="b-事件和回调函数"><a href="#b-事件和回调函数" class="headerlink" title="b. 事件和回调函数"></a>b. 事件和回调函数</h4><p>事件的编程方式具有轻量级，松耦合，只关注事务等优势。<br>以下以node创建一个web服务器，监听3000端口为例来说明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line">va querystring = require(&apos;querystring&apos;);</span><br><span class="line"></span><br><span class="line">//监听服务器的request事件</span><br><span class="line">http.createServer(function(req, res)&#123;</span><br><span class="line">	var data = &apos;&apos;;</span><br><span class="line">	req.setEncoding(&apos;utf8&apos;);</span><br><span class="line">	//监听请求的data事件</span><br><span class="line">	req.on(&apos;data&apos;, function(chunk)&#123;</span><br><span class="line">		data += chunk;</span><br><span class="line">	&#125;)</span><br><span class="line">	//监听请求的end事件</span><br><span class="line">	req.on(&apos;end&apos;, function()&#123;</span><br><span class="line">		res.end(data);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;).listen(3000);</span><br><span class="line"></span><br><span class="line">console.log(&quot;web服务器启动完成，端口为3000&quot;);</span><br></pre></td></tr></table></figure>
-<p>从以上例子可以看出，在node处理过程中基本上都是以事件和回调函数来处理。</p>
-<h4 id="c-单线程"><a href="#c-单线程" class="headerlink" title="c. 单线程"></a>c. 单线程</h4><p>node保持了JavaScript在浏览器中单线程的特点。而且在node中JavaScrip与其余线程是无法共享任何状态的。单线程的最大好处就是不用象多线程那样处处在意状态的同步问题。<br>单线程的缺点主要是以下三个方面：</p>
+        <p>在做微信小程序的时候想做一个ui自定义的音频播放组件，如果使用官方给的audio组件是无法实现的，这时候就可以自定义音频播放组件，做成自己想要的样子。<br><a id="more"></a></p>
+<p>由于官方提供了一个InnerAudioContext的api，可以使用这个api来实现音频的播放。</p>
+<h3 id="1-创建实例"><a href="#1-创建实例" class="headerlink" title="1. 创建实例"></a>1. 创建实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//创建实例</span><br><span class="line">const innerAudioContext = wx.createInnerAudioContext();</span><br><span class="line">//自动播放</span><br><span class="line">innerAudioContext.autoplay = true;</span><br><span class="line">//音频src</span><br><span class="line">innerAudioContext.src = audioSrc;</span><br></pre></td></tr></table></figure>
+<p>得到音频的实例后设置音频的各个需要的属性。</p>
+<h3 id="2-音频ui"><a href="#2-音频ui" class="headerlink" title="2. 音频ui"></a>2. 音频ui</h3><p>在wxml中根据自己的需要编写自己的ui，由于每个人的ui都不同，这里就不展示代码了。</p>
+<h3 id="3-音频管理"><a href="#3-音频管理" class="headerlink" title="3. 音频管理"></a>3. 音频管理</h3><p>在实际的情况中我们可能会碰到下面的这些情况：</p>
 <ol>
-<li>无法利用多核CPU；</li>
-<li>错误会引起整个应用退出，应用的强壮性不行；</li>
-<li>大量计算占用CPU导致无法继续调用异步I/O;</li>
+<li>支持多个音频同时播放</li>
+<li>多个音频多时播放的时候显示各自的进度条</li>
 </ol>
-<h4 id="d-跨平台"><a href="#d-跨平台" class="headerlink" title="d. 跨平台"></a>d. 跨平台</h4><p>起初node只能在Linux平台上运行，但是在v0.6.0版本后node已经能够直接在windows平台上运行了。</p>
-<h3 id="2-node的模块机制"><a href="#2-node的模块机制" class="headerlink" title="2. node的模块机制"></a>2. node的模块机制</h3><p>对于JavaScript自身而言，它的规范依然是很薄弱，并且还有以下的缺点：</p>
-<ol>
-<li>没有模块系统；</li>
-<li>标准库很少；</li>
-<li>没有标准接口；</li>
-<li>缺乏包管理系统；</li>
-</ol>
-<p>commonJS规范的出现为JavaScript制定了一个美好的愿景，希望JavaScript能够在任何地方运行。<br>在commonJS规范中涵盖了模块，二进制，Buffer，字符集编码，I/O流，进程环境，文件系统，套接字，单元测试，web服务器网关接口，包管理等。<br>node借鉴commonJS的Modules规范实现了一套非常易用的模块系统，NPM对Packages规范的完好支持使得Node应用在开发过程中事半功倍。</p>
-<h4 id="a-commonJS的模块规范"><a href="#a-commonJS的模块规范" class="headerlink" title="a. commonJS的模块规范"></a>a. commonJS的模块规范</h4><p>commonJS对模块的定义十分简单，主要分为模块引用，模块定义，模块标识等3个部分。</p>
-<ol>
-<li><p>模块引用<br>在commonJS规范中存在一个require(）方法，这个方法接受模块标识，依次引入一个模块的API到当前上下文中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var math = require(&apos;math&apos;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>模块定义<br>在模块中，上下文提供requier()方法来引入外部模块。对应引入的功能，上下文提供了exports对象用于导出当前模块的方法或者变量，并且它是唯一导出的出口。在模块中还存在一个module对象，他代表模块本身，而exports是module的属性。</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//导出</span><br><span class="line">//math.js</span><br><span class="line">exports.add = function()&#123;</span><br><span class="line">	var a = 1,</span><br><span class="line">		b = 2;</span><br><span class="line">	return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//在另外一个文件中引入：</span><br><span class="line">var math = require(&apos;math&apos;);</span><br><span class="line"></span><br><span class="line">console.log(math.add());   //3</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>模块标识<br>模块标识就是传递给require()方法的参数，他必须是符合小驼峰命名的字符串，或者以. , ..开头的相对路径，或者绝对路径。可以省略文件名后缀<br>.js。</li>
-</ol>
-<h4 id="b-node的模块实现"><a href="#b-node的模块实现" class="headerlink" title="b. node的模块实现"></a>b. node的模块实现</h4><p>在node中引入模块需要经历如下3个过程：</p>
-<ol>
-<li>路径分析；</li>
-<li>文件定位；</li>
-<li>编译执行；</li>
-</ol>
-<p>在node中模块分为两类： 一类是node提供的模块，称为核心模块；另一类是用户编写的模块，称为文件模块。</p>
-<p>核心模块： 在node源代码的编译过程中，编译进了二进制执行文件中。在node进程启动的时候，部分核心模块就被直接加载进了内存中，所以这部分核心模块引入时。文件定位和编译执行这两个步骤可以省略掉，并且在路径分析中优先判断，所以他的加载速度是最快的。</p>
-<p>文件模块： 是在运行时动态加载的，需要完整的路径分析，文件定位，编译执行的过程，速度比核心模块慢。</p>
-<h4 id="c-npm的模块加载机制："><a href="#c-npm的模块加载机制：" class="headerlink" title="c. npm的模块加载机制："></a>c. npm的模块加载机制：</h4><p>如果require的是绝对路径文件，查找不会去遍历每个node_modules目录， 其速度最快。</p>
-<ol>
-<li>从module.paths数组中（由当前执行文件目录到磁盘根目录）取出第一个目录作为查找基准；</li>
-<li>直接从目录中查找该文件，如果存在则结束查找，如果不存在则进行下一条查找；</li>
-<li>尝试添加.js，.node, .json后缀之后查找，如果存在文件则结束查找，如果不存在则进行下一条查找；</li>
-<li>尝试将require的参数作为一个包来进行查找，读取目录下的package.json文件，取得Main参数指定的文件；</li>
-<li>尝试查找该文件，如果存在则结束查找，如果不存在则进行第三条查找；</li>
-<li>如果继续失败，则取出module.paths数组中的下一目录作为基准查找，循环1-5个步骤；</li>
-<li>如果继续失败，循环1-6个步骤，直到module.paths数组中的最后一个值；</li>
-<li>如果继续失败，则抛出异常。</li>
-</ol>
+<p>如果想实现这些功能的时候要实例一套音频队列管理的逻辑<br>原理和思路： 实现一个管理队列，将多个音频按照插入队列的时间排好一个队列，每个成员都保存当前音频的一些重要的属性，比如id，src，duration，isPlaying, innerAudioContext等等，再提供一些操作该队列的api来实现对所有音频的统一管理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 管理audio实例队列</span><br><span class="line"> * 方法：</span><br><span class="line"> *      push: 加入队列方法</span><br><span class="line"> *      update：更新方法</span><br><span class="line"> *      clear：清空队列方法</span><br><span class="line"> *      get：通过id获取对应的audio实例的信息</span><br><span class="line"> *      getCurrentPlay：获取正在播放中的audio实例信息</span><br><span class="line"> *      getAll：获取所有实例信息</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"> class AudioManager &#123;</span><br><span class="line">    consotructor()&#123;</span><br><span class="line">        this.audioManageArr = [];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    push(audio) &#123;</span><br><span class="line">        //数据存储数组</span><br><span class="line">        const audioArray = this.audioManageArr || [];</span><br><span class="line"></span><br><span class="line">        const &#123;</span><br><span class="line">            id = &apos;&apos;,  //音频id</span><br><span class="line">            innerAudioContext = null,  //innerAudioContext实例</span><br><span class="line">            isPlaying = false,  //是否正在播放</span><br><span class="line">            audioSrc = &apos;&apos;,  //音频的src</span><br><span class="line">            sliderValue = &apos;0%&apos; //进度条的值</span><br><span class="line">        &#125; = audio;</span><br><span class="line"></span><br><span class="line">        audioArray.push(&#123;</span><br><span class="line">            id,</span><br><span class="line">            innerAudioContext,</span><br><span class="line">            isPlaying,</span><br><span class="line">            audioSrc,</span><br><span class="line">            sliderValue</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        this.audioManageArr = audioArray;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    update(audioId, info) &#123;</span><br><span class="line">        const audioManageArr = this.audioManageArr || [];</span><br><span class="line">        audioManageArr.map((item) =&gt; &#123;</span><br><span class="line">            if (item.audioId === audioId) &#123;</span><br><span class="line">                item = info;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;);</span><br><span class="line">        this.audioManageArr = audioManageArr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    clear() &#123;</span><br><span class="line">        this.audioManageArr = [];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    get(audioId)&#123;</span><br><span class="line">        const audioManageArr = this.audioManageArr || [];</span><br><span class="line">        const list = audioManageArr.filter((item) =&gt; &#123;</span><br><span class="line">            return audioId === item.audioId;</span><br><span class="line">        &#125;);</span><br><span class="line">        return list[0];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCurrentPlay()&#123;</span><br><span class="line">        const audioManageArr = this.audioManageArr || [];</span><br><span class="line">        if (audioManageArr.length === 0) &#123;</span><br><span class="line">            return &#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        const list = audioManageArr.filter((item) =&gt; &#123;</span><br><span class="line">            return item.isPlaying === true;</span><br><span class="line">        &#125;);</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getAll()&#123;</span><br><span class="line">        return this.audioManageArr || [];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>有了上述的管理方法后，就可以操作每个音频而又互不影响。</p>
 
       
     </div>
@@ -501,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/07/mySql学习笔记/" rel="next" title="mySql学习笔记">
-                <i class="fa fa-chevron-left"></i> mySql学习笔记
+              <a href="/2019/06/04/使用react-antd-node-mysql搭建项目/" rel="next" title="使用react+antd+node+mysql搭建项目">
+                <i class="fa fa-chevron-left"></i> 使用react+antd+node+mysql搭建项目
               </a>
             
           </div>
@@ -510,10 +470,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/17/node学习笔记-2/" rel="prev" title="node学习笔记(2)">
-                node学习笔记(2) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -680,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-node的特点"><span class="nav-text">1. node的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-异步I-O"><span class="nav-text">a. 异步I/O</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-事件和回调函数"><span class="nav-text">b. 事件和回调函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-单线程"><span class="nav-text">c. 单线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-跨平台"><span class="nav-text">d. 跨平台</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-node的模块机制"><span class="nav-text">2. node的模块机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-commonJS的模块规范"><span class="nav-text">a. commonJS的模块规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-node的模块实现"><span class="nav-text">b. node的模块实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-npm的模块加载机制："><span class="nav-text">c. npm的模块加载机制：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建实例"><span class="nav-text">1. 创建实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-音频ui"><span class="nav-text">2. 音频ui</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-音频管理"><span class="nav-text">3. 音频管理</span></a></li></ol></div>
             
 
           </div>
