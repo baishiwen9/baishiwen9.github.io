@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="学习笔记," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="1. Symbol的简介在es6之前，对象属性在命名时很容易造成命名冲突，为了保证每个属性的名字都是独一无二的，这就从根本上防止了属性名的冲突，这就是引入Symbol的原因。Symbol是一种新的原始数据类型，表示独一无二的值。至此，JavaScript语言总共有7中数据类型：undefined,null,Boolean,String,Number,Object,Symbol">
-<meta name="keywords" content="学习笔记">
+<meta name="description" content="瀑布流布局是目前一种比较流行的布局模式。即多行等宽模式，后面的元素一次添加到后面，等宽不登高。优点：可以有效的降低页面的复杂度，节省很多的空间，在app中瀑布流可以提供很好的用户体验。特点：瀑布流的特点就是参差不齐的排列方式，以及流式布局的扩展性，可以在界面展示多条数据给用户，让用户有向下浏览的冲动。 核心原理：  找出高度最小的那一列，再那一列插入，然后继续找下一个高度最小的，一直循环到插满为止">
 <meta property="og:type" content="article">
-<meta property="og:title" content="es6--Symbol">
-<meta property="og:url" content="http://yoursite.com/2018/08/06/es6-Symbol/index.html">
+<meta property="og:title" content="瀑布流布局">
+<meta property="og:url" content="http://yoursite.com/2019/11/07/瀑布流布局/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="1. Symbol的简介在es6之前，对象属性在命名时很容易造成命名冲突，为了保证每个属性的名字都是独一无二的，这就从根本上防止了属性名的冲突，这就是引入Symbol的原因。Symbol是一种新的原始数据类型，表示独一无二的值。至此，JavaScript语言总共有7中数据类型：undefined,null,Boolean,String,Number,Object,Symbol">
+<meta property="og:description" content="瀑布流布局是目前一种比较流行的布局模式。即多行等宽模式，后面的元素一次添加到后面，等宽不登高。优点：可以有效的降低页面的复杂度，节省很多的空间，在app中瀑布流可以提供很好的用户体验。特点：瀑布流的特点就是参差不齐的排列方式，以及流式布局的扩展性，可以在界面展示多条数据给用户，让用户有向下浏览的冲动。 核心原理：  找出高度最小的那一列，再那一列插入，然后继续找下一个高度最小的，一直循环到插满为止">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-06T10:13:05.000Z">
+<meta property="og:updated_time" content="2019-11-08T05:45:59.813Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es6--Symbol">
-<meta name="twitter:description" content="1. Symbol的简介在es6之前，对象属性在命名时很容易造成命名冲突，为了保证每个属性的名字都是独一无二的，这就从根本上防止了属性名的冲突，这就是引入Symbol的原因。Symbol是一种新的原始数据类型，表示独一无二的值。至此，JavaScript语言总共有7中数据类型：undefined,null,Boolean,String,Number,Object,Symbol">
+<meta name="twitter:title" content="瀑布流布局">
+<meta name="twitter:description" content="瀑布流布局是目前一种比较流行的布局模式。即多行等宽模式，后面的元素一次添加到后面，等宽不登高。优点：可以有效的降低页面的复杂度，节省很多的空间，在app中瀑布流可以提供很好的用户体验。特点：瀑布流的特点就是参差不齐的排列方式，以及流式布局的扩展性，可以在界面展示多条数据给用户，让用户有向下浏览的冲动。 核心原理：  找出高度最小的那一列，再那一列插入，然后继续找下一个高度最小的，一直循环到插满为止">
 
 
 
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/06/es6-Symbol/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/07/瀑布流布局/"/>
 
 
 
 
 
-  <title>es6--Symbol | baishiwen's blog</title>
+  <title>瀑布流布局 | baishiwen's blog</title>
   
 
 
@@ -275,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/es6-Symbol/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/07/瀑布流布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baishiwen">
@@ -292,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">es6--Symbol</h1>
+          <h1 class="post-title" itemprop="name headline">瀑布流布局</h1>
         
 
         <div class="post-meta">
@@ -304,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-06T17:06:33+08:00">
-                2018-08-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-07T15:53:18+08:00">
+                2019-11-07
               </time>
             
 
@@ -323,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/06/es6-Symbol/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/08/06/es6-Symbol/" itemprop="commentCount">0</span> comments
+                <a href="/2019/11/07/瀑布流布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2019/11/07/瀑布流布局/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -351,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,013字
+                  673字
                 </span>
               
 
@@ -388,23 +387,15 @@
       
 
       
-        <h2 id="1-Symbol的简介"><a href="#1-Symbol的简介" class="headerlink" title="1. Symbol的简介"></a>1. Symbol的简介</h2><p>在es6之前，对象属性在命名时很容易造成命名冲突，为了保证每个属性的名字都是独一无二的，这就从根本上防止了属性名的冲突，这就是引入Symbol的原因。<br>Symbol是一种新的原始数据类型，表示独一无二的值。<br>至此，JavaScript语言总共有7中数据类型：undefined,null,Boolean,String,Number,Object,Symbol<br><a id="more"></a></p>
-<h2 id="2-Symbol的生成及使用规则"><a href="#2-Symbol的生成及使用规则" class="headerlink" title="2. Symbol的生成及使用规则"></a>2. Symbol的生成及使用规则</h2><p>Symbol值通过Symbol函数生成。现在对象的属性名可有两种类型，一种是原来的字符串，另一种就是新增的Symbol类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let symbol = Symbol();</span><br><span class="line">typeof symbol;   // &quot;symbol&quot;</span><br></pre></td></tr></table></figure></p>
-<p>Symbol函数前面不能使用new命令，否则会报错，这是因为生成的Symbol是一种原始数据类型，不是对象。也就是说，由于Symbol的值不是对象，所以不能添加属性。<br>Symbol是一种类似于字符串的数据类型。</p>
-<p>Symbol函数可以接受一个字符串作为参数，表示对symbol实例的描述：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">let s2 = Symbol(&apos;bar&apos;);</span><br><span class="line"></span><br><span class="line">s1 // Symbol(&apos;foo&apos;)</span><br><span class="line">s1.toString();    // &apos;Symbol(foo)&apos;</span><br></pre></td></tr></table></figure></p>
-<p>如果Symbol的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，然后生成一个Symbol值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">	toString()&#123;</span><br><span class="line">		return &apos;abc&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">const sym = Symbol(obj);</span><br><span class="line">sym;  // Symbol(abc)</span><br></pre></td></tr></table></figure></p>
-<p>Symbol函数的参数只是对当前Symbol值的描述，因此相同参数的Symbol函数的返回值不相等：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//无参数</span><br><span class="line">let s1 = Symbol();</span><br><span class="line">let s2 = Symbol();</span><br><span class="line">s1 === s2 // false</span><br><span class="line">//有参数</span><br><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">let s2 = Symbol(&apos;foo&apos;);</span><br><span class="line">s1 === s2 // false</span><br></pre></td></tr></table></figure></p>
-<p>Symbol值不能与其他类型的值进行运算，否则报错；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">&quot;symbol is &quot;+ s1;    // TypeError: can&apos;t convert symbol to string</span><br></pre></td></tr></table></figure></p>
-<p>Symbol值可以显示转为字符串：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">s1.toString();   // &quot;Symbol(foo)&quot;</span><br></pre></td></tr></table></figure>
-<p>Symbol 值可以转为布尔值，但是不能转为数值:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol(&apos;foo&apos;);</span><br><span class="line">Boolean(s1)  // true</span><br><span class="line">!s1   // false</span><br></pre></td></tr></table></figure>
-<h2 id="3-Symbol作为属性名"><a href="#3-Symbol作为属性名" class="headerlink" title="3. Symbol作为属性名"></a>3. Symbol作为属性名</h2><p>由于每一个 Symbol 值都是不相等的，这意味着 Symbol 值可以作为标识符，用于对象的属性名，就能保证不会出现同名的属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol();</span><br><span class="line">//first：</span><br><span class="line">let a = &#123;&#125;;</span><br><span class="line">a[s1] = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">//second:</span><br><span class="line">let a = &#123;</span><br><span class="line">	[s1]: &apos;hello&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//third:</span><br><span class="line">let a = &#123;&#125;;</span><br><span class="line">Object.defineProperty(a,s1,&#123;value:&apos;hello&apos;&#125;);</span><br><span class="line"></span><br><span class="line">a[s1];  // &quot;hello&quot;</span><br></pre></td></tr></table></figure></p>
-<p>Symbol 值作为对象属性名时，不能用点运算符;<br>在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在方括号之中;<br>Symbol 类型还可以用于定义一组常量，保证这组常量的值都是不相等的;<br>Symbol 值作为属性名时，该属性还是公开属性，不是私有属性。</p>
-<h2 id="4-属性名的遍历"><a href="#4-属性名的遍历" class="headerlink" title="4. 属性名的遍历"></a>4. 属性名的遍历</h2><p>Symbol 作为属性名，该属性不会出现在for…in、for…of循环中，也不会被Object.keys()、Object.getOwnPropertyNames()、JSON.stringify()返回。<br>1）Object.getOwnPropertySymbols<br>Object.getOwnPropertySymbols方法返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;&#125;;</span><br><span class="line">let a = Symbol(&apos;a&apos;);</span><br><span class="line">let b = Symbol(&apos;b&apos;);</span><br><span class="line"></span><br><span class="line">obj[a] = &apos;Hello&apos;;</span><br><span class="line">obj[b] = &apos;World&apos;;</span><br><span class="line"></span><br><span class="line">const objectSymbols = Object.getOwnPropertySymbols(obj);</span><br><span class="line">objectSymbols</span><br><span class="line">// [Symbol(a), Symbol(b)]</span><br></pre></td></tr></table></figure></p>
-<p>2）Reflect.ownKeys<br>Reflect.ownKeys方法可以返回所有类型的键名，包括常规键名和 Symbol 键名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;</span><br><span class="line">  [Symbol(&apos;a&apos;)]: 1,</span><br><span class="line">  aaa: 2,</span><br><span class="line">  bbb: 3</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Reflect.ownKeys(obj)</span><br><span class="line">//  [&quot;aaa&quot;, &quot;bbb&quot;, Symbol(a)]</span><br></pre></td></tr></table></figure></p>
-<h2 id="5-Symbol-for-和-Symbol-keyFor"><a href="#5-Symbol-for-和-Symbol-keyFor" class="headerlink" title="5. Symbol.for() 和 Symbol.keyFor()"></a>5. Symbol.for() 和 Symbol.keyFor()</h2><p>1）Symbol.for()<br>Symbol.for()接受一个字符串作为参数，然后搜索有没有以该参数作为名称的 Symbol 值。如果有，就返回这个 Symbol 值，否则就新建并返回一个以该字符串为名称的 Symbol 值。<br>Symbol.for()与Symbol()这两种写法，都会生成新的 Symbol。它们的区别是，前者会被登记在全局环境中供搜索，后者不会。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Symbol.for(&quot;bar&quot;) === Symbol.for(&quot;bar&quot;)</span><br><span class="line">// true</span><br><span class="line"></span><br><span class="line">Symbol(&quot;bar&quot;) === Symbol(&quot;bar&quot;)</span><br><span class="line">// false</span><br></pre></td></tr></table></figure></p>
-<p>2）Symbol.keyFor()<br>Symbol.keyFor方法返回一个已登记的 Symbol 类型值的key。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s1 = Symbol.for(&quot;foo&quot;);</span><br><span class="line">Symbol.keyFor(s1) // &quot;foo&quot;</span><br><span class="line"></span><br><span class="line">let s2 = Symbol(&quot;foo&quot;);</span><br><span class="line">Symbol.keyFor(s2) // undefined</span><br></pre></td></tr></table></figure></p>
+        <p>瀑布流布局是目前一种比较流行的布局模式。即多行等宽模式，后面的元素一次添加到后面，等宽不登高。<br>优点：可以有效的降低页面的复杂度，节省很多的空间，在app中瀑布流可以提供很好的用户体验。<br>特点：瀑布流的特点就是参差不齐的排列方式，以及流式布局的扩展性，可以在界面展示多条数据给用户，让用户有向下浏览的冲动。</p>
+<p>核心原理：</p>
+<ol>
+<li>找出高度最小的那一列，再那一列插入，然后继续找下一个高度最小的，一直循环到插满为止；</li>
+<li>计算出每一列距离浏览器整体的距离；<br>代码示例：</li>
+</ol>
+<p>html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no, user-scalable=no, viewport-fit=cover&quot;/&gt;    </span><br><span class="line">    &lt;meta name=&quot;theme-color&quot; content=&quot;#000000&quot;&gt;</span><br><span class="line">    &lt;title&gt;瀑布流&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#root&#123;</span><br><span class="line">	display: flex;</span><br><span class="line">	position: relative;</span><br><span class="line">	width: 100%;</span><br><span class="line">	height: 100%;</span><br><span class="line">	overflow-y: scroll;</span><br><span class="line">	overflow-x: none;</span><br><span class="line">&#125;</span><br><span class="line">.item&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.item-img&#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">const images = [</span><br><span class="line">	&apos;https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4256474966,2292281373&amp;fm=26&amp;gp=0.jpg&apos;,</span><br><span class="line">	&apos;https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3717083495,2049140391&amp;fm=26&amp;gp=0.jpg&apos;,</span><br><span class="line">	&apos;https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3207309264,2197583591&amp;fm=26&amp;gp=0.jpg&apos;,</span><br><span class="line">	&apos;https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2300875363,445064071&amp;fm=5&apos;,</span><br><span class="line">	&apos;https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=2086869928,3196158198&amp;fm=85&amp;s=B220EEA60E4002C6501B7C3D0300E05A&apos;,</span><br><span class="line">	&apos;https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1039495642,2969284440&amp;fm=26&amp;gp=0.jpg&apos;,</span><br><span class="line">	&apos;https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2038406380,317017081&amp;fm=5&apos;,</span><br><span class="line">	&apos;https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2984967009,1714293888&amp;fm=85&amp;app=57&amp;f=JPEG?w=121&amp;h=75&amp;s=97A602AA0CD2C6D01A0733AD03007008&apos;,</span><br><span class="line">	&apos;https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2300875363,445064071&amp;fm=5&apos;,</span><br><span class="line">	&apos;https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=598069525,3705173246&amp;fm=5&apos;,</span><br><span class="line">	&apos;https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2152435263,329091142&amp;fm=5&apos;,</span><br><span class="line">	&apos;https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=620185774,165030302&amp;fm=5&apos;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">const configs = &#123;</span><br><span class="line">	column: 3,   //列数</span><br><span class="line">	diffX: 10,   //横向间距</span><br><span class="line">	diffY: 10,   //纵向间距</span><br><span class="line">	width: 140,  //宽度</span><br><span class="line">&#125;;</span><br><span class="line">&lt;!-- 存储高度的数组 --&gt;</span><br><span class="line">const heightArr = [];</span><br><span class="line"></span><br><span class="line">window.onload = function () &#123;</span><br><span class="line">	const root = document.querySelector(&apos;#root&apos;);</span><br><span class="line">	images.map((item, index) =&gt; &#123;</span><br><span class="line">		createItem(root, item, index);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function createItem(root, src, index) &#123;</span><br><span class="line">	const div = document.createElement(&apos;div&apos;);</span><br><span class="line">	div.classList.add(&apos;item&apos;);</span><br><span class="line">	const img = document.createElement(&apos;img&apos;);</span><br><span class="line">	img.src = src;</span><br><span class="line">	img.onload = function () &#123;</span><br><span class="line">		const height = img.clientHeight;</span><br><span class="line">		if (index &lt; configs.column) &#123;</span><br><span class="line">			div.style.top = &apos;0px&apos;;</span><br><span class="line">			heightArr.push(height);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			const minV = getMin(heightArr);</span><br><span class="line">			const minIndex = heightArr.indexOf(minV);</span><br><span class="line">			index = minIndex;</span><br><span class="line">			div.style.top = (configs.diffY + minV) + &apos;px&apos;;</span><br><span class="line">			heightArr[minIndex] = minV + height + configs.diffY;</span><br><span class="line">		&#125;</span><br><span class="line">		div.style.left = (configs.width + configs.diffX)*index + &apos;px&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	img.classList.add(&apos;item-img&apos;);</span><br><span class="line">	img.classList.add(&apos;img&apos;+ index);</span><br><span class="line">	div.appendChild(img);</span><br><span class="line">	root.appendChild(div);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function getMin(arr) &#123;</span><br><span class="line">	return Math.min.apply(null, arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -457,12 +448,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
-          
-        </div>
-      
 
       
       
@@ -472,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/01/deepLink/" rel="next" title="deepLink">
-                <i class="fa fa-chevron-left"></i> deepLink
+              <a href="/2019/11/05/水平垂直布局/" rel="next" title="水平垂直布局案例总结">
+                <i class="fa fa-chevron-left"></i> 水平垂直布局案例总结
               </a>
             
           </div>
@@ -481,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/06/es6-Set和Map数据结构/" rel="prev" title="es6--Set和Map数据结构">
-                es6--Set和Map数据结构 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,17 +561,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -641,22 +613,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Symbol的简介"><span class="nav-text">1. Symbol的简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Symbol的生成及使用规则"><span class="nav-text">2. Symbol的生成及使用规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Symbol作为属性名"><span class="nav-text">3. Symbol作为属性名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-属性名的遍历"><span class="nav-text">4. 属性名的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Symbol-for-和-Symbol-keyFor"><span class="nav-text">5. Symbol.for() 和 Symbol.keyFor()</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
