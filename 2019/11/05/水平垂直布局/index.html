@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="水平垂直布局在前端开发中是经常使用到，在水平垂直布局中主要有两种情况，一种是知道元素的宽和高，一种是不知道宽高。 1. 已知宽高的元素进行水平垂直布局方案方案一：给父元素设置为相对定位，子元素设置绝对定位，且top，bottom，left和right为0，margin为auto 123456789101112131415161718192021&amp;lt;div id=&amp;quot;fatherDom&amp;">
+<meta name="description" content="水平垂直布局在前端开发中是经常使用到，在水平垂直布局中主要有两种情况，一种是知道元素的宽和高，一种是不知道宽高。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="水平垂直布局案例总结">
 <meta property="og:url" content="http://yoursite.com/2019/11/05/水平垂直布局/index.html">
 <meta property="og:site_name" content="baishiwen&#39;s blog">
-<meta property="og:description" content="水平垂直布局在前端开发中是经常使用到，在水平垂直布局中主要有两种情况，一种是知道元素的宽和高，一种是不知道宽高。 1. 已知宽高的元素进行水平垂直布局方案方案一：给父元素设置为相对定位，子元素设置绝对定位，且top，bottom，left和right为0，margin为auto 123456789101112131415161718192021&amp;lt;div id=&amp;quot;fatherDom&amp;">
+<meta property="og:description" content="水平垂直布局在前端开发中是经常使用到，在水平垂直布局中主要有两种情况，一种是知道元素的宽和高，一种是不知道宽高。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-07T07:23:37.088Z">
+<meta property="og:updated_time" content="2019-11-08T06:04:39.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="水平垂直布局案例总结">
-<meta name="twitter:description" content="水平垂直布局在前端开发中是经常使用到，在水平垂直布局中主要有两种情况，一种是知道元素的宽和高，一种是不知道宽高。 1. 已知宽高的元素进行水平垂直布局方案方案一：给父元素设置为相对定位，子元素设置绝对定位，且top，bottom，left和right为0，margin为auto 123456789101112131415161718192021&amp;lt;div id=&amp;quot;fatherDom&amp;">
+<meta name="twitter:description" content="水平垂直布局在前端开发中是经常使用到，在水平垂直布局中主要有两种情况，一种是知道元素的宽和高，一种是不知道宽高。">
 
 
 
@@ -387,7 +387,7 @@
       
 
       
-        <p>水平垂直布局在前端开发中是经常使用到，在水平垂直布局中主要有两种情况，一种是知道元素的宽和高，一种是不知道宽高。</p>
+        <p>水平垂直布局在前端开发中是经常使用到，在水平垂直布局中主要有两种情况，一种是知道元素的宽和高，一种是不知道宽高。<br><a id="more"></a></p>
 <h2 id="1-已知宽高的元素进行水平垂直布局方案"><a href="#1-已知宽高的元素进行水平垂直布局方案" class="headerlink" title="1. 已知宽高的元素进行水平垂直布局方案"></a>1. 已知宽高的元素进行水平垂直布局方案</h2><p>方案一：<br>给父元素设置为相对定位，子元素设置绝对定位，且top，bottom，left和right为0，margin为auto</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;fatherDom&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;sonDom&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    #fatherDom&#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 200px;</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    #sonDom&#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        position: absolute;</span><br><span class="line">        left: 0;</span><br><span class="line">        top: 0;</span><br><span class="line">        bottom: 0;</span><br><span class="line">        right: 0;</span><br><span class="line">        margin: auto;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 <p>方案二：<br>设置父元素为相对定位，子元素设置为绝对定位，且left和top为50%，margin-left为元素宽度的一半（负值），margin-top为元素高度的一半（负值）。</p>
